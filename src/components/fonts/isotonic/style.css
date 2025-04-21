@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Isotonic';
+    src: local('Isotonic Light'), local('Isotonic-Light'),
+        url('Isotonic-Lt.woff2') format('woff2'),
+        url('Isotonic-Lt.woff') format('woff'),
+        url('Isotonic-Lt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }

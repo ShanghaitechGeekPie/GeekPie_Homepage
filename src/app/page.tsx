@@ -1,103 +1,64 @@
-import Image from "next/image";
+import { TextAnimate } from "@/components/magicui/text-animate";
+import { Globe } from "@/components/magicui/globe";
+import { isotonic } from "@/components/localfont";
+import cs from "classnames"
+import { Particles } from "@/components/magicui/particles";
+import { BentoAbout } from "@/components/bento";
+// import { useTheme } from "next-themes";
+// import { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // const { resolvedTheme } = useTheme();
+  // const [color, setColor] = useState("#ffffff");
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  // useEffect(() => {
+  //   setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
+  // }, [resolvedTheme]);
+  return (
+    <>
+      <div className="flex flex-col items-between justify-center min-h-screen max-h-screen p-5 lg:p-24 relative overflow-clip">
+        <Particles
+          className="absolute inset-0 z-0"
+          quantity={80}
+          ease={80}
+          vx={1}
+          size={0.8}
+          color={"#000000"}
+          refresh
+        />
+        <Particles
+          className="absolute inset-0 -z-20"
+          quantity={20}
+          ease={80}
+          vx={-1}
+          size={0.4}
+          color={"#00000044"}
+          refresh
+        />
+        <div className="">
+          <TextAnimate animation="blurInUp" as="h1" className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-8xl">
+            For those
+          </TextAnimate>
+          <TextAnimate animation="blurInUp" as="h1" delay={0.25} className="scroll-m-20 text-5xl font-bold tracking-tight lg:text-8xl mb-3">
+            who love Tech
+          </TextAnimate>
+          <TextAnimate animation="blurInUp" delay={0.5} className={cs(isotonic.className, "text-2xl font-bold tracking-tight lg:text-4xl")}>
+            GeekPie_ Association @ ShanghaiTech
+          </TextAnimate>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <Globe className="mt-[70vh] lg:mt-40 mr-auto lg:mr-0 -z-10 max-w-2/3" />
+      </div>
+      <div className="flex flex-col h-screen p-10 gap-5 items-center">
+        <h2 className="scroll-m-20 text-3xl font-bold tracking-tight lg:text-5xl">
+          我们是谁？
+        </h2>
+
+        <div className="flex-grow w-full max-w-4xl lg:overflow-auto">
+          <BentoAbout className="w-full h-full p-5" />
+        </div>
+      </div>
+
+
+    </>
   );
 }
