@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="zh-cn">
       <body
-        className={`${montserrat.className} antialiased`}
+        className={`${montserrat.className} antialiased relative flex flex-col justify-center items-stretch`}
       >
         {children}
       </body>
