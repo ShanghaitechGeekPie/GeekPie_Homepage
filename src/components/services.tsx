@@ -24,7 +24,7 @@ export function Services({ className }: { className: string }) {
 
 const Icons = {
     mirror: () => <span className="text-xl font-bold">Mirror</span>,
-    opentech: () => <img src="/assets/opentech.png" alt="OpenTech" />,
+    opentech: () => <img src="/assets/opentech.png" alt="OpenTech" className="rounded-full" />,
     cb: () => <img src="/assets/coursebench.svg" alt="CourseBench" />,
     prettier: () => <span className="text-xl leading-none font-bold bg-clip-text text-transparent bg-[linear-gradient(90deg,#7bb4e6,#e6c944,#f3b6cd)]">Course<br />Prettier</span>,
     hpc: () => <img src="/assets/geekpie-hpc-logo.png" alt="GeekPie HPC" />,

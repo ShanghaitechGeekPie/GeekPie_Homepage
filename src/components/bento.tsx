@@ -38,7 +38,7 @@ const features = [
     description: "我们的成员在 MIT、UCB、CMU、UIUC 等世界顶尖高校深造，并发表多篇一作文章于世界顶级会议。",
     href: "/",
     cta: "Learn more",
-    background: (<FlickeringGrid className="absolute opacity-30"/>),
+    background: (<FlickeringGrid className="absolute opacity-30 dark:invert-100"/>),
     className: "lg:col-start-2 lg:col-end-2 lg:row-start-1 lg:row-end-2",
   },
   {

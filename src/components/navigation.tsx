@@ -14,6 +14,7 @@ import {
 import { isotonic } from "./localfont"
 import { FaGithub } from "react-icons/fa6"
 import { GeekPie_ } from "./geekpie"
+import { ModeToggle } from "./toggleDark"
 
 const links: { title: string; href: string; description: string }[] = [
   {
@@ -92,7 +93,7 @@ export function NavMenu({ className }: { className?: string }) {
           <NavigationMenuTrigger>友链</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-400px gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] ">
-            {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
+              {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
               {friendlinks.map((component) => (
                 <ListItem
                   key={component.title}
@@ -104,6 +105,9 @@ export function NavMenu({ className }: { className?: string }) {
               ))}
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <ModeToggle />
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
