@@ -19,7 +19,7 @@ export default function Home() {
   // }, [resolvedTheme]);
   return (
     <>
-      <header className="sticky top-0 z-40 backdrop-blur-sm shadow-sm p-3">
+      <header className="sticky top-0 z-40 p-3 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <GeekPie_ className="min-h-[2rem] max-h-[2rem] min-w-fit hidden md:block" />
           <NavMenu className="" />
