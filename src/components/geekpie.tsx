@@ -14,27 +14,7 @@ export const GeekPie_ = ({ className }: { className?: string }) => (
     <style>
       {".st0{fill:#fff;stroke:#fff;stroke-width:4;stroke-miterlimit:10}"}
     </style>
-    <image
-      xlinkHref="74239886B77AE85C.png"
-      width={293}
-      height={80}
-      style={{
-        overflow: "visible",
-        opacity: 0.37,
-      }}
-      transform="translate(1 3.3)"
-    />
     <g id="\u56FE\u5C42_1_10_">
-      <image
-        xlinkHref="74239886B77AE852.png"
-        width={279}
-        height={69}
-        style={{
-          overflow: "visible",
-          opacity: 0.6,
-        }}
-        transform="translate(7 7.3)"
-      />
       <g id="XMLID_125_">
         <g id="XMLID_127_">
           <path
