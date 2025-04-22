@@ -10,6 +10,7 @@ export function Services({ className }: { className: string }) {
                 <Icons.hpc />
                 <Icons.aoscc />
                 <Icons.run />
+                <Icons.hydro />
             </OrbitingCircles>
             <OrbitingCircles iconSize={30} radius={100} reverse speed={2}>
                 <Icons.mirror />
@@ -31,4 +32,5 @@ const Icons = {
     asfr: () => <span className="text-xl font-bold">ASFR</span>,
     run: () => <img src="/assets/run.svg" alt="Run" />,
     lug: () => <span className="text-xl font-bold">LUG</span>,
+    hydro: () => <img src="/assets/hydro.png" alt="Hydro" />,
 };

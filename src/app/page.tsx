@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <header className="sticky top-0 z-40 backdrop-blur-sm shadow-sm p-3">
-        <div className="max-w-3xl mx-auto flex justify-between items-center">
+        <div className="max-w-5xl mx-auto flex justify-between items-center">
           <GeekPie_ className="min-h-[2rem] max-h-[2rem] min-w-fit hidden md:block" />
           <NavMenu className="" />
         </div>

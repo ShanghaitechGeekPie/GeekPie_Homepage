@@ -53,7 +53,7 @@ const friendlinks: { title: string; href: string; description: string }[] = [
 
 export function NavMenu({ className }: { className?: string }) {
   return (
-    <NavigationMenu className={cn("self-end", className)}>
+    <NavigationMenu className={cn("", className)}>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className={"hidden md:inline-flex"}>由 GeekPie_ 驱动</NavigationMenuTrigger>
