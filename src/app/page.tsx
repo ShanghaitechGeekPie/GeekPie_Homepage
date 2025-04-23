@@ -48,7 +48,7 @@ export default function Home() {
           <RetroGrid />
         </div>
       </main>
-      <footer className="flex items-center justify-center w-full h-16 border-t">
+      <footer className="flex items-center justify-center w-full p-10 border-t">
         <div className="flex flex-col items-center justify-center w-full max-w-3xl">
           <p className="text-sm text-muted-foreground">
             Designed & Developed by ZAMBAR @ GeekPie_

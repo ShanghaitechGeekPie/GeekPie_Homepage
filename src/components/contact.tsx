@@ -1,6 +1,7 @@
 "use client";
 
 import { RetroGrid as MagicRetroGrid } from "@/components/magicui/retro-grid";
+import { cn } from "@/lib/utils";
 import { IconType } from "react-icons";
 import { FaGithub, FaQq } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
@@ -30,7 +31,9 @@ export function RetroGrid() {
       <div className="flex items-center justify-center gap-3">
         {links.map((link) => (
           <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-            <link.icon className="w-6 h-6 hover:opacity-80 hover:scale-105 active:scale-90 transition-all" />
+            <link.icon className={cn(
+              "w-6 h-6 hover:opacity-80 hover:scale-110 active:scale-90 transition-all",
+            )} />
           </a>
         ))
         }
