@@ -36,6 +36,7 @@ export function RetroGrid() {
         }
       </div>
 
+      <img src="/geekpie_retro.png" alt="GeekPie Retro" className="h-[200px] -z-10 dark:invert-100" />
 
       <MagicRetroGrid className="[mask-image:linear-gradient(to_bottom,transparent_30%,#000_100%)]" />
     </div>

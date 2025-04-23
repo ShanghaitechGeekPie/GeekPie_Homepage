@@ -35,7 +35,7 @@ export default function Home() {
             </TextAnimate>
           </div>
         </div>
-        <div className="flex flex-col p-10 gap-5 items-center">
+        <div className="flex flex-col p-10 py-20 gap-5 items-center">
           <h2 className="scroll-m-20 text-3xl font-bold tracking-tight lg:text-5xl">
             我们是谁？
           </h2>

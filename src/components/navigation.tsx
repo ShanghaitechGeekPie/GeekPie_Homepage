@@ -54,11 +54,11 @@ const friendlinks: { title: string; href: string; description: string }[] = [
 
 export function NavMenu({ className }: { className?: string }) {
   return (
-    <NavigationMenu className={cn("", className)}>
+    <NavigationMenu className={cn(className)}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={"hidden md:inline-flex"}>由 GeekPie_ 驱动</NavigationMenuTrigger>
-          <NavigationMenuTrigger className={"md:hidden"}>
+          <NavigationMenuTrigger className={"bg-transparent hidden md:inline-flex"}>由 GeekPie_ 驱动</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={"bg-transparen md:hidden"}>
             <div className="w-16">
               <GeekPie_ />
             </div>
@@ -90,7 +90,9 @@ export function NavMenu({ className }: { className?: string }) {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>友链</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={"bg-transparent"}>
+            友链
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-400px gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] ">
               {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
@@ -106,7 +108,7 @@ export function NavMenu({ className }: { className?: string }) {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="">
           <ModeToggle />
         </NavigationMenuItem>
       </NavigationMenuList>
