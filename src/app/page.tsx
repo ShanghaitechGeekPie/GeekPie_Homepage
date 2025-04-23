@@ -19,7 +19,9 @@ export default function Home() {
       <main className="flex-1 -mt-5">
         <div className={cs("flex flex-col items-between justify-center min-h-screen max-h-screen p-5 lg:p-24 relative overflow-clip",
           "[mask-image:linear-gradient(to_top,transparent_0%,#000_10%)]"
-        )}>
+        )}
+          style={{ paddingTop: 0 }}
+        >
           <div className="">
             <Universe />
             <TextAnimate animation="blurInUp" as="h1" className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-8xl">
