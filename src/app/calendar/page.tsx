@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { BorderBeam } from "@/components/magicui/border-beam";
 
-export function ActivityCard() {
+function ActivityCard() {
   return (
     <Card className="relative w-[350px] overflow-hidden">
       <CardHeader>
