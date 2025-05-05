@@ -23,7 +23,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "GeekPie_",
-  description: "ShanghaiTech University, GeekPie_ Association",
+  description: "For those who love Tech! We are GeekPie Association from ShanghaiTech University.",
 };
 
 export default function RootLayout({
