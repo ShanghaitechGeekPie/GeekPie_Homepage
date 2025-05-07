@@ -18,42 +18,67 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { BorderBeam } from "@/components/magicui/border-beam";
 
-function ActivityCard() {
+function ActivityCard({ item }: { item: Item }) {
+  const status = item.fieldValues?.nodes?.find((field) => field?.field?.name === 'Status')?.name || 'Todo';
+  
+  const getStatusColor = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'in progress':
+        return 'from-transparent via-green-500 to-transparent';
+      case 'todo':
+        return 'from-transparent via-purple-500 to-transparent';
+      default:
+        return 'from-transparent via-foreground to-transparent';
+    }
+  };
+
   return (
-    <Card className="relative w-[350px] overflow-hidden">
-      <CardHeader>
-        <CardTitle>Login</CardTitle>
-        <CardDescription>
-          Enter your credentials to access your account.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="Enter your email" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="Enter your password"
-              />
-            </div>
+    <Card className="relative w-full overflow-hidden">
+      <CardHeader className="pb-2">
+        {item.content && (
+          <div>
+            <CardTitle className="text-2xl">{item.content.title}</CardTitle>
+            {item.content.body && (
+              <CardDescription className="mt-2">
+                {item.content.body}
+              </CardDescription>
+            )}
           </div>
-        </form>
+        )}
+      </CardHeader>
+      <CardContent className="px-4 py-1">
+        {item.content?.assignees && item.content.assignees?.nodes?.length > 0 && (
+          <div className="mb-4">
+            <p className="text-sm font-medium text-muted-foreground">Assignees:</p>
+            <ul className="text-sm">
+              {item.content.assignees.nodes.map((a) => (
+                <li key={a.login}>{a.login}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div className="mt-4">
+          <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+            {item.fieldValues.nodes.map((field, idx) => (
+              field.field && (
+                <div key={idx} className="contents">
+                  <dt className="font-bold pr-2 text-muted-foreground">{field.field.name}</dt>
+                  <dd className="text-primary pl-2">{
+                    field.__typename === 'ProjectV2ItemFieldTextValue' && field.text ||
+                    field.__typename === 'ProjectV2ItemFieldDateValue' && field.date ||
+                    field.__typename === 'ProjectV2ItemFieldSingleSelectValue' && field.name
+                  }</dd>
+                </div>
+              )
+            ))}
+          </dl>
+        </div>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="outline">Register</Button>
-        <Button>Login</Button>
-      </CardFooter>
       <BorderBeam
-        duration={4}
+        duration={2}
         size={300}
         reverse
-        className="from-transparent via-green-500 to-transparent"
+        className={getStatusColor(status)}
       />
     </Card>
   );
@@ -176,8 +201,8 @@ export default async function ProjectPage() {
   const items = await fetchProjectItems();
 
   const groupedItems = items.reduce((acc, item) => {
-    const activityType = item.fieldValues?.nodes?.find((field) => field?.field?.name === 'Activity')?.name || 'Unknown';
-    
+    const activityType = item.fieldValues?.nodes?.find((field) => field?.field?.name === 'Activity')?.name || 'Others';
+
     if (!acc[activityType]) {
       acc[activityType] = [];
     }
@@ -185,66 +210,34 @@ export default async function ProjectPage() {
     return acc;
   }, {} as Record<string, Item[]>);
 
+  // Sort the entries so that "Others" appears last
+  const sortedEntries = Object.entries(groupedItems).sort(([a], [b]) => {
+    if (a === 'Others') return 1;
+    if (b === 'Others') return -1;
+    return a.localeCompare(b);
+  });
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Project Items</h1>
-      {Object.entries(groupedItems).map(([activityType, items]) => (
-        <div key={activityType} className="mb-8">
-          <h2 className="text-xl font-bold mb-4">{activityType}</h2>
-          <Carousel className="max-w-2xl">
-            <CarouselContent>
-              {items.map((item, index) => (
-                <CarouselItem key={item.id} className="md:basis-full lg:basis-1/2">
-                  <Card className="h-full">
-                    <CardContent className="p-4">
-                      <h3 className="text-lg font-semibold mb-2">Item {index + 1}</h3>
-                      {item.content && (
-                        <div className="mb-2">
-                          <p className="text-xl font-bold">{item.content.title}</p>
-                          {item.content.body && (
-                            <>
-                              <p className="font-bold mt-2">Body:</p>
-                              <p className="text-sm">{item.content.body}</p>
-                            </>
-                          )}
-                          {item.content.assignees && item.content.assignees?.nodes?.length > 0 && (
-                            <>
-                              <p className="font-bold mt-2">Assignees:</p>
-                              <ul className="text-sm">
-                                {item.content.assignees.nodes.map((a) => (
-                                  <li key={a.login}>{a.login}</li>
-                                ))}
-                              </ul>
-                            </>
-                          )}
-                        </div>
-                      )}
-                      <div className="mt-4">
-                        <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                          {item.fieldValues.nodes.map((field, idx) => (
-                            field.field && (
-                              <div key={idx} className="contents">
-                                <dt className="font-bold text-right pr-2">{field.field.name}</dt>
-                                <dd className="text-primary pl-2">{
-                                  field.__typename === 'ProjectV2ItemFieldTextValue' && field.text ||
-                                  field.__typename === 'ProjectV2ItemFieldDateValue' && field.date ||
-                                  field.__typename === 'ProjectV2ItemFieldSingleSelectValue' && field.name
-                                }</dd>
-                              </div>
-                            )
-                          ))}
-                        </dl>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-      ))}
+    <div className="p-6 flex flex-col w-full">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-6xl font-bold mb-12">Recent Activities</h1>
+        {sortedEntries.map(([activityType, items]) => (
+          <div key={activityType} className="mb-8 w-full max-w-2xl flex flex-col">
+            <h2 className="text-3xl font-bold mb-4 text-center">{activityType}</h2>
+            <Carousel className="max-w-2xl mb-10">
+              <CarouselContent>
+                {items.map((item, index) => (
+                  <CarouselItem key={item.id} className="md:basis-full lg:basis-1/2 p-4">
+                    <ActivityCard item={item} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="top-[calc(100%+0.5rem)] translate-y-0 left-0" variant="default" />
+              <CarouselNext className="top-[calc(100%+0.5rem)] translate-y-0 left-2 translate-x-full" variant="default" />
+            </Carousel>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
