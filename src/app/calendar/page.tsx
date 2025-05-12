@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -14,8 +14,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { BorderBeam } from "@/components/magicui/border-beam";
 
 function ActivityCard({ item }: { item: Item }) {
@@ -110,11 +108,11 @@ async function fetchProjectItems(): Promise<Item[]> {
   if (!token) {
     throw new Error('GitHub token is not defined');
   }
-  const projectId = 'PVT_kwDOAKejWs4A4QJ3'; // 替换为你的 ProjectV2 ID
+  const projectId = 'PVT_kwDOAKejWs4A4QJ3';
 
   const query = `
 query {                                                                                                     
-    node(id: "PVT_kwDOAKejWs4A4QJ3") {                                                                                                                                    
+    node(id: "${projectId}") {                                                                                                                                    
         ... on ProjectV2 {                                                                                                                                                
             items {                                                                                                                                                       
                 nodes {                                                                                                                                                   
@@ -188,13 +186,14 @@ query {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ query }),
-    cache: 'no-store', // 保证每次最新
+    next: {
+      revalidate: 60 // Revalidate every minute
+    }
   });
 
   const json = await res.json();
   console.log(json);
   return json.data.node.items.nodes;
-  // return [] as Item[];
 }
 
 export default async function ProjectPage() {
@@ -227,7 +226,7 @@ export default async function ProjectPage() {
             <Carousel className="max-w-2xl mb-10">
               <CarouselContent>
                 {items.map((item, index) => (
-                  <CarouselItem key={item.id} className="md:basis-full lg:basis-1/2 p-4">
+                  <CarouselItem key={index} className="md:basis-full lg:basis-1/2 p-4">
                     <ActivityCard item={item} />
                   </CarouselItem>
                 ))}
