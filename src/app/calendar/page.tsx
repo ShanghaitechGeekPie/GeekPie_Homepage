@@ -15,11 +15,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import { useEffect, useState } from "react";
+import useSWR from 'swr';
+import { DotPattern } from "@/components/magicui/dot-pattern";
+import { cn } from "@/lib/utils";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 function ActivityCard({ item }: { item: Item }) {
   const status = item.fieldValues?.nodes?.find((field) => field?.field?.name === 'Status')?.name || 'Todo';
-  
-  const getStatusColor = (status: string) => {
+
+  const getStatusBorderColor = (status: string) => {
     switch (status.toLowerCase()) {
       case 'in progress':
         return 'from-transparent via-green-500 to-transparent';
@@ -32,7 +37,7 @@ function ActivityCard({ item }: { item: Item }) {
 
   return (
     <Card className="relative w-full overflow-hidden">
-      <CardHeader className="pb-2">
+      <CardHeader className="flex justify-between items-center gap-2 flex-wrap">
         {item.content && (
           <div>
             <CardTitle className="text-2xl">{item.content.title}</CardTitle>
@@ -43,19 +48,31 @@ function ActivityCard({ item }: { item: Item }) {
             )}
           </div>
         )}
+        {
+          item.content?.url && (
+            <InteractiveHoverButton className="justify-self-end">
+              <a href={item.content.url} target="_blank" rel="noopener noreferrer">
+                Details
+              </a>
+            </InteractiveHoverButton>
+          )
+        }
       </CardHeader>
-      <CardContent className="px-4 py-1">
+      <CardContent className="px-6 py-1">
         {item.content?.assignees && item.content.assignees?.nodes?.length > 0 && (
           <div className="mb-4">
             <p className="text-sm font-medium text-muted-foreground">Assignees:</p>
             <ul className="text-sm">
               {item.content.assignees.nodes.map((a) => (
-                <li key={a.login}>{a.login}</li>
+                <li key={a.login} className="flex gap-1 items-center justify-start my-1">
+                  <img src={a.avatarUrl} alt={a.login} className="inline-block w-6 h-6 rounded-full mr-2" />
+                  {a.login}
+                </li>
               ))}
             </ul>
           </div>
         )}
-        <div className="mt-4">
+        <div className="mt-2">
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
             {item.fieldValues.nodes.map((field, idx) => (
               field.field && (
@@ -73,10 +90,10 @@ function ActivityCard({ item }: { item: Item }) {
         </div>
       </CardContent>
       <BorderBeam
-        duration={2}
+        duration={5}
         size={300}
         reverse
-        className={getStatusColor(status)}
+        className={getStatusBorderColor(status)}
       />
     </Card>
   );
@@ -90,7 +107,7 @@ type FieldValue = {
   name?: string;
 };
 
-type Assignee = { login: string };
+type Assignee = { login: string; avatarUrl: string };
 
 type Item = {
   id: string;
@@ -99,12 +116,13 @@ type Item = {
     __typename: string;
     title: string;
     body?: string;
+    url?: string;
     assignees?: { nodes: Assignee[] };
   } | null;
 };
 
 async function fetchProjectItems(): Promise<Item[]> {
-  const token = process.env.GH_PROJ_TOKEN;
+  const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
   if (!token) {
     throw new Error('GitHub token is not defined');
   }
@@ -117,7 +135,7 @@ query {
             items {                                                                                                                                                       
                 nodes {                                                                                                                                                   
                     id                                                                                                                                                    
-                    fieldValues(first: 8) {                                                                                                                               
+                    fieldValues(first: 20) {                                                                                                                               
                         nodes {                                                                                                                                           
                             ... on ProjectV2ItemFieldTextValue {                                                                                                          
                                 text                                                                                                                                      
@@ -151,7 +169,14 @@ query {
                     content {
                         ... on DraftIssue {
                             title
-                            body
+                            assignees(first: 10) {
+                                totalCount 
+                                nodes {
+                                    login
+                                    avatarUrl
+                                    url
+                                }
+                            }
                         }
                         ... on Issue {
                             title
@@ -160,16 +185,10 @@ query {
                                 nodes {
                                     login
                                     avatarUrl
+                                    url
                                 }
                             }
-                        }
-                        ... on PullRequest {
-                            title
-                            assignees(first: 10) {
-                                nodes {
-                                    login
-                                }
-                            }
+                            url
                         }
                     }
                 }
@@ -196,8 +215,16 @@ query {
   return json.data.node.items.nodes;
 }
 
-export default async function ProjectPage() {
-  const items = await fetchProjectItems();
+export default function ProjectPage() {
+  const [items, setItems] = useState<Item[]>([]);
+
+  const fetcher = async () => await fetchProjectItems();
+
+  const { data, isLoading } = useSWR('project-items', fetcher, { revalidateOnFocus: false });
+
+  useEffect(() => {
+    if (data) setItems(data);
+  }, [data]);
 
   const groupedItems = items.reduce((acc, item) => {
     const activityType = item.fieldValues?.nodes?.find((field) => field?.field?.name === 'Activity')?.name || 'Others';
@@ -219,23 +246,48 @@ export default async function ProjectPage() {
   return (
     <div className="p-6 flex flex-col w-full">
       <div className="flex flex-col items-center justify-center">
+        <DotPattern
+          className={cn(
+            "[mask-image:radial-gradient(80vh_circle_at_center,white,transparent)]",
+            "fixed -z-1"
+          )}
+        />
         <h1 className="text-6xl font-bold mb-12">Recent Activities</h1>
-        {sortedEntries.map(([activityType, items]) => (
-          <div key={activityType} className="mb-8 w-full max-w-2xl flex flex-col">
-            <h2 className="text-3xl font-bold mb-4 text-center">{activityType}</h2>
-            <Carousel className="max-w-2xl mb-10">
-              <CarouselContent>
-                {items.map((item, index) => (
-                  <CarouselItem key={index} className="md:basis-full lg:basis-1/2 p-4">
-                    <ActivityCard item={item} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="top-[calc(100%+0.5rem)] translate-y-0 left-0" variant="default" />
-              <CarouselNext className="top-[calc(100%+0.5rem)] translate-y-0 left-2 translate-x-full" variant="default" />
-            </Carousel>
+        {isLoading ? (
+          <div className="w-full max-w-2xl">
+            {[...Array(2)].map((_, idx) => (
+              <div key={idx} className="mb-8">
+                <div className="h-10 w-1/3 mx-auto mb-8 bg-muted rounded animate-pulse" />
+                <div className="flex gap-4">
+                  {[...Array(2)].map((_, i) => (
+                    <div key={i} className="flex-1">
+                      <div className="h-48 bg-muted rounded-lg animate-pulse mb-2" />
+                      <div className="h-4 w-2/3 bg-muted rounded animate-pulse mb-1 mx-auto" />
+                      <div className="h-4 w-1/2 bg-muted rounded animate-pulse mx-auto" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        ) : (
+          sortedEntries.map(([activityType, items]) => (
+            <div key={activityType} className="mb-8 w-full max-w-2xl flex flex-col">
+              <h2 className="text-3xl font-bold mb-4 text-center">{activityType}</h2>
+              <Carousel className="max-w-2xl mb-10">
+                <CarouselContent>
+                  {items.map((item, index) => (
+                    <CarouselItem key={index} className="md:basis-full lg:basis-1/2 p-4">
+                      <ActivityCard item={item} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="top-[calc(100%+0.5rem)] translate-y-0 left-0" variant="default" />
+                <CarouselNext className="top-[calc(100%+0.5rem)] translate-y-0 left-2 translate-x-full" variant="default" />
+              </Carousel>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

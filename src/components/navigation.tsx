@@ -18,16 +18,30 @@ import { ModeToggle } from "./toggleDark"
 
 const links: { title: string; href: string; description: string }[] = [
   {
-    title: "HPC",
+    title: "社团主页",
+    href: "/",
+    description: "关于 GeekPie 学生社团"
+  },
+  {
+    title: "活动日历",
+    href: "/calendar",
+    description:
+      "GeekPie 的活动日历，记录 GeekPie 学生社团的活动、比赛、Seminar 等",
+  }
+]
+
+const friendlinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "GeekPie_HPC",
     href: "https://hpc.geekpie.club/",
     description:
       "来自上海科技大学的高性能计算团队",
   },
   {
-    title: "Mirrors",
+    title: "GeekPie_Mirrors",
     href: "https://mirrors.shanghaitech.edu.cn/",
     description:
-      "由上海科技大学图书馆和信息中心赞助、GeekPie_ 维护的镜像站点",
+      "由上海科技大学图书馆和信息中心赞助、GeekPie 维护的镜像站点",
   },
   {
     title: "CourseBench",
@@ -35,9 +49,6 @@ const links: { title: string; href: string; description: string }[] = [
     description:
       "一个真实可靠、不断完善的多维课程评价信息库",
   },
-]
-
-const friendlinks: { title: string; href: string; description: string }[] = [
   {
     title: "ShanghaiTech University",
     href: "https://www.shanghaitech.edu.cn/",
