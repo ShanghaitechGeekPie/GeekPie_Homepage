@@ -34,6 +34,9 @@ const links: { title: string; href: string; description: string }[] = [
     description:
       "来自上海科技大学的高性能计算团队",
   },
+]
+
+const friendlinks: { title: string; href: string; description: string }[] = [
   {
     title: "GeekPie_Mirrors",
     href: "https://mirrors.shanghaitech.edu.cn/",
@@ -58,9 +61,6 @@ const links: { title: string; href: string; description: string }[] = [
     description:
       "简单、私密的文件分享服务（仅校内）",
   },
-]
-
-const friendlinks: { title: string; href: string; description: string }[] = [
   {
     title: "GeekPie 服务状态",
     href: "https://status.geekpie.club/status",
@@ -93,7 +93,7 @@ export function NavMenu({ className }: { className?: string }) {
             </div>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] max-h-[80vh] overflow-y-auto">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
@@ -123,7 +123,7 @@ export function NavMenu({ className }: { className?: string }) {
             友链
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-400px gap-3 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px] ">
+            <ul className="grid w-400px gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] max-h-[80vh] overflow-y-auto">
               {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
               {friendlinks.map((component) => (
                 <ListItem
