@@ -27,10 +27,7 @@ const links: { title: string; href: string; description: string }[] = [
     href: "/calendar",
     description:
       "GeekPie 的活动日历，记录 GeekPie 学生社团的活动、比赛、Seminar 等",
-  }
-]
-
-const friendlinks: { title: string; href: string; description: string }[] = [
+  },
   {
     title: "GeekPie_HPC",
     href: "https://hpc.geekpie.club/",
@@ -48,6 +45,27 @@ const friendlinks: { title: string; href: string; description: string }[] = [
     href: "https://coursebench.geekpie.club/",
     description:
       "一个真实可靠、不断完善的多维课程评价信息库",
+  },
+  {
+    title: "Next.GenAI",
+    href: "https://chat.geekpie.club/chat",
+    description:
+      "简洁、现代的下一代 ShanghaiTech GenAI 前端",
+  },
+  {
+    title: "GeekPie Send",
+    href: "https://send.geekpie.club/",
+    description:
+      "简单、私密的文件分享服务（仅校内）",
+  },
+]
+
+const friendlinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "GeekPie 服务状态",
+    href: "https://status.geekpie.club/status",
+    description:
+      "由 GeekPie 运维的主要服务的状态",
   },
   {
     title: "ShanghaiTech University",
