@@ -244,52 +244,44 @@ export default function ProjectPage() {
   });
 
   return (
-    <div className="p-6 flex flex-col w-full">
-      <div className="flex flex-col items-center justify-center">
-        <DotPattern
-          className={cn(
-            "[mask-image:radial-gradient(80vh_circle_at_center,white,transparent)]",
-            "fixed -z-1"
-          )}
-        />
-        <h1 className="text-6xl font-bold mb-12">Recent Activities</h1>
-        {isLoading ? (
-          <div className="w-full max-w-2xl">
-            {[...Array(2)].map((_, idx) => (
-              <div key={idx} className="mb-8">
-                <div className="h-10 w-1/3 mx-auto mb-8 bg-muted rounded animate-pulse" />
-                <div className="flex gap-4">
-                  {[...Array(2)].map((_, i) => (
-                    <div key={i} className="flex-1">
-                      <div className="h-48 bg-muted rounded-lg animate-pulse mb-2" />
-                      <div className="h-4 w-2/3 bg-muted rounded animate-pulse mb-1 mx-auto" />
-                      <div className="h-4 w-1/2 bg-muted rounded animate-pulse mx-auto" />
-                    </div>
-                  ))}
-                </div>
+    <>
+      <h1 className="text-6xl font-bold mb-12">Recent Activities</h1>
+      {isLoading ? (
+        <div className="w-full max-w-2xl">
+          {[...Array(2)].map((_, idx) => (
+            <div key={idx} className="mb-8">
+              <div className="h-10 w-1/3 mx-auto mb-8 bg-muted rounded animate-pulse" />
+              <div className="flex gap-4">
+                {[...Array(2)].map((_, i) => (
+                  <div key={i} className="flex-1">
+                    <div className="h-48 bg-muted rounded-lg animate-pulse mb-2" />
+                    <div className="h-4 w-2/3 bg-muted rounded animate-pulse mb-1 mx-auto" />
+                    <div className="h-4 w-1/2 bg-muted rounded animate-pulse mx-auto" />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        ) : (
-          sortedEntries.map(([activityType, items]) => (
-            <div key={activityType} className="mb-8 w-full max-w-2xl flex flex-col">
-              <h2 className="text-3xl font-bold mb-4 text-center">{activityType}</h2>
-              <Carousel className="max-w-2xl mb-10">
-                <CarouselContent>
-                  {items.map((item, index) => (
-                    <CarouselItem key={index} className="md:basis-full lg:basis-1/2 p-4">
-                      <ActivityCard item={item} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="top-[calc(100%+0.5rem)] translate-y-0 left-0" variant="default" />
-                <CarouselNext className="top-[calc(100%+0.5rem)] translate-y-0 left-2 translate-x-full" variant="default" />
-              </Carousel>
             </div>
-          ))
-        )}
-      </div>
-    </div>
+          ))}
+        </div>
+      ) : (
+        sortedEntries.map(([activityType, items]) => (
+          <div key={activityType} className="mb-8 w-full max-w-2xl flex flex-col">
+            <h2 className="text-3xl font-bold mb-4 text-center">{activityType}</h2>
+            <Carousel className="max-w-2xl mb-10">
+              <CarouselContent>
+                {items.map((item, index) => (
+                  <CarouselItem key={index} className="md:basis-full lg:basis-1/2 p-4">
+                    <ActivityCard item={item} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="top-[calc(100%+0.5rem)] translate-y-0 left-0" variant="default" />
+              <CarouselNext className="top-[calc(100%+0.5rem)] translate-y-0 left-2 translate-x-full" variant="default" />
+            </Carousel>
+          </div>
+        ))
+      )}
+    </>
   );
 }
 
