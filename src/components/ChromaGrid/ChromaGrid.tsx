@@ -149,7 +149,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
         </article>
       ))}
       <div
-        className="absolute inset-0 pointer-events-none z-30"
+        className="absolute inset-0 pointer-events-none z-30 hidden dark:block"
         style={{
           backdropFilter: "grayscale(1) brightness(0.78)",
           WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
@@ -162,7 +162,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       />
       <div
         ref={fadeRef}
-        className="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40"
+        className="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40 hidden dark:block"
         style={{
           backdropFilter: "grayscale(1) brightness(0.78)",
           WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
