@@ -39,10 +39,34 @@ const links: { title: string; href: string; description: string }[] = [
 
 const services: { title: string; href: string; description: string }[] = [
   {
+    title: "GeekPie 服务状态",
+    href: "https://status.geekpie.club/status",
+    description:
+      "由 GeekPie 运维的主要服务的状态",
+  },
+  {
     title: "CourseBench",
     href: "https://coursebench.geekpie.club/",
     description:
       "一个真实可靠、不断完善的多维课程评价信息库",
+  },
+  {
+    title: "GeekPie AFFiNE",
+    href: "https://affine.geekpie.club/",
+    description:
+      "GeekPie 运维的笔记与知识管理及协作平台",
+  },
+  {
+    title: "CTFd",
+    href: "https://ctfd.geekpie.club/",
+    description:
+      "GeekPie_CTF 赛事平台",
+  },
+  {
+    title: "GeekPie Overleaf",
+    href: "https://overleaf.geekpie.club/",
+    description:
+      "GeekPie 运维的 LaTeX 在线编写平台（仅校内）",
   },
   {
     title: "Next.GenAI",
@@ -56,15 +80,9 @@ const services: { title: string; href: string; description: string }[] = [
     description:
       "简单、私密的文件分享服务（仅校内）",
   },
-  {
-    title: "GeekPie 服务状态",
-    href: "https://status.geekpie.club/status",
-    description:
-      "由 GeekPie 运维的主要服务的状态",
-  },
 ]
 
-const friendlinks: { title: string; href: string; description: string }[] = [
+const departlinks: { title: string; href: string; description: string }[] = [
   {
     title: "GeekPie_HPC",
     href: "https://hpc.geekpie.club/",
@@ -72,16 +90,31 @@ const friendlinks: { title: string; href: string; description: string }[] = [
       "来自上海科技大学的高性能计算团队",
   },
   {
+    title: "GeekPie_CTF",
+    href: "https://ctf.geekpie.club/",
+    description:
+      "GeekPie_CTF 主页 & WriteUps",
+  },
+]
+
+const friendlinks: { title: string; href: string; description: string }[] = [
+  {
     title: "ShanghaiTech University",
     href: "https://www.shanghaitech.edu.cn/",
     description:
       "上海科技大学主页",
   },
   {
-    title: "ACM",
+    title: "ShanghaiTech ACM",
     href: "https://acm.shanghaitech.edu.cn/",
     description:
       "上海科技大学 ACM 社团",
+  },
+  {
+    title: "PKU - HPCGame",
+    href: "https://hpcgame.pku.edu.cn/",
+    description:
+      "北京大学主办、GeekPie_HPC 参与协办的高性能计算挑战赛",
   }
 ]
 
@@ -146,6 +179,19 @@ export function NavMenu({ className }: { className?: string }) {
             友链
           </NavigationMenuTrigger>
           <NavigationMenuContent>
+            <ul className="grid w-400px gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] max-h-[80vh] overflow-y-auto">
+              {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
+              {departlinks.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+            <hr/>
             <ul className="grid w-400px gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] max-h-[80vh] overflow-y-auto">
               {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
               {friendlinks.map((component) => (
