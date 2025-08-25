@@ -115,7 +115,13 @@ const friendlinks: { title: string; href: string; description: string }[] = [
     href: "https://hpcgame.pku.edu.cn/",
     description:
       "北京大学主办、GeekPie_HPC 参与协办的高性能计算挑战赛",
-  }
+  },
+  {
+    title: "MirrorZ",
+    href: "https://mirrorz.org/",
+    description:
+      "高校联合镜像站",
+  },
 ]
 
 export function NavMenu({ className }: { className?: string }) {
@@ -136,6 +142,7 @@ export function NavMenu({ className }: { className?: string }) {
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="https://github.com/ShanghaitechGeekPie/"
+                    target="_blank"
                   >
                     <FaGithub className="h-10 w-10 text-muted-foreground" />
                     <div className={cn(`mb-2 mt-1 text-2xl font-medium`, isotonic.className)}>
@@ -223,6 +230,7 @@ const ListItem = React.forwardRef<
       <NavigationMenuLink asChild>
         <a
           ref={ref}
+          target="_blank"
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
