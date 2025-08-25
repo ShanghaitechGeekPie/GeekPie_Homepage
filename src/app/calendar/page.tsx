@@ -17,8 +17,6 @@ import {
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { useEffect, useState } from "react";
 import useSWR from 'swr';
-import { DotPattern } from "@/components/magicui/dot-pattern";
-import { cn } from "@/lib/utils";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 
 function ActivityCard({ item }: { item: Item }) {
