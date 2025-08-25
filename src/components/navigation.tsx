@@ -29,20 +29,15 @@ const links: { title: string; href: string; description: string }[] = [
       "GeekPie 的活动日历，记录 GeekPie 学生社团的活动、比赛、Seminar 等",
   },
   {
-    title: "GeekPie_HPC",
-    href: "https://hpc.geekpie.club/",
+    title: "成员介绍",
+    href: "/members",
     description:
-      "来自上海科技大学的高性能计算团队",
+      "GeekPie 学生社团的核心成员",
   },
 ]
 
-const friendlinks: { title: string; href: string; description: string }[] = [
-  {
-    title: "GeekPie_Mirrors",
-    href: "https://mirrors.shanghaitech.edu.cn/",
-    description:
-      "由上海科技大学图书馆和信息中心赞助、GeekPie 维护的镜像站点",
-  },
+
+const services: { title: string; href: string; description: string }[] = [
   {
     title: "CourseBench",
     href: "https://coursebench.geekpie.club/",
@@ -67,6 +62,15 @@ const friendlinks: { title: string; href: string; description: string }[] = [
     description:
       "由 GeekPie 运维的主要服务的状态",
   },
+]
+
+const friendlinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "GeekPie_HPC",
+    href: "https://hpc.geekpie.club/",
+    description:
+      "来自上海科技大学的高性能计算团队",
+  },
   {
     title: "ShanghaiTech University",
     href: "https://www.shanghaitech.edu.cn/",
@@ -86,7 +90,7 @@ export function NavMenu({ className }: { className?: string }) {
     <NavigationMenu className={cn(className)}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={"bg-transparent hidden md:inline-flex"}>由 GeekPie_ 驱动</NavigationMenuTrigger>
+          <NavigationMenuTrigger className={"bg-transparent hidden md:inline-flex"}>探索 GeekPie_</NavigationMenuTrigger>
           <NavigationMenuTrigger className={"bg-transparen md:hidden"}>
             <div className="w-16">
               <GeekPie_ />
@@ -113,6 +117,25 @@ export function NavMenu({ className }: { className?: string }) {
               {links.map((item, index) => (
                 <ListItem href={item.href} title={item.title} key={index}>
                   {item.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className={"bg-transparent"}>
+            服务
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-400px gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] max-h-[80vh] overflow-y-auto">
+              {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
+              {services.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
                 </ListItem>
               ))}
             </ul>

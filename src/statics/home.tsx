@@ -25,8 +25,8 @@ export const features = [
       name: "信息学院最多样化的学生组织",
       description:
         "我们的成员来自 CS/EE/BME 等多个专业，掌握多种编程语言和技术栈，拥有丰富的项目和比赛经验。在 HPC、CTF、ICPC 等竞赛中屡获殊荣。",
-      href: "#",
-      cta: "Learn more",
+      href: "/members",
+      cta: "Members",
       background: <TechStacks className="absolute opacity-60"/>,
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
     },
