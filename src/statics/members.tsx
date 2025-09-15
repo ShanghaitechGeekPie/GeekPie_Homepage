@@ -108,6 +108,14 @@ export
       url: "https://www.linkedin.com/in/xiaoyu-lucy-song/"
     },
     {
+      image: "/assets/profile_photos/hjing.jpg",
+      title: "Haotian Jing",
+      subtitle: "系统工程师 @ 思勰投资",
+      handle: "2022",
+      gradient: gradients.indigo,
+      url: "https://geekpie.club/members" // prefers not to disclose
+    },
+    {
       image: "/assets/profile_photos/lzhang.jpg",
       title: "Longwen Zhang",
       subtitle: "Co-Founder @ Deemos | PhD Student @ ShanghaiTech",
@@ -126,7 +134,7 @@ export
     {
       image: "/assets/profile_photos/yyang.jpg",
       title: "Yiwei Yang",
-      subtitle: "Co-Founder of zett.ai",
+      subtitle: "Co-Founder of zett.ai | PhD Student @ UCSC",
       handle: "2022",
       gradient: gradients.red,
       url: "https://www.linkedin.com/in/yiwei-yang-56b920166/"
@@ -158,7 +166,7 @@ export
     {
       image: "/assets/profile_photos/zli.jpeg",
       title: "Zongze Li",
-      subtitle: "PhD student @UChicago",
+      subtitle: "PhD student @ UChicago",
       handle: "2024",
       gradient: gradients.cyan,
       url: "https://www.linkedin.com/in/zongze-li-45710a2a8/"
