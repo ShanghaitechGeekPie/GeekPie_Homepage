@@ -43,7 +43,7 @@ export
     {
       image: "https://avatars.githubusercontent.com/u/47201556?v=4",
       title: "Hengyu Ai",
-      subtitle: "GeekPie 副主席 | Intern @ UC State",
+      subtitle: "GeekPie 副主席 | Intern @ NC State",
       handle: "@AstatineAi",
       gradient: "linear-gradient(145deg, #3B82F6, #000)",
       url: "https://github.com/AstatineAi"

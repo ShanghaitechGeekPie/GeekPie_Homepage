@@ -13,11 +13,11 @@ export default function PeoplesPage() {
         <section className="py-5 md:py-10">
           <div className="mx-auto max-w-5xl border-t px-6">
             <div className="mt-12 gap-4 sm:grid sm:grid-cols-2 md:mt-24">
-              <div className="sm:w-2/5">
+              <div className="sm:w-2/5 flex justify-center items-center">
                 <h2 className="text-3xl font-bold sm:text-4xl">Leadership</h2>
               </div>
               <div className="mt-6 sm:mt-0">
-                <p>GeekPie 部门众多，<br/>来认识 GeekPie 管理层</p>
+                <p>江山代有才人出。<br/>GeekPie 部门众多，<br/>离不开强而有力的管理层</p>
               </div>
             </div>
             <div className="mt-12 md:mt-24">
@@ -46,7 +46,7 @@ export default function PeoplesPage() {
         <section className="py-5 md:py-10">
           <div className="mx-auto max-w-5xl border-t px-6">
             <div className="mt-12 gap-4 sm:grid sm:grid-cols-2 md:mt-24">
-              <div className="sm:w-2/5">
+              <div className="sm:w-2/5 flex justify-center items-center">
                 <h2 className="text-3xl font-bold sm:text-4xl">Alumni</h2>
               </div>
               <div className="mt-6 sm:mt-0">
