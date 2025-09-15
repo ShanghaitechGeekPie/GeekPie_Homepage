@@ -251,4 +251,4 @@ export
       gradient: gradients.slate,
       url: "https://www.linkedin.com/in/xinyue-jiang-cn-4b3931366/"
     }
-  ];
+  ].sort((a, b) => a.title.localeCompare(b.title)).sort((a, b) => a.handle.localeCompare(b.handle));
