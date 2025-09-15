@@ -18,7 +18,7 @@ export default function PeoplesPage() {
           ease="power3.out"
           />
       </div>
-      <h2 className="text-5xl font-bold mb-12">Alumni</h2>
+      <h2 className="text-5xl font-bold mb-12" style={{ paddingTop: '20px' }}>Alumni</h2>
       <div style={{ height: 'auto', position: 'relative' }}>
         <ChromaGrid
           items={alumni}
