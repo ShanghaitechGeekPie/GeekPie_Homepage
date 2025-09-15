@@ -69,7 +69,7 @@ export
   const alumni = [
     {
       image: "/assets/profile_photos/wlyu.jpg",
-      title: "Wenyao Lyu",
+      title: "Wentao Lyu",
       subtitle: "Founder of GeekPie_ | CTO and Co-Founder @ Stereye",
       handle: "2018",
       gradient: gradients.teal,
