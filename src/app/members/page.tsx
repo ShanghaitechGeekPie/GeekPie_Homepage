@@ -22,8 +22,8 @@ export default function PeoplesPage() {
             <div className="mt-12 md:mt-24">
               <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
                 {leaders.map((member, index) => (
-                  <Link href={member.url} key={index} className="group overflow-hidden">
-                    <img className="h-80 w-full rounded-md object-cover object-top transition-all duration-500 group-hover:h-[22.5rem]" src={member.image} alt="team member" width="826" height="1239" />
+                  <Link href={member.url} key={index} className="group">
+                    <img className="h-80 w-full rounded-md object-cover object-top transition-all duration-500 group-hover:h-[22.5rem] border-2" src={member.image} alt="team member" width="800" height="800" />
                     <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
                       <div className="flex justify-between">
                         <h3 className="text-title text-base font-medium transition-all duration-500 group-hover:tracking-normal group-hover:text-lg group-hover:font-bold">{member.title}</h3>
@@ -56,7 +56,7 @@ export default function PeoplesPage() {
               <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
                 {alumni.map((member, index) => (
                   <Link href={member.url} key={index} className="group overflow-hidden">
-                    <img className="h-80 w-full rounded-md object-cover object-top transition-all duration-500 group-hover:h-[22.5rem]" src={member.image} alt="team member" width="826" height="1239" />
+                    <img className="h-80 w-full rounded-md object-cover object-top transition-all duration-500 group-hover:h-[22.5rem]" src={member.image} alt="team member" width="800" height="800" />
                     <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
                       <div className="flex justify-between">
                         <h3 className="text-title text-base font-medium transition-all duration-500 group-hover:tracking-wide group-hover:text-lg group-hover:font-bold">{member.title}</h3>
