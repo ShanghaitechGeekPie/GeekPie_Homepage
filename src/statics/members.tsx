@@ -198,7 +198,7 @@ export
     {
       image: "/assets/profile_photos/xwen.jpg",
       title: "Xuanjun Wen",
-      subtitle: "",
+      subtitle: "Open Source Contributor @ GitHub",
       handle: "2025",
       gradient: gradients.orange,
       url: "https://github.com/wenxuanjun"
@@ -236,7 +236,7 @@ export
       url: "https://www.linkedin.com/in/xiang-li-634568367/"
     },
     {
-      image: "/assets/profile_photos/xjiang.png",
+      image: "/assets/profile_photos/xjiang.jpg",
       title: "Xinyue Jiang",
       subtitle: "Performance Engineer @ NVIDIA",
       handle: "2026",
