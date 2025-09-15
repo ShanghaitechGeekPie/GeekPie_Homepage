@@ -124,14 +124,6 @@ export
       url: "https://www.linkedin.com/in/yiwei-yang-56b920166/"
     },
     {
-      image: "/assets/profile_photos/szhang.jpg",
-      title: "Siyuan Zhang",
-      subtitle: "PhD Student @ Ohio State University",
-      handle: "2023",
-      gradient: gradients.rose,
-      url: "https://www.linkedin.com/in/murezsy/"
-    },
-    {
       image: "/assets/profile_photos/fqin.jpg",
       title: "Feiran Qin",
       subtitle: "PhD Student @ NC State University",
@@ -140,14 +132,29 @@ export
       url: "https://www.linkedin.com/in/feiranqin/"
     },
     {
+      image: "/assets/profile_photos/szhang.jpg",
+      title: "Siyuan Zhang",
+      subtitle: "PhD Student @ Ohio State University",
+      handle: "2023",
+      gradient: gradients.rose,
+      url: "https://www.linkedin.com/in/murezsy/"
+    },
+    {
+      image: "/assets/profile_photos/hlin.jpeg",
+      title: "Hongyang Lin",
+      subtitle: "Technical Manager @ Deemos | PhD Student @ ShanghaiTech",
+      handle: "2024",
+      gradient: gradients.red,
+      url: "https://www.linkedin.com/in/hongyang-lin-4a0109207/"
+    },
+    {
       image: "/assets/profile_photos/jcheng.jpg",
       title: "Jiajun Cheng",
       subtitle: "PhD Student @ UC Riverside",
       handle: "2024",
       gradient: gradients.lime,
       url: "https://www.linkedin.com/in/jiajun-cheng-47926a344/"
-    }
-    ,
+    },
     {
       image: "/assets/profile_photos/ahu.jpg",
       title: "Aibo Hu",
@@ -181,6 +188,30 @@ export
       url: "https://www.linkedin.com/in/qingcheng-zhao-a76631238/"
     },
     {
+      image: "/assets/profile_photos/xwen.jpg",
+      title: "Xuanjun Wen",
+      subtitle: "",
+      handle: "2025",
+      gradient: gradients.orange,
+      url: "https://github.com/wenxuanjun"
+    },
+    {
+      image: "/assets/profile_photos/yzhang.png",
+      title: "Yichi Zhang",
+      subtitle: "Software Engineer @ Ubiquant",
+      handle: "2025",
+      gradient: gradients.blue,
+      url: "https://www.linkedin.com/in/yichi-zhang-3a61022a0/"
+    },
+    {
+      image: "/assets/profile_photos/zwang.jpg",
+      title: "Ziqi Wang",
+      subtitle: "MS Student @ Ohio State University 2025",
+      handle: "2025",
+      gradient: gradients.green,
+      url: "https://www.linkedin.com/in/tacoin/"
+    },
+    {
       image: "/assets/profile_photos/hzhang.jpg",
       title: "Hanrui Zhang",
       subtitle: "Quantitative Engineer @ 九坤投资",
@@ -198,7 +229,7 @@ export
     },
     {
       image: "/assets/profile_photos/xjiang.png",
-      title: "Xiang Jiang",
+      title: "Xinyue Jiang",
       subtitle: "Performance Engineer @ NVIDIA",
       handle: "2026",
       gradient: gradients.slate,
