@@ -1,40 +1,54 @@
 export
   const leaders = [
     {
-      image: "https://avatars.githubusercontent.com/u/27360275?v=4",
+      image: "/assets/profile_photos/zbhe.jpg",
       title: "Zebang He",
       subtitle: "GeekPie 主席 / GeekPie_HPC & GeekPie_CTF 负责人 | Intern @ SJTU IPADS, UbiQuant",
       handle: "@HeZeBang",
       url: "https://github.com/HeZeBang"
     },
     {
-      image: "https://avatars.githubusercontent.com/u/25235514?v=4",
+      image: "/assets/profile_photos/szzhao.jpg",
       title: "Sizhe Zhao",
       subtitle: "GeekPie 副主席 / 镜像站 SRE / GeekPie_DevOps 负责人 | Intern @ UbiQuant",
       handle: "@Prince213",
       url: "https://github.com/Prince213"
     },
     {
-      image: "https://avatars.githubusercontent.com/u/47201556?v=4",
+      image: "/assets/profile_photos/hyai.jpg",
       title: "Hengyu Ai",
       subtitle: "GeekPie 副主席 | Intern @ NC State",
       handle: "@AstatineAi",
       url: "https://github.com/AstatineAi"
     },
     {
-      image: "https://avatars.githubusercontent.com/u/24501840?v=4",
+      image: "/assets/profile_photos/lthan.jpg",
       title: "Letong Han",
       subtitle: "GeekPie_Arch 负责人 | NSCSCC 2025 1st Winner | BOSC",
       handle: "@DFPMTS",
       url: "https://github.com/DFPMTS"
     },
     {
-      image: "https://avatars.githubusercontent.com/u/109655023?v=4",
+      image: "/assets/profile_photos/hzli.jpg",
       title: "Hanze Li",
       subtitle: "GeekPie_HardCore 负责人",
       handle: "@Maotechh",
       url: "https://github.com/Maotechh"
     },
+    {
+      image: "/assets/profile_photos/kph.jpg",
+      title: "Penghao Kuang",
+      subtitle: "ACM 社团主席 | RA @ Kewei Tu",
+      handle: "@kuangpenghao",
+      url: "https://github.com/kuangpenghao"
+    },
+    {
+      image: "https://avatars.githubusercontent.com/u/178589625?v=4",
+      title: "Kaizhan Lin",
+      subtitle: "GeekPie_HardCore 联席负责人 | SenseUs 2024 1st Winner | Intern @ UbiQuant",
+      handle: "@clateral912",
+      url: "https://github.com/clateral912"
+    }
   ];
 export
   const alumni = [
