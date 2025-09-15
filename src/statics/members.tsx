@@ -102,7 +102,7 @@ export
     {
       image: "/assets/profile_photos/xsong.jpeg",
       title: "Xiaoyu Song",
-      subtitle: "PhD in CS @ UT Dallas | Intern @ Microsoft/Google/Microsoft",
+      subtitle: "PhD in CS @ UT Dallas | Former @ Roblox/Microsoft/Google/Microsoft",
       handle: "2020",
       gradient: gradients.purple,
       url: "https://www.linkedin.com/in/xiaoyu-lucy-song/"
