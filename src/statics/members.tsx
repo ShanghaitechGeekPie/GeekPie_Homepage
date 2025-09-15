@@ -188,6 +188,14 @@ export
       url: "https://www.linkedin.com/in/zheye/"
     },
     {
+      image: "/assets/profile_photos/jdu.png",
+      title: "Jiaying Du",
+      subtitle: "Creator @ Bilibili",
+      handle: "2025",
+      gradient: gradients.pink,
+      url: "https://space.bilibili.com/11000198"
+    },
+    {
       image: "/assets/profile_photos/lhuang.jpg",
       title: "Lei Huang",
       subtitle: "MS Student @ UIUC | Quant Sys @ Sixie",
