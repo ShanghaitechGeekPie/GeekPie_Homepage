@@ -67,7 +67,14 @@ export
   ];
 export
   const alumni = [
-
+    {
+      image: "/assets/profile_photos/wlyu.jpg",
+      title: "Wenyao Lyu",
+      subtitle: "Founder of GeekPie_ | CTO and Co-Founder at Stereye, Inc.",
+      handle: "2018",
+      gradient: gradients.teal,
+      url: "https://www.linkedin.com/in/wenyaolyu"
+    },
     {
       image: "/assets/profile_photos/zxie.jpg",
       title: "Zhiqiang Xie",
