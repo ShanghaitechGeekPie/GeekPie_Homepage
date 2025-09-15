@@ -51,7 +51,7 @@ export
     {
       image: "https://avatars.githubusercontent.com/u/24501840?v=4",
       title: "Letong Han",
-      subtitle: "GeekPie_Arch 负责人 | NSCSCC 2025 Rank 1 | BOSC",
+      subtitle: "GeekPie_Arch 负责人 | NSCSCC 2025 1st Winner | BOSC",
       handle: "@DFPMTS",
       gradient: "linear-gradient(225deg,#8B5CF6,#000)",
       url: "https://github.com/DFPMTS"
