@@ -93,7 +93,7 @@ export
     },
     {
       image: "/assets/profile_photos/qqin.jpg",
-      title: "Qin Qi",
+      title: "Qi Qin",
       subtitle: "Senior Security Researcher @ Sec3",
       handle: "2020",
       gradient: gradients.sky,
