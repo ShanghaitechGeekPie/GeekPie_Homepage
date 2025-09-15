@@ -45,7 +45,7 @@ export
     {
       image: "https://avatars.githubusercontent.com/u/178589625?v=4",
       title: "Kaizhan Lin",
-      subtitle: "GeekPie_HardCore 联席负责人 | SenseUs 2024 1st Winner | Intern @ UbiQuant",
+      subtitle: "GeekPie_HardCore 联席负责人 | SenseUs 2025 1st Winner | Intern @ UbiQuant",
       handle: "@clateral912",
       url: "https://github.com/clateral912"
     }
