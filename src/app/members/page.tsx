@@ -1,6 +1,5 @@
 "use client";
 
-import ChromaGrid from '@/components/ChromaGrid/ChromaGrid';
 import { leaders, alumni } from '@/statics/members';
 import Link from 'next/link';
 
