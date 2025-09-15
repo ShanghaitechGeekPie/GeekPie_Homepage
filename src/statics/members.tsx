@@ -191,7 +191,7 @@ export
       image: "/assets/profile_photos/jdu.png",
       title: "Jiaying Du",
       subtitle: "Creator @ Bilibili",
-      handle: "2025",
+      handle: "2026",
       gradient: gradients.pink,
       url: "https://space.bilibili.com/11000198"
     },
