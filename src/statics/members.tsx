@@ -100,6 +100,14 @@ export
       url: "https://www.linkedin.com/in/leoq7/"
     },
     {
+      image: "/assets/profile_photos/xsong.jpeg",
+      title: "Xiaoyu Song",
+      subtitle: "PhD in CS @ UT Dallas | Intern @ Microsoft/Google/Microsoft",
+      handle: "2020",
+      gradient: gradients.purple,
+      url: "https://www.linkedin.com/in/xiaoyu-lucy-song/"
+    },
+    {
       image: "/assets/profile_photos/lzhang.jpg",
       title: "Longwen Zhang",
       subtitle: "Co-Founder @ Deemos | PhD Student @ ShanghaiTech",
