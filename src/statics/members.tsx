@@ -228,6 +228,14 @@ export
       url: "https://www.linkedin.com/in/hanrui-zhang-0b323b381/"
     },
     {
+      image: "/assets/profile_photos/mhong.jpeg",
+      title: "Mutian Hong",
+      subtitle: "Founder of GeekPie_DataTech | PhD Student @ Westlake",
+      handle: "2026",
+      gradient: gradients.green,
+      url: "https://ori233.icu/"
+    },
+    {
       image: "/assets/profile_photos/xli.jpg",
       title: "Xiang Li",
       subtitle: "系统开发工程师 @ 思勰投资",
