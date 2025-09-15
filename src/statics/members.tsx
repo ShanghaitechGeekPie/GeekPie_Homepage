@@ -198,7 +198,7 @@ export
     {
       image: "/assets/profile_photos/ymzhang.png",
       title: "Yiming Chen",
-      subtitle: "MS Student @ Chinese Academy of Sciences",
+      subtitle: "MS Student @ University of Chinese Academy of Sciences",
       handle: "2025",
       gradient: gradients.cyan,
       url: "https://www.linkedin.com/in/yiming-chen-6528a3384/"
