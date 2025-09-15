@@ -156,6 +156,14 @@ export
       url: "https://www.linkedin.com/in/hongyang-lin-4a0109207/"
     },
     {
+      image: "/assets/profile_photos/zli.jpeg",
+      title: "Zongze Li",
+      subtitle: "PhD student @UChicago",
+      handle: "2024",
+      gradient: gradients.cyan,
+      url: "https://www.linkedin.com/in/zongze-li-45710a2a8/"
+    },
+    {
       image: "/assets/profile_photos/jcheng.jpg",
       title: "Jiajun Cheng",
       subtitle: "PhD Student @ UC Riverside",
@@ -172,12 +180,12 @@ export
       url: "https://www.linkedin.com/in/aibo-hu-590b0325a/"
     },
     {
-      image: "/assets/profile_photos/lhuang.jpg",
-      title: "Lei Huang",
-      subtitle: "MS Student @ UIUC | Quant Sys @ Sixie",
-      handle: "2025",
-      gradient: gradients.orange,
-      url: "https://www.linkedin.com/in/lei-huang-117102355/"
+      image: "/assets/profile_photos/zye.jpeg",
+      title: "Zhe Ye",
+      subtitle: "PhD Student @ UC Berkeley",
+      handle: "2022",
+      gradient: gradients.yellow,
+      url: "https://www.linkedin.com/in/zheye/"
     },
     {
       image: "/assets/profile_photos/lyang.jpg",
@@ -186,6 +194,14 @@ export
       handle: "2025",
       gradient: gradients.pink,
       url: "https://www.linkedin.com/in/ly4ng/"
+    },
+    {
+      image: "/assets/profile_photos/ymzhang.png",
+      title: "Yiming Chen",
+      subtitle: "MS Student @ Chinese Academy of Sciences",
+      handle: "2025",
+      gradient: gradients.cyan,
+      url: "https://www.linkedin.com/in/yiming-chen-6528a3384/"
     },
     {
       image: "/assets/profile_photos/qzhao.jpg",
