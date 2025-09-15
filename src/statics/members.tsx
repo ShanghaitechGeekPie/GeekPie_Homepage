@@ -70,7 +70,7 @@ export
     {
       image: "/assets/profile_photos/wlyu.jpg",
       title: "Wenyao Lyu",
-      subtitle: "Founder of GeekPie_ | CTO and Co-Founder at Stereye, Inc.",
+      subtitle: "Founder of GeekPie_ | CTO and Co-Founder @ Stereye",
       handle: "2018",
       gradient: gradients.teal,
       url: "https://www.linkedin.com/in/wenyaolyu"
