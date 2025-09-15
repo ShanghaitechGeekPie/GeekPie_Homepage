@@ -188,6 +188,14 @@ export
       url: "https://www.linkedin.com/in/zheye/"
     },
     {
+      image: "/assets/profile_photos/lhuang.jpg",
+      title: "Lei Huang",
+      subtitle: "MS Student @ UIUC | Quant Sys @ Sixie",
+      handle: "2025",
+      gradient: gradients.orange,
+      url: "https://www.linkedin.com/in/lei-huang-117102355/"
+    },
+    {
       image: "/assets/profile_photos/lyang.jpg",
       title: "Linshu Yang",
       subtitle: "MCS@UIUC | ex-Infra@Ubiquant | ex-RI@MPI | ex-SDE@Tencent",
