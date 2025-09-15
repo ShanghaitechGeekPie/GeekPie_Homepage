@@ -77,6 +77,14 @@ export
       url: "https://www.linkedin.com/in/xiezhq/"
     },
     {
+      image: "/assets/profile_photos/yjing.png",
+      title: "Yuzhuo Jing",
+      subtitle: "Ph.D. student @ University of Michigan",
+      handle: "2020",
+      gradient: gradients.cyan,
+      url: "https://www.linkedin.com/in/robert-king-s/"
+    },
+    {
       image: "/assets/profile_photos/qqin.jpg",
       title: "Qin Qi",
       subtitle: "Senior Security Researcher @ Sec3",
