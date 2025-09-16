@@ -1,5 +1,6 @@
 "use client";
 
+import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button';
 import { leaders, alumni } from '@/statics/members';
 import Link from 'next/link';
 
@@ -52,10 +53,23 @@ export default function PeoplesPage() {
                 <p>GeekPie_ 学生社团自 2014 年创立以来，<br />无数的优秀人才从这里走出，<br />成为各行各业的新星。</p>
               </div>
             </div>
-            <div className="mt-12 md:mt-24">
+            <div className="mt-6 flex flex-col md:flex-row mb-0 gap-3 items-center justify-end">
+              <div className="text-sm text-muted-foreground">在 Linkedin 上关注我们的动向</div>
+              <InteractiveHoverButton className="justify-self-end">
+                <a href={"https://www.linkedin.com/company/geekpie/"} target="_blank" rel="noopener noreferrer">
+                  GeekPie
+                </a>
+              </InteractiveHoverButton>
+              <InteractiveHoverButton className="justify-self-end">
+                <a href={"https://www.linkedin.com/company/shanghaitech-geekpie-hpc-team/"} target="_blank" rel="noopener noreferrer">
+                  GeekPie_HPC
+                </a>
+              </InteractiveHoverButton>
+            </div>
+            <div className="mt-6 md:mt-24">
               <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
                 {alumni.map((member, index) => (
-                  <Link href={member.url} key={index} className="group overflow-hidden">
+                  <Link href={member.url} key={index} className="group">
                     <img className="group-hover:shadow-md h-80 w-full rounded-md object-cover object-top transition-all duration-500 group-hover:h-[22.5rem]" src={member.image} alt="team member" width="800" height="800" />
                     <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
                       <div className="flex justify-between items-center">
