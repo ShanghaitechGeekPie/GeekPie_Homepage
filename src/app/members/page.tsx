@@ -16,7 +16,7 @@ export default function PeoplesPage() {
                 <h2 className="text-3xl font-bold sm:text-4xl">Leadership</h2>
               </div>
               <div className="mt-6 sm:mt-0">
-                <p>江山代有才人出。<br />GeekPie_ 的多元方向，<br />离不开强而有力的骨干力量</p>
+                <p>江山代有才人出。<br />GeekPie_ 的多元方向，<br />离不开强而有力的骨干力量。</p>
               </div>
             </div>
             <div className="mt-12 md:mt-24">
