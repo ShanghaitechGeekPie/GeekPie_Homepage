@@ -3,14 +3,14 @@ export
     {
       image: "/assets/profile_photos/zbhe.jpg",
       title: "Zebang He",
-      subtitle: "GeekPie 主席 / GeekPie_HPC & GeekPie_CTF 负责人 | Intern @ SJTU IPADS, UbiQuant",
+      subtitle: "GeekPie 主席 / GeekPie_HPC & GeekPie_CTF 负责人 | Intern @ SJTU IPADS, 九坤投资",
       handle: "@HeZeBang",
       url: "https://github.com/HeZeBang"
     },
     {
       image: "/assets/profile_photos/szzhao.jpg",
       title: "Sizhe Zhao",
-      subtitle: "GeekPie 副主席 / 镜像站 SRE / GeekPie_DevOps 负责人 | Intern @ UbiQuant",
+      subtitle: "GeekPie 副主席 / 镜像站 SRE / GeekPie_DevOps 负责人 | Intern @ 九坤投资",
       handle: "@Prince213",
       url: "https://github.com/Prince213"
     },
@@ -45,7 +45,7 @@ export
     {
       image: "https://avatars.githubusercontent.com/u/178589625?v=4",
       title: "Kaizhan Lin",
-      subtitle: "GeekPie_HardCore 联席负责人 | SenseUs 2025 1st Winner | Intern @ UbiQuant",
+      subtitle: "GeekPie_HardCore 联席负责人 | SenseUs 2025 1st Winner | Intern @ 九坤投资",
       handle: "@clateral912",
       url: "https://github.com/clateral912"
     }
@@ -174,14 +174,14 @@ export
     {
       image: "/assets/profile_photos/lhuang.jpg",
       title: "Lei Huang",
-      subtitle: "MS Student @ UIUC | Quant Sys @ Sixie",
+      subtitle: "MS Student @ UIUC | Quant Sys @ 思勰投资",
       handle: "2025",
       url: "https://www.linkedin.com/in/lei-huang-117102355/"
     },
     {
       image: "/assets/profile_photos/lyang.jpg",
       title: "Linshu Yang",
-      subtitle: "MCS@UIUC | ex-Infra@Ubiquant | ex-RI@MPI | ex-SDE@Tencent",
+      subtitle: "MCS@UIUC | ex-Infra@九坤投资 | ex-RI@MPI | ex-SDE@Tencent",
       handle: "2025",
       url: "https://www.linkedin.com/in/ly4ng/"
     },
@@ -209,7 +209,7 @@ export
     {
       image: "/assets/profile_photos/yzhang.png",
       title: "Yichi Zhang",
-      subtitle: "Software Engineer @ Ubiquant",
+      subtitle: "Software Engineer @ 九坤投资",
       handle: "2025",
       url: "https://www.linkedin.com/in/yichi-zhang-3a61022a0/"
     },
@@ -254,5 +254,19 @@ export
       subtitle: "PhD student @ ShanghaiTech",
       handle: "2025",
       url: "https://github.com/YaeSakuraL"
-    }
+    },
+    {
+      image: "/assets/profile_photos/sxu.jpeg",
+      title: "Sijie Xu",
+      subtitle: "PhD student @ ShanghaiTech",
+      handle: "2025",
+      url: "https://github.com/xsjk"
+    },
+    {
+      image: "/assets/profile_photos/lthan.jpg",
+      title: "Letong Han",
+      subtitle: "硕士研究生 @ 上科大+北京开源芯片研究院",
+      handle: "2025",
+      url: "https://github.com/DFPMTS"
+    },
   ].sort((a, b) => a.title.localeCompare(b.title)).sort((a, b) => a.handle.localeCompare(b.handle));
