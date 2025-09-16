@@ -43,7 +43,7 @@ export
       url: "https://github.com/kuangpenghao"
     },
     {
-      image: "https://avatars.githubusercontent.com/u/178589625?v=4",
+      image: "/assets/profile_photos/klin.jpg",
       title: "Kaizhan Lin",
       subtitle: "GeekPie_HardCore 联席负责人 | SenseUs 2025 1st Winner | Intern @ 九坤投资",
       handle: "@clateral912",
