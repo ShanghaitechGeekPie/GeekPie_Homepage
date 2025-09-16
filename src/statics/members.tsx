@@ -63,8 +63,36 @@ export
       image: "/assets/profile_photos/jhshi.jpg",
       title: "Jiahe Shi",
       subtitle: "2nd President of GeekPie_ | 博士研究生 @ 上海科技大学",
-      handle: "2018 ",
+      handle: "2018 ", // 加上空格破坏姓名字母顺序
       url: "https://www.linkedin.com/in/wenyaolyu"
+    },
+    {
+      image: "/assets/profile_photos/xiongzhip.jpg",
+      title: "Erik Xiong",
+      subtitle: "博士研究生 @ 上海科技大学 | 上海科技大学药物发现与设计中心",
+      handle: "2019",
+      url: "https://github.com/xiongzhp",
+    },
+    {
+      image: "/assets/profile_photos/qdeng.jpg",
+      title: "Qi Deng",
+      subtitle: "博士研究生 @ 上海科技大学 | ShanghaiTechRicLab",
+      handle: "2018 ",
+      url: "https://github.com/nerdneilsfield",
+    },
+    {
+      image: "/assets/profile_photos/yzyuan.jpg",
+      title: "Yunzhe Yuan",
+      subtitle: "PhD Student @ University of St Andrews | Ex RA @ 北京大学",
+      handle: "2018 ",
+      url: "https://www.linkedin.com/in/yunzhe-yuan-001574102/?locale=en_US",
+    },
+    {
+      image: "/assets/profile_photos/zyang.jpg",
+      title: "Zhou Yang",
+      subtitle: "Robotics PhD Candidate @ NYU | RoboMaster 社团创立者 | Ex Intern @ Carnegie Mellon University",
+      handle: "2019",
+      url: "https://www.linkedin.com/in/yangrobotics/"
     },
     {
       image: "/assets/profile_photos/zxie.jpg",
@@ -72,6 +100,13 @@ export
       subtitle: "PhD Student @ Stanford",
       handle: "2019",
       url: "https://www.linkedin.com/in/xiezhq/"
+    },
+    {
+      image: "/assets/profile_photos/xizhao.png",
+      title: "Xiting Zhao",
+      subtitle: "博士研究生 @ 上海科技大学",
+      handle: "2019",
+      url: "https://robotics.shanghaitech.edu.cn/people/zhxt",
     },
     {
       image: "/assets/profile_photos/yjing.png",
@@ -100,6 +135,20 @@ export
       subtitle: "Hyper3d.ai | Ex Tesla | UPenn | Ex Microsoft & Meta",
       handle: "2020",
       url: "https://www.linkedin.com/in/philipxyc/?locale=en_US"
+    },
+    {
+      image: "/assets/profile_photos/dingtj.webp",
+      title: "Tianjiao Ding",
+      subtitle: "PhD Student @ University of Pennsylvania | Innovation in Data Engineering and Science (IDEAS)",
+      handle: "2020",
+      url: "https://github.com/tianjiaoding",
+    },
+    {
+      image: "/assets/profile_photos/zhdiao.jpg",
+      title: "Zihao (Eric) Diao",
+      subtitle: "Co-Founder & Backend Engineering Director | Software Engineer @ Deemos | GeekPie SysAdmin",
+      handle: "2021",
+      url: "https://www.linkedin.com/in/zihao-diao-10268490/",
     },
     {
       image: "/assets/profile_photos/hjing.jpg",
@@ -132,7 +181,7 @@ export
     {
       image: "/assets/profile_photos/fqin.jpg",
       title: "Feiran Qin",
-      subtitle: "PhD Student @ NC State University",
+      subtitle: "PhD Student @ NC State University | Ex Intern @ UIUC | 安同开源社区",
       handle: "2023",
       url: "https://www.linkedin.com/in/feiranqin/"
     },
