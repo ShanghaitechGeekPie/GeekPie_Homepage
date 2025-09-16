@@ -186,6 +186,13 @@ export
       url: "https://www.linkedin.com/in/ly4ng/"
     },
     {
+      image: "/assets/profile_photos/teafrogsf.jpg",
+      title: "Yuhan Cao",
+      subtitle: "RA @ University of California, Berkeley | Former @ 清华叉院, 微软亚洲研究院, 北京大学 | SI 100+ 创立者 | CourseBench 项目经理",
+      handle: "2025",
+      url: "https://teafrogsf.github.io/",
+    },
+    {
       image: "/assets/profile_photos/ymzhang.png",
       title: "Yiming Chen",
       subtitle: "硕士研究生 @ 中国科学院大学",
@@ -195,7 +202,7 @@ export
     {
       image: "/assets/profile_photos/qzhao.jpg",
       title: "Qingcheng Zhao",
-      subtitle: "PhD Student @ University of Toronto",
+      subtitle: "PhD Student @ University of Toronto | SI 100+ / CourseBench 创立者 | 曾主办多场优质 Workshops 与校内活动",
       handle: "2025",
       url: "https://www.linkedin.com/in/qingcheng-zhao-a76631238/"
     },
