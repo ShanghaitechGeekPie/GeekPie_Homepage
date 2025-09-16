@@ -60,6 +60,13 @@ export
       url: "https://www.linkedin.com/in/wenyaolyu"
     },
     {
+      image: "/assets/profile_photos/jhshi.jpg",
+      title: "Jiahe Shi",
+      subtitle: "2nd President of GeekPie_ | 博士研究生 @ 上海科技大学",
+      handle: "2018 ",
+      url: "https://www.linkedin.com/in/wenyaolyu"
+    },
+    {
       image: "/assets/profile_photos/zxie.jpg",
       title: "Zhiqiang Xie",
       subtitle: "PhD Student @ Stanford",
@@ -86,6 +93,13 @@ export
       subtitle: "PhD Student @ UT Dallas | Former @ Roblox/Microsoft/Google/Microsoft",
       handle: "2020",
       url: "https://www.linkedin.com/in/xiaoyu-lucy-song/"
+    },
+    {
+      image: "/assets/profile_photos/pxia.jpg",
+      title: "Philip (Yincen) Xia",
+      subtitle: "Hyper3d.ai | Ex Tesla | UPenn | Ex Microsoft & Meta",
+      handle: "2020",
+      url: "https://www.linkedin.com/in/philipxyc/?locale=en_US"
     },
     {
       image: "/assets/profile_photos/hjing.jpg",
