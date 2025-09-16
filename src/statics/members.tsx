@@ -111,7 +111,7 @@ export
     {
       image: "/assets/profile_photos/yyang.jpg",
       title: "Yiwei Yang",
-      subtitle: "Co-Founder of zett.ai | PhD Student @ UCSC",
+      subtitle: "Co-Founder of zett.ai | PhD Student @ University of California, Santa Cruz",
       handle: "2022",
       url: "https://www.linkedin.com/in/yiwei-yang-56b920166/"
     },
@@ -139,14 +139,14 @@ export
     {
       image: "/assets/profile_photos/zli.jpeg",
       title: "Zongze Li",
-      subtitle: "PhD student @ UChicago",
+      subtitle: "PhD student @ University of Chicago",
       handle: "2024",
       url: "https://www.linkedin.com/in/zongze-li-45710a2a8/"
     },
     {
       image: "/assets/profile_photos/jcheng.jpg",
       title: "Jiajun Cheng",
-      subtitle: "PhD Student @ UC Riverside",
+      subtitle: "PhD Student @ University of California, Riverside",
       handle: "2024",
       url: "https://www.linkedin.com/in/jiajun-cheng-47926a344/"
     },
@@ -247,5 +247,12 @@ export
       subtitle: "Performance Engineer @ NVIDIA",
       handle: "2026",
       url: "https://www.linkedin.com/in/xinyue-jiang-cn-4b3931366/"
+    },
+    {
+      image: "/assets/profile_photos/plong.jpg",
+      title: "Pengyu Long",
+      subtitle: "PhD student @ ShanghaiTech",
+      handle: "2025",
+      url: "https://github.com/YaeSakuraL"
     }
   ].sort((a, b) => a.title.localeCompare(b.title)).sort((a, b) => a.handle.localeCompare(b.handle));

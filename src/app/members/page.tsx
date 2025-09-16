@@ -16,7 +16,7 @@ export default function PeoplesPage() {
                 <h2 className="text-3xl font-bold sm:text-4xl">Leadership</h2>
               </div>
               <div className="mt-6 sm:mt-0">
-                <p>江山代有才人出。<br />GeekPie 部门众多，<br />离不开强而有力的管理层</p>
+                <p>江山代有才人出。<br />GeekPie_ 部门众多，<br />离不开强而有力的管理层</p>
               </div>
             </div>
             <div className="mt-12 md:mt-24">
@@ -49,7 +49,7 @@ export default function PeoplesPage() {
                 <h2 className="text-3xl font-bold sm:text-4xl">Alumni</h2>
               </div>
               <div className="mt-6 sm:mt-0">
-                <p>GeekPie 学生社团自 2014 年创立以来，<br />无数的优秀人才从这里走出，<br />成为各行各业的佼佼者。</p>
+                <p>GeekPie_ 学生社团自 2014 年创立以来，<br />无数的优秀人才从这里走出，<br />成为各行各业的佼佼者。</p>
               </div>
             </div>
             <div className="mt-12 md:mt-24">
