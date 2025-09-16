@@ -17,7 +17,7 @@ export
     {
       image: "/assets/profile_photos/hyai.jpg",
       title: "Hengyu Ai",
-      subtitle: "GeekPie 副主席 | Intern @ NC State",
+      subtitle: "GeekPie 副主席 | Intern @ NC State University",
       handle: "@AstatineAi",
       url: "https://github.com/AstatineAi"
     },
@@ -83,7 +83,7 @@ export
     {
       image: "/assets/profile_photos/xsong.jpeg",
       title: "Xiaoyu Song",
-      subtitle: "PhD in CS @ UT Dallas | Former @ Roblox/Microsoft/Google/Microsoft",
+      subtitle: "PhD Student @ UT Dallas | Former @ Roblox/Microsoft/Google/Microsoft",
       handle: "2020",
       url: "https://www.linkedin.com/in/xiaoyu-lucy-song/"
     },
@@ -97,7 +97,7 @@ export
     {
       image: "/assets/profile_photos/lzhang.jpg",
       title: "Longwen Zhang",
-      subtitle: "Co-Founder @ Deemos | PhD Student @ ShanghaiTech",
+      subtitle: "Co-Founder @ Deemos | 博士研究生 @ 上海科技大学",
       handle: "2022",
       url: "https://www.linkedin.com/in/longwen-zhang-73354a183/"
     },
@@ -132,7 +132,7 @@ export
     {
       image: "/assets/profile_photos/hlin.jpeg",
       title: "Hongyang Lin",
-      subtitle: "Technical Manager @ Deemos | PhD Student @ ShanghaiTech",
+      subtitle: "Technical Manager @ Deemos | 博士研究生 @ 上海科技大学",
       handle: "2024",
       url: "https://www.linkedin.com/in/hongyang-lin-4a0109207/"
     },
@@ -160,7 +160,7 @@ export
     {
       image: "/assets/profile_photos/zye.jpeg",
       title: "Zhe Ye",
-      subtitle: "PhD Student @ UC Berkeley",
+      subtitle: "PhD Student @ University of California, Berkeley",
       handle: "2022",
       url: "https://www.linkedin.com/in/zheye/"
     },
@@ -181,14 +181,14 @@ export
     {
       image: "/assets/profile_photos/lyang.jpg",
       title: "Linshu Yang",
-      subtitle: "MCS@UIUC | ex-Infra@九坤投资 | ex-RI@MPI | ex-SDE@Tencent",
+      subtitle: "MCS@UIUC | ex-Infra@UbiQuant | ex-RI@MPI | ex-SDE@Tencent",
       handle: "2025",
       url: "https://www.linkedin.com/in/ly4ng/"
     },
     {
       image: "/assets/profile_photos/ymzhang.png",
       title: "Yiming Chen",
-      subtitle: "MS Student @ University of Chinese Academy of Sciences",
+      subtitle: "硕士研究生 @ 中国科学院大学",
       handle: "2025",
       url: "https://www.linkedin.com/in/yiming-chen-6528a3384/"
     },
@@ -230,7 +230,7 @@ export
     {
       image: "/assets/profile_photos/mhong.jpeg",
       title: "Mutian Hong",
-      subtitle: "Founder of GeekPie_DataTech | PhD Student @ Westlake",
+      subtitle: "Founder of DataTech | 博士研究生 @ 西湖大学",
       handle: "2026",
       url: "https://ori233.icu/"
     },
@@ -251,14 +251,14 @@ export
     {
       image: "/assets/profile_photos/plong.jpg",
       title: "Pengyu Long",
-      subtitle: "PhD student @ ShanghaiTech",
+      subtitle: "博士研究生 @ 上海科技大学",
       handle: "2025",
       url: "https://github.com/YaeSakuraL"
     },
     {
       image: "/assets/profile_photos/sxu.jpeg",
       title: "Sijie Xu",
-      subtitle: "PhD student @ ShanghaiTech",
+      subtitle: "博士研究生 @ 上海科技大学",
       handle: "2025",
       url: "https://github.com/xsjk"
     },
