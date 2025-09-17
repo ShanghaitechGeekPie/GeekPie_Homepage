@@ -64,14 +64,7 @@ export
       title: "Jiahe Shi",
       subtitle: "2nd President of GeekPie_ | 博士研究生 @ 上海科技大学",
       handle: "2018 ", // 加上空格破坏姓名字母顺序
-      url: "https://www.linkedin.com/in/wenyaolyu"
-    },
-    {
-      image: "/assets/profile_photos/xiongzhip.jpg",
-      title: "Erik Xiong",
-      subtitle: "博士研究生 @ 上海科技大学 | 上海科技大学药物发现与设计中心",
-      handle: "2019",
-      url: "https://github.com/xiongzhp",
+      url: "https://www.linkedin.com/in/sjhstone"
     },
     {
       image: "/assets/profile_photos/qdeng.jpg",
@@ -86,6 +79,13 @@ export
       subtitle: "PhD Student @ University of St Andrews | Ex RA @ 北京大学",
       handle: "2018 ",
       url: "https://www.linkedin.com/in/yunzhe-yuan-001574102/?locale=en_US",
+    },
+    {
+      image: "/assets/profile_photos/xiongzhip.jpg",
+      title: "Erik Xiong",
+      subtitle: "博士研究生 @ 上海科技大学 | 上海科技大学药物发现与设计中心",
+      handle: "2019",
+      url: "https://github.com/xiongzhp",
     },
     {
       image: "/assets/profile_photos/zyang.jpg",
@@ -107,6 +107,20 @@ export
       subtitle: "博士研究生 @ 上海科技大学",
       handle: "2019",
       url: "https://robotics.shanghaitech.edu.cn/people/zhxt",
+    },
+    {
+      image: "/assets/profile_photos/yyrang.jpg",
+      title: "Yuyang Rong",
+      subtitle: "Research Scientise @ Meta | Ex @ UC Davis, AMD, ByteDance",
+      handle: "2019",
+      utl: "https://www.linkedin.com/in/yuyang-peter-rong-648109127"
+    }
+    {
+      image: "/assets/profile_photos/zhzhao.jpg",
+      title: "Zehao Zhao",
+      subtitle: "IAMCAS/PAISATELLITE - 主任设计师/项目负责人 @ 中国科学院微小卫星创新研究院 | 前 GeekPie_ Robotics & Hardware 负责人",
+      handle: "2020",
+      url: "https://www.linkedin.com/in/%E6%B3%BD%E6%B5%A9-%E8%B5%B5-08463a167/",
     },
     {
       image: "/assets/profile_photos/yjing.png",
