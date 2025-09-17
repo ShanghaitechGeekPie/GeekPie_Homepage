@@ -52,7 +52,7 @@ export
     {
       image: "/assets/profile_photos/chtzhong.jpg",
       title: "Chengtao Zhong",
-      subtitle: "GeekPie_404 前后端团队负责人 | CoursePrettier  |Intern @ Deemos",
+      subtitle: "GeekPie_404 前后端团队负责人 | CoursePrettier | Intern @ Deemos",
       handle: "@GregTaoo",
       url: "https://github.com/GregTaoo"
     },
