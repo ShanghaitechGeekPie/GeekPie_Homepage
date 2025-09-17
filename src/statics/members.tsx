@@ -116,7 +116,7 @@ export
       url: "https://robotics.shanghaitech.edu.cn/people/zhxt",
     },
     {
-      image: "/assets/profile_photos/yyrang.jpg",
+      image: "/assets/profile_photos/yyrong.jpg",
       title: "Yuyang Rong",
       subtitle: "Research Scientise @ Meta | Ex @ UC Davis, AMD, ByteDance",
       handle: "2019",
