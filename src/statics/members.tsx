@@ -120,14 +120,14 @@ export
       title: "Yuyang Rong",
       subtitle: "Research Scientise @ Meta | Ex @ UC Davis, AMD, ByteDance",
       handle: "2019",
-      utl: "https://www.linkedin.com/in/yuyang-peter-rong-648109127"
+      url: "https://www.linkedin.com/in/yuyang-peter-rong-648109127"
     },
     {
       image: "/assets/profile_photos/jysu.jpg",
       title: "Junyan Su",
       subtitle: "PhD Student @ City University of Hong Kong",
       handle: "2019",
-      utl: "https://www.linkedin.com/in/junyan-su-12649828b"
+      url: "https://www.linkedin.com/in/junyan-su-12649828b"
     },
     {
       image: "/assets/profile_photos/zhzhao.jpg",
