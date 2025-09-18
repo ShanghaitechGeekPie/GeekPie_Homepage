@@ -34,7 +34,7 @@ export default function Home() {
           <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed text-center">
             GeekPie_ 是一个立足于技术的综合性科创社团，屡获殊荣。
             <br />
-            方向覆盖人工智能、高性能计算、综合开发、计算机安全、计算机体系结构、芯片设计等。
+            方向覆盖人工智能、高性能计算、硬件与软件工程、计算机系统与安全、理论与算法、芯片设计等。
             <br />
             实际上很难用简单的标签概括我们，
             <br />
