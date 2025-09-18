@@ -31,7 +31,15 @@ export default function Home() {
           <h2 className="scroll-m-20 text-3xl font-bold tracking-tight lg:text-5xl">
             我们是谁？
           </h2>
-
+          <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed text-center">
+            GeekPie_ 是一个立足于技术的综合性科创社团，屡获殊荣。
+            <br />
+            方向覆盖人工智能、高性能计算、综合开发、计算机安全、计算机体系结构、芯片设计等。
+            <br />
+            实际上很难用简单的标签概括我们，
+            <br />
+            我们是一个秉承开源与合作理念，不断追求思想进步和技术前沿的学生组织。
+          </p>
           <div className="flex-grow w-full max-w-4xl lg:overflow-visible">
             <BentoAbout className="w-full h-full lg:p-5" />
           </div>
