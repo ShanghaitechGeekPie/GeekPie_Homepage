@@ -179,6 +179,13 @@ export
       url: "https://www.linkedin.com/in/zihao-diao-10268490/",
     },
     {
+      image: "/assets/profile_photos/jwluo.jpg",
+      title: "Jianwen Luo",
+      subtitle: "Placeholder | 前 GeekPie_ FPGA 负责人",
+      handle: "2021",
+      url: "https://github.com/luojw-dwr",
+    },
+    {
       image: "/assets/profile_photos/hjing.jpg",
       title: "Haotian Jing",
       subtitle: "系统工程师 @ 思勰投资",
