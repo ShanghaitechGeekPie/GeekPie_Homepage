@@ -1,9 +1,16 @@
 export
   const leaders = [
     {
+      image: "/assets/profile_photos/hzli.jpg",
+      title: "Hanze Li",
+      subtitle: "GeekPie 主席 | GeekPie_HardCore 负责人 | RA @ METAL | PRiSM 漫研社音游部部长 & 技术支持",
+      handle: "@Maotechh",
+      url: "https://github.com/Maotechh"
+    },
+    {
       image: "/assets/profile_photos/zbhe.jpg",
       title: "Zebang He",
-      subtitle: "GeekPie 主席 | GeekPie_HPC & GeekPie_CTF 负责人 | Intern @ 上海交通大学 IPADS 实验室, 九坤投资",
+      subtitle: "GeekPie_HPC & GeekPie_CTF 负责人 | Intern @ 上海交通大学 IPADS 实验室, 九坤投资",
       handle: "@HeZeBang",
       url: "https://github.com/HeZeBang"
     },
@@ -27,13 +34,6 @@ export
       subtitle: "GeekPie_Arch 负责人 | 龙芯杯全国特等奖 | 北京开源芯片研究院 | “一生一芯”计划助教",
       handle: "@DFPMTS",
       url: "https://github.com/DFPMTS"
-    },
-    {
-      image: "/assets/profile_photos/hzli.jpg",
-      title: "Hanze Li",
-      subtitle: "GeekPie_HardCore 负责人 | PRiSM 漫研社音游部部长 & 技术支持",
-      handle: "@Maotechh",
-      url: "https://github.com/Maotechh"
     },
     {
       image: "/assets/profile_photos/kph.jpg",
