@@ -1,23 +1,30 @@
 export
   const leaders = [
     {
+      image: "/assets/profile_photos/hzli.jpg",
+      title: "Hanze Li",
+      subtitle: "GeekPie 主席 | GeekPie_HardCore 负责人 | RA @ METAL | PRiSM 漫研社音游部部长 & 技术支持",
+      handle: "@Maotechh",
+      url: "https://github.com/Maotechh"
+    },
+    {
       image: "/assets/profile_photos/zbhe.jpg",
       title: "Zebang He",
-      subtitle: "GeekPie 主席 | GeekPie_HPC & GeekPie_CTF 负责人 | Intern @ 上海交通大学 IPADS 实验室, 九坤投资",
+      subtitle: "GeekPie 前主席 | GeekPie_HPC & GeekPie_CTF 负责人 | Intern @ 上海交通大学 IPADS 实验室, 九坤投资",
       handle: "@HeZeBang",
       url: "https://github.com/HeZeBang"
     },
     {
       image: "/assets/profile_photos/szzhao.jpg",
       title: "Sizhe Zhao",
-      subtitle: "GeekPie 副主席 | 镜像站 SRE | GeekPie_DevOps 负责人 | Intern @ 九坤投资 | NixOS CN Core Member",
+      subtitle: "GeekPie 前副主席 | 镜像站 SRE | GeekPie_DevOps 负责人 | Intern @ 九坤投资 | NixOS CN Core Member",
       handle: "@Prince213",
       url: "https://github.com/Prince213"
     },
     {
       image: "/assets/profile_photos/hyai.jpg",
       title: "Hengyu Ai",
-      subtitle: "GeekPie 副主席 | Intern @ NC State University",
+      subtitle: "GeekPie 前副主席 | Intern @ NC State University",
       handle: "@AstatineAi",
       url: "https://github.com/AstatineAi"
     },
@@ -27,13 +34,6 @@ export
       subtitle: "GeekPie_Arch 负责人 | 龙芯杯全国特等奖 | 北京开源芯片研究院 | “一生一芯”计划助教",
       handle: "@DFPMTS",
       url: "https://github.com/DFPMTS"
-    },
-    {
-      image: "/assets/profile_photos/hzli.jpg",
-      title: "Hanze Li",
-      subtitle: "GeekPie_HardCore 负责人 | PRiSM 漫研社音游部部长 & 技术支持",
-      handle: "@Maotechh",
-      url: "https://github.com/Maotechh"
     },
     {
       image: "/assets/profile_photos/kph.jpg",
