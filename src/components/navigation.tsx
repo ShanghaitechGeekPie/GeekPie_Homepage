@@ -45,29 +45,47 @@ const services: { title: string; href: string; description: string }[] = [
       "由 GeekPie 运维的主要服务的状态",
   },
   {
+    title: "上海科技大学镜像站",  
+    href: "https://mirrors.shanghaitech.edu.cn/",
+    description:
+      "抽风、龟速、复古的镜像服务——托管于华东教育网边缘节点张江理工学院",
+  },
+  {
     title: "CourseBench",
     href: "https://coursebench.geekpie.club/",
     description:
       "一个真实可靠、不断完善的多维课程评价信息库",
   },
   {
-    title: "GeekPie AFFiNE",
-    href: "https://affine.geekpie.club/",
+    title: "Holly DDL",
+    href: "https://ddl.geekpie.club/",
     description:
-      "GeekPie 运维的笔记与知识管理及协作平台",
+      "集合 Blackboard / HydroOJ / Gradescope 的一站式 DDL 查询平台",
   },
   {
-    title: "CTFd",
-    href: "https://ctfd.geekpie.club/",
+    title: "Course Prettier",
+    href: "https://courseprettier.geekpie.club/",
     description:
-      "GeekPie_CTF 赛事平台",
+      "上科大课程表美化、导出工具",
   },
-  {
-    title: "GeekPie Overleaf",
-    href: "https://overleaf.geekpie.club/",
-    description:
-      "GeekPie 运维的 LaTeX 在线编写平台（仅校内）",
-  },
+  // {
+  //   title: "GeekPie AFFiNE",
+  //   href: "https://affine.geekpie.club/",
+  //   description:
+  //     "GeekPie 运维的笔记与知识管理及协作平台",
+  // },
+  // {
+  //   title: "CTFd",
+  //   href: "https://ctfd.geekpie.club/",
+  //   description:
+  //     "GeekPie_CTF 赛事平台",
+  // },
+  // {
+  //   title: "GeekPie Overleaf",
+  //   href: "https://overleaf.geekpie.club/",
+  //   description:
+  //     "GeekPie 运维的 LaTeX 在线编写平台（仅校内）",
+  // },
   {
     title: "Next.GenAI",
     href: "https://chat.geekpie.club/chat",
@@ -109,6 +127,12 @@ const friendlinks: { title: string; href: string; description: string }[] = [
     href: "https://acm.shanghaitech.edu.cn/",
     description:
       "上海科技大学 ACM 社团",
+  },
+  {
+    title: "DataTech",
+    href: "https://www.datatech.club/",
+    description:
+      "上海科技大学 DataTech 社团",
   },
   {
     title: "PKU - HPCGame",
