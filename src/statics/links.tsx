@@ -40,6 +40,12 @@ export const services: { title: string; href: string; description: string }[] = 
       "一个真实可靠、不断完善的多维课程评价信息库",
   },
   {
+    title: "GeekPie Meeting",
+    href: "https://meet.geekpie.club/",
+    description:
+      "基于 Jitsi Meet 的无限制视频会议服务（仅校内）",
+  },
+  {
     title: "Holly DDL",
     href: "https://ddl.geekpie.club/",
     description:
