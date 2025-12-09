@@ -17,6 +17,11 @@ export const links: { title: string; href: string; description: string }[] = [
     description:
       "GeekPie 学生社团的核心成员",
   },
+  {
+    title: "活动与博客",
+    href: "/posts",
+    description: "查看我们最新的活动和博客投稿"
+  }
 ]
 
 

@@ -2,11 +2,14 @@ import { getPostData, getAllPostIds, PostType } from '@/lib/posts';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
+import { remarkRewriteAssets } from '@/lib/remark-rewrite-assets';
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import { extractHeadings } from '@/lib/toc';
 import { TableOfContents } from '@/components/post/toc';
 import { TagsList } from '@/components/post/tags';
+import { EventInfoCard } from '@/components/post/event-info-card';
+import { AlertTriangle } from 'lucide-react';
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -34,6 +37,7 @@ export default async function Post({ params }: { params: Promise<{ type: string;
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <aside className="hidden lg:block lg:col-span-1 order-1">
            <div className="lg:sticky lg:top-24 space-y-8">
+              {type === 'event' && <EventInfoCard post={postData} />}
               <TableOfContents headings={headings} />
               <div>
                  <h3 className="text-sm font-semibold mb-2 text-muted-foreground">Tags</h3>
@@ -49,17 +53,19 @@ export default async function Post({ params }: { params: Promise<{ type: string;
               <span>{format(new Date(postData.date), 'MMMM d, yyyy')}</span>
               {postData.author && <span>By {postData.author}</span>}
             </div>
-            
-            {type === 'event' && (
-               <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-8">
-                 <h3 className="text-lg font-semibold mb-2">Event Details</h3>
-                 {postData.place && <p><strong>Location:</strong> {postData.place}</p>}
-                 {postData.start && <p><strong>Start:</strong> {format(new Date(postData.start), 'PPpp')}</p>}
-                 {postData.end && <p><strong>End:</strong> {format(new Date(postData.end), 'PPpp')}</p>}
-               </div>
-            )}
 
+            {postData.draft && (
+              <div className="not-prose mb-8 p-4 border-l-4 border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-200 rounded-r-lg flex items-start gap-3">
+                <AlertTriangle className="h-5 w-5 shrink-0 mt-1" />
+                <div>
+                  <p className="font-semibold">监修中</p>
+                  <p className="text-sm mt-1">该文章仍处于草稿阶段，内容信息可能有变动，请留意。</p>
+                </div>
+              </div>
+            )}
+            
             <div className="lg:hidden mb-8 not-prose">
+               {type === 'event' && <EventInfoCard post={postData} />}
                <TableOfContents headings={headings} />
             </div>
 
@@ -67,7 +73,7 @@ export default async function Post({ params }: { params: Promise<{ type: string;
               source={postData.content}
               options={{
                 mdxOptions: {
-                  remarkPlugins: [remarkGfm],
+                  remarkPlugins: [remarkGfm, remarkRewriteAssets],
                   rehypePlugins: [rehypeSlug],
                 },
               }}

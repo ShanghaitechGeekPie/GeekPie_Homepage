@@ -52,6 +52,20 @@ export function getSortedPostsData(type: PostType): PostData[] {
   });
 }
 
+export function getAllSortedPosts(): PostData[] {
+  const blogs = getSortedPostsData('blog');
+  const events = getSortedPostsData('event');
+  const allPosts = [...blogs, ...events];
+
+  return allPosts.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+}
+
 export function getAllPostIds() {
   const types: PostType[] = ['blog', 'event'];
   let paths: { type: string; slug: string }[] = [];
