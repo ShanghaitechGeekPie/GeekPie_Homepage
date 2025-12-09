@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeekPie_ } from "@/components/geekpie";
 import { NavMenu } from "@/components/navigation";
+import { Footer7 } from "@/components/ui/footer-7";
+import { departlinks, friendlinks, links, services } from "@/statics/links";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -44,15 +46,54 @@ export default function RootLayout({
             </div>
           </header>
           {children}
-          <footer className="flex items-center justify-center w-full p-10 border-t">
-            <div className="flex flex-col items-center justify-center w-full max-w-3xl">
-              <p className="text-sm text-muted-foreground">
-                Designed & Developed by ZAMBAR @ GeekPie_
-              </p>
-              <p className="text-sm font-bold text-muted-foreground">
-                © 2025 GeekPie Association. All rights reserved.
-              </p>
-            </div>
+          <footer className="flex items-center justify-center w-full p-5 border-t bg-transparent backdrop-blur-sm">
+            <Footer7 
+              logo={{
+                url: "https://geekpie.club/",
+                src: "/geekpie_Logo.svg",
+                alt: "GeekPie_",
+                title: "Association",
+              }}
+              description="上海科技大学 GeekPie 学生社团 @ SIST"
+              sections={[
+                {
+                  title: "GeekPie_",
+                  links: [
+                    { name: "Github", href: "https://github.com/ShanghaitechGeekPie/" },
+                    ...links.map(link => {
+                      return { name: link.title, href: link.href, description: link.description };
+                    })
+                  ],
+                },
+                {
+                  title: "服务",
+                  links: [
+                    ...services.map(link => {
+                      return { name: link.title, href: link.href, description: link.description };
+                    })
+                  ],
+                },
+                {
+                  title: "友链",
+                  links: [
+                    ...departlinks.map(link => {
+                      return { name: link.title, href: link.href, description: link.description };
+                    }),
+                    ...friendlinks.map(link => {
+                      return { name: link.title, href: link.href, description: link.description };
+                    })
+                  ]
+                }
+              ]}
+              copyright="Made with ❤️ by ZAMBAR."
+
+              socialLinks={[
+                // { icon: <FaBilibili />, href: "https://space.bilibili.com/156494172", label: "Bilibili" },
+                // { icon: <LuMail />, href: "mailto: pie@geekpie.club", label: "Email" },
+                // { icon: <FaGithub />, href: "https://github.com/HeZeBang", label: "Github" },
+              ]}
+              legalLinks={[]}
+            />
           </footer>
         </ThemeProvider>
       </body>

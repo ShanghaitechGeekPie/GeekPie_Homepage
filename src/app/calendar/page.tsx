@@ -243,11 +243,11 @@ export default function ProjectPage() {
 
   return (
     <>
-      <h1 className="text-6xl font-bold mb-12">Recent Activities</h1>
+      <h1 className="text-6xl font-bold my-5">活动日历</h1>
       {isLoading ? (
-        <div className="w-full max-w-2xl">
+        <div className="w-full max-w-2xl border-t">
           {[...Array(2)].map((_, idx) => (
-            <div key={idx} className="mb-8">
+            <div key={idx} className="my-5">
               <div className="h-10 w-1/3 mx-auto mb-8 bg-muted rounded animate-pulse" />
               <div className="flex gap-4">
                 {[...Array(2)].map((_, i) => (
@@ -263,7 +263,7 @@ export default function ProjectPage() {
         </div>
       ) : (
         sortedEntries.map(([activityType, items]) => (
-          <div key={activityType} className="mb-8 w-full max-w-2xl flex flex-col">
+          <div key={activityType} className="py-5 my-5 w-full max-w-2xl flex flex-col border-t">
             <h2 className="text-3xl font-bold mb-4 text-center">{activityType}</h2>
             <Carousel className="max-w-2xl mb-10">
               <CarouselContent>
