@@ -6,6 +6,9 @@ import { GeekPie_ } from "@/components/geekpie";
 import { NavMenu } from "@/components/navigation";
 import { Footer7 } from "@/components/ui/footer-7";
 import { departlinks, friendlinks, links, services } from "@/statics/links";
+import { FaGithub, FaLinkedin, FaQq } from "react-icons/fa6";
+import { IoMail } from "react-icons/io5";
+import { SiKnowledgebase } from "react-icons/si";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -85,14 +88,16 @@ export default function RootLayout({
                   ]
                 }
               ]}
-              copyright="Made with ❤️ by ZAMBAR."
+              copyright="Made with ❤️ by ZAMBAR @ GeekPie_"
 
               socialLinks={[
-                // { icon: <FaBilibili />, href: "https://space.bilibili.com/156494172", label: "Bilibili" },
-                // { icon: <LuMail />, href: "mailto: pie@geekpie.club", label: "Email" },
-                // { icon: <FaGithub />, href: "https://github.com/HeZeBang", label: "Github" },
+                { icon: <FaQq />, href: "https://qm.qq.com/cgi-bin/qm/qr?k=g248V3KideQVW6xQA_REfiiErBrsRq_P&authKey=abd97DiBhLi0qyR0PQAMvFm5HCxNr4sjaMGaVuUOsSc5NYptm6trJSgM%2Bmip6MQh&noverify=0&group_code=217260786", label: "QQ Group" },
+                { icon: <IoMail />, href: "mailto: geekpie@geekpie.club", label: "Email" },
+                { icon: <FaGithub />, href: "https://github.com/ShanghaitechGeekPie/", label: "Github" },
+                { icon: <SiKnowledgebase />, href: "https://ncngzakonwnv.feishu.cn", label: "Feishu Knowledge Base" },
+                { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/geekpie/", label: "LinkedIn" },
               ]}
-              legalLinks={[]}
+              legalLinks={[{ name: "沪ICP备16022788号-2", href: "https://beian.miit.gov.cn/" }]}
             />
           </footer>
         </ThemeProvider>
