@@ -97,7 +97,7 @@ export default function RootLayout({
                 { icon: <SiKnowledgebase />, href: "https://ncngzakonwnv.feishu.cn", label: "Feishu Knowledge Base" },
                 { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/geekpie/", label: "LinkedIn" },
               ]}
-              legalLinks={[{ name: "沪ICP备16022788号-2", href: "https://beian.miit.gov.cn/" }]}
+              legalLinks={[{ name: "沪ICP备2021011443号-2", href: "https://beian.miit.gov.cn/" }]}
             />
           </footer>
         </ThemeProvider>
