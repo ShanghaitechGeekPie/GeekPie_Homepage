@@ -17,7 +17,7 @@ export const features = [
       description: "我们开发和运营了上科大 OJ、镜像源，上科大 CourseBench 论坛；举办、承办 Workshop、AOSCC、ASFR 校内比赛、上海市大学生程序设计竞赛等多项赛事和论坛。",
       href: "#",
       cta: "Learn more",
-      background: (<Services className="absolute h-full transition-all opacity-50 hover:opacity-20 hover:scale-105 [mask-image:linear-gradient(to_top,transparent_0%,#000_100%)]"/>),
+      background: (<Services className="absolute h-full transition-all opacity-50 hover:opacity-20 [mask-image:linear-gradient(to_top,transparent_0%,#000_100%)]"/>),
       className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     },
     {
