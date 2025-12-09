@@ -4,6 +4,7 @@ import cs from "classnames"
 import { BentoAbout } from "@/components/bento";
 import { RetroGrid } from "@/components/contact";
 import Universe from "@/components/universe";
+import { RecentPosts } from "@/components/recent-posts";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
             </TextAnimate>
           </div>
         </div>
+        <RecentPosts />
         <div className="flex flex-col p-10 py-20 gap-5 items-center">
           <h2 className="scroll-m-20 text-3xl font-bold tracking-tight lg:text-5xl">
             我们是谁？
