@@ -1,4 +1,7 @@
 import GithubSlugger from 'github-slugger';
+import { remark } from 'remark';
+import { visit } from 'unist-util-visit';
+import { toString } from 'mdast-util-to-string';
 
 export interface Heading {
   id: string;
@@ -8,16 +11,21 @@ export interface Heading {
 
 export function extractHeadings(content: string): Heading[] {
   const slugger = new GithubSlugger();
-  const headingRegex = /^(#{1,8})\s+(.*)$/gm;
   const headings: Heading[] = [];
-  let match;
 
-  while ((match = headingRegex.exec(content)) !== null) {
-    const level = match[1].length;
-    const text = match[2].trim();
+  const tree = remark().parse(content);
+
+  visit(tree, 'heading', (node) => {
+    const text = toString(node);
     const id = slugger.slug(text);
-    headings.push({ id, text, level });
-  }
+    if (node.depth >= 6) return;
+    
+    headings.push({
+      id,
+      text,
+      level: node.depth,
+    });
+  });
 
   return headings;
 }
