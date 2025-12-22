@@ -1,11 +1,34 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Heading } from '@/lib/toc';
 import clsx from 'clsx';
 
 export function TableOfContents({ headings }: { headings: Heading[] }) {
   const [activeId, setActiveId] = useState<string>('');
+
+  const activeIds = useMemo(() => {
+    if (!activeId) return new Set<string>();
+
+    const activeSet = new Set<string>();
+    activeSet.add(activeId);
+
+    const index = headings.findIndex((h) => h.id === activeId);
+    if (index === -1) return activeSet;
+
+    const currentHeading = headings[index];
+    let currentLevel = currentHeading.level;
+
+    for (let i = index - 1; i >= 0; i--) {
+      const h = headings[i];
+      if (h.level < currentLevel) {
+        activeSet.add(h.id);
+        currentLevel = h.level;
+      }
+    }
+
+    return activeSet;
+  }, [activeId, headings]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,34 +57,58 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
   return (
     <nav className="toc">
       <h2 className="text-lg font-semibold mb-4">Table of Contents</h2>
-      <ul className="space-y-2 text-sm border-l border-border pl-4">
-        {headings.map((heading) => (
-          <li
-            key={heading.id}
-            className={clsx("transition-all", {
-                "pl-0": heading.level === 1,
-                "pl-2": heading.level === 2,
-                "pl-4": heading.level === 3,
-            })}
-          >
-            <a
-              href={`#${heading.id}`}
+      <ul className="space-y-0 text-sm border-l border-border pl-4">
+        {headings.map((heading) => {
+          const isActive = activeIds.has(heading.id);
+          const isCurrent = activeId === heading.id;
+
+          const isDeep = heading.level > 3;
+          const shouldShow = !isDeep || isActive;
+
+          return (
+            <li
+              key={heading.id}
               className={clsx(
-                'block transition-colors hover:text-primary py-1 text-muted-foreground',
-                activeId === heading.id && 'lg:font-bold lg:text-primary'
+                "grid transition-all duration-300 ease-in-out",
+                shouldShow
+                  ? "grid-rows-[1fr] opacity-100 my-1"
+                  : "grid-rows-[0fr] opacity-0 my-0"
               )}
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(heading.id)?.scrollIntoView({
-                  behavior: 'smooth',
-                });
-                setActiveId(heading.id);
-              }}
             >
-              {heading.text}
-            </a>
-          </li>
-        ))}
+              <div className="overflow-hidden relative">
+                {heading.level >= 4 && (
+                  <span className={clsx("absolute left-4 top-1.5 bottom-1.5 w-0.5 rounded-r bg-primary transition-opacity", isCurrent? "opacity-100" : "opacity-0")} />
+                )}
+
+                <a
+                  href={`#${heading.id}`}
+                  className={clsx(
+                    'block transition-colors hover:text-primary py-1 leading-snug',
+                    isActive ? 'font-medium text-primary' : 'text-muted-foreground',
+                    {
+                      "pl-0": heading.level === 1,
+                      "pl-2": heading.level === 2,
+                      "pl-4": heading.level === 3,
+                      "pl-8": heading.level >= 4,
+                    },
+                    isDeep && "text-xs"
+                  )}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById(heading.id)?.scrollIntoView({
+                      behavior: 'smooth',
+                    });
+                    setActiveId(heading.id);
+                  }}
+                >
+                  <span className="line-clamp-2">
+                    {heading.text}
+                  </span>
+                </a>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

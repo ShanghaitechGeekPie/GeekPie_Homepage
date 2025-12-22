@@ -10,6 +10,8 @@ import { TableOfContents } from '@/components/post/toc';
 import { TagsList } from '@/components/post/tags';
 import { EventInfoCard } from '@/components/post/event-info-card';
 import { AlertTriangle } from 'lucide-react';
+import rehypePrettyCode, { Options } from 'rehype-pretty-code';
+import { CodeBlock } from '@/components/mdx/code-block';
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -32,6 +34,24 @@ export default async function Post({ params }: { params: Promise<{ type: string;
 
   const headings = extractHeadings(postData.content);
 
+  const prettyCodeOptions: Options = {
+    theme: 'github-dark',
+    keepBackground: false, 
+    onVisitLine(node: any) {
+      // 防止空行塌陷
+      if (node.children.length === 0) {
+        node.children = [{ type: 'text', value: ' ' }];
+      }
+    },
+    onVisitHighlightedLine(node: any) {
+      node.properties.className?.push('bg-zinc-800 border-l-2 border-blue-500');
+    },
+  };
+
+  const components = {
+    pre: CodeBlock, // 将 markdown 中的 pre 标签替换为我们的 CodeBlock 组件
+  };
+
   return (
     <div className="container mx-auto py-12 px-4">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -47,7 +67,7 @@ export default async function Post({ params }: { params: Promise<{ type: string;
         </aside>
 
         <main className="lg:col-span-3 order-2">
-          <article className="prose dark:prose-invert max-w-none">
+          <article className="prose dark:prose-invert max-w-4xl">
             <h1 className="text-3xl font-bold mb-4">{postData.title}</h1>
             <div className="text-sm text-gray-500 mb-8 flex gap-4">
               <span>{format(new Date(postData.date), 'MMMM d, yyyy')}</span>
@@ -71,10 +91,14 @@ export default async function Post({ params }: { params: Promise<{ type: string;
 
             <MDXRemote
               source={postData.content}
+              components={components}
               options={{
                 mdxOptions: {
                   remarkPlugins: [remarkGfm, remarkRewriteAssets],
-                  rehypePlugins: [rehypeSlug],
+                  rehypePlugins: [
+                    rehypeSlug,
+                    [rehypePrettyCode, prettyCodeOptions] // 添加高亮插件
+                  ],
                 },
               }}
             />

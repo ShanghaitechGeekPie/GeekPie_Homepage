@@ -8,7 +8,7 @@ export interface Heading {
 
 export function extractHeadings(content: string): Heading[] {
   const slugger = new GithubSlugger();
-  const headingRegex = /^(#{1,3})\s+(.*)$/gm;
+  const headingRegex = /^(#{1,8})\s+(.*)$/gm;
   const headings: Heading[] = [];
   let match;
 
