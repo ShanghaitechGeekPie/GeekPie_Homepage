@@ -3,9 +3,13 @@
 import { useEffect, useState, useMemo } from 'react';
 import { Heading } from '@/lib/toc';
 import clsx from 'clsx';
+// 1. 引入图标
+import { ChevronsUpDown } from 'lucide-react';
 
 export function TableOfContents({ headings }: { headings: Heading[] }) {
   const [activeId, setActiveId] = useState<string>('');
+  // 2. 新增状态控制是否全部展开
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const activeIds = useMemo(() => {
     if (!activeId) return new Set<string>();
@@ -56,14 +60,28 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
 
   return (
     <nav className="toc">
-      <h2 className="text-lg font-semibold mb-4">Table of Contents</h2>
+      <div className="flex items-center justify-start gap-2 mb-4 pr-2">
+        <h2 className="text-lg font-semibold">Table of Contents</h2>
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className={clsx(
+            "p-1 rounded-md hover:bg-muted transition-colors text-muted-foreground hover:text-foreground",
+            isExpanded && "bg-muted text-foreground"
+          )}
+          title={isExpanded ? "Collapse all" : "Expand all"}
+          aria-label="Toggle table of contents expansion"
+        >
+          <ChevronsUpDown className="h-4 w-4" />
+        </button>
+      </div>
+
       <ul className="space-y-0 text-sm border-l border-border pl-4">
         {headings.map((heading) => {
           const isActive = activeIds.has(heading.id);
           const isCurrent = activeId === heading.id;
 
           const isDeep = heading.level > 3;
-          const shouldShow = !isDeep || isActive;
+          const shouldShow = isExpanded || !isDeep || isActive;
 
           return (
             <li
