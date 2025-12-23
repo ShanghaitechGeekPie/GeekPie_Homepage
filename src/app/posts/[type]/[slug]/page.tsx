@@ -11,6 +11,7 @@ import { TagsList } from '@/components/post/tags';
 import { EventInfoCard } from '@/components/post/event-info-card';
 import { AlertTriangle } from 'lucide-react';
 import rehypePrettyCode, { Options } from 'rehype-pretty-code';
+import rehypeGithubAlert from 'rehype-github-alert'
 import { CodeBlock } from '@/components/mdx/code-block';
 
 export async function generateStaticParams() {
@@ -20,23 +21,23 @@ export async function generateStaticParams() {
 
 export default async function Post({ params }: { params: Promise<{ type: string; slug: string }> }) {
   const { type, slug } = await params;
-  
+
   if (type !== 'blog' && type !== 'event') {
     notFound();
   }
 
   let postData;
   try {
-      postData = await getPostData(type as PostType, slug);
+    postData = await getPostData(type as PostType, slug);
   } catch (e) {
-      notFound();
+    notFound();
   }
 
   const headings = extractHeadings(postData.content);
 
   const prettyCodeOptions: Options = {
     theme: 'github-dark',
-    keepBackground: false, 
+    keepBackground: false,
     onVisitLine(node: any) {
       // 防止空行塌陷
       if (node.children.length === 0) {
@@ -56,14 +57,14 @@ export default async function Post({ params }: { params: Promise<{ type: string;
     <div className="container mx-auto py-12 px-4">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <aside className="hidden lg:block lg:col-span-1 order-1">
-           <div className="lg:sticky lg:top-24 space-y-8">
-              {type === 'event' && <EventInfoCard post={postData} />}
-              <TableOfContents headings={headings} />
-              <div>
-                 <h3 className="text-sm font-semibold mb-2 text-muted-foreground">Tags</h3>
-                 <TagsList tags={postData.tags} />
-              </div>
-           </div>
+          <div className="lg:sticky lg:top-24 space-y-8">
+            {type === 'event' && <EventInfoCard post={postData} />}
+            <TableOfContents headings={headings} />
+            <div>
+              <h3 className="text-sm font-semibold mb-2 text-muted-foreground">Tags</h3>
+              <TagsList tags={postData.tags} />
+            </div>
+          </div>
         </aside>
 
         <main className="lg:col-span-3 order-2">
@@ -83,10 +84,10 @@ export default async function Post({ params }: { params: Promise<{ type: string;
                 </div>
               </div>
             )}
-            
+
             <div className="lg:hidden mb-8 not-prose">
-               {type === 'event' && <EventInfoCard post={postData} />}
-               <TableOfContents headings={headings} />
+              {type === 'event' && <EventInfoCard post={postData} />}
+              <TableOfContents headings={headings} />
             </div>
 
             <MDXRemote
@@ -97,6 +98,7 @@ export default async function Post({ params }: { params: Promise<{ type: string;
                   remarkPlugins: [remarkGfm, remarkRewriteAssets],
                   rehypePlugins: [
                     rehypeSlug,
+                    rehypeGithubAlert,
                     [rehypePrettyCode, prettyCodeOptions] // 添加高亮插件
                   ],
                 },
@@ -104,10 +106,10 @@ export default async function Post({ params }: { params: Promise<{ type: string;
             />
           </article>
 
-           <div className="lg:hidden mt-8 border-t pt-4">
-              <h3 className="text-sm font-semibold mb-2 text-muted-foreground">Tags</h3>
-              <TagsList tags={postData.tags} />
-           </div>
+          <div className="lg:hidden mt-8 border-t pt-4">
+            <h3 className="text-sm font-semibold mb-2 text-muted-foreground">Tags</h3>
+            <TagsList tags={postData.tags} />
+          </div>
         </main>
       </div>
     </div>
