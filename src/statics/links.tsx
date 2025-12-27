@@ -1,5 +1,6 @@
+import { NavLink, ServiceEntry } from "@/lib/types";
 
-export const links: { title: string; href: string; description: string }[] = [
+export const links: Array<NavLink> = [
   {
     title: "社团主页",
     href: "/",
@@ -25,7 +26,7 @@ export const links: { title: string; href: string; description: string }[] = [
 ]
 
 
-export const services: { title: string; href: string; description: string }[] = [
+export const services: Array<ServiceEntry> = [
   {
     title: "GeekPie 服务状态",
     href: "https://status.geekpie.club/status",
@@ -62,6 +63,12 @@ export const services: { title: string; href: string; description: string }[] = 
     description:
       "上科大课程表美化、导出工具",
   },
+  {
+    title: "GeekPie Danmaku",
+    href: "https://danmaku.geekpie.club/",
+    description:
+      "基于 Comment9 的弹幕服务器"
+  },
   // {
   //   title: "GeekPie AFFiNE",
   //   href: "https://affine.geekpie.club/",
@@ -94,7 +101,7 @@ export const services: { title: string; href: string; description: string }[] = 
   },
 ]
 
-export const departlinks: { title: string; href: string; description: string }[] = [
+export const departlinks: Array<NavLink> = [
   {
     title: "GeekPie_HPC",
     href: "https://hpc.geekpie.club/",
@@ -109,7 +116,7 @@ export const departlinks: { title: string; href: string; description: string }[]
   },
 ]
 
-export const friendlinks: { title: string; href: string; description: string }[] = [
+export const friendlinks: Array<NavLink> = [
   {
     title: "ShanghaiTech University",
     href: "https://www.shanghaitech.edu.cn/",

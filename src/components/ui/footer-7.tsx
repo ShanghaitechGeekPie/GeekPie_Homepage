@@ -120,7 +120,7 @@ export const Footer7 = ({
                       key={linkIdx}
                       className="font-medium hover:text-primary"
                     >
-                      <a href={link.href} aria-label={link.description || link.name} title={link.description || link.name}>{link.name}</a>
+                      <a href={link.href} aria-label={link.description || link.name} title={`${link.name} - ${link.description || ""}`}>{link.name}</a>
                     </li>
                   ))}
                 </ul>
