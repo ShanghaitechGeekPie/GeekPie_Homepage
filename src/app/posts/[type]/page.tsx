@@ -1,18 +1,19 @@
-import { getSortedPostsData, PostType } from '@/lib/posts';
-import { PostCard } from '@/components/post/post-card';
-import { notFound } from 'next/navigation';
+import { getSortedPostsData, PostType } from "@/lib/posts";
+import { PostCard } from "@/components/post/post-card";
+import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return [
-    { type: 'blog' },
-    { type: 'event' },
-  ];
+  return [{ type: "blog" }, { type: "event" }];
 }
 
-export default async function PostTypePage({ params }: { params: Promise<{ type: string }> }) {
+export default async function PostTypePage({
+  params,
+}: {
+  params: Promise<{ type: string }>;
+}) {
   const { type } = await params;
 
-  if (type !== 'blog' && type !== 'event') {
+  if (type !== "blog" && type !== "event") {
     notFound();
   }
 

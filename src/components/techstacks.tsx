@@ -1,8 +1,14 @@
 import { Marquee } from "@/components/magicui/marquee";
 import cs from "classnames";
-import { FaBoxesPacking, FaReact, FaRust } from "react-icons/fa6"
+import { FaBoxesPacking, FaReact, FaRust } from "react-icons/fa6";
 import { RiNextjsFill } from "react-icons/ri";
-import { SiArduino, SiKubernetes, SiNixos, SiOcaml, SiVuedotjs } from "react-icons/si";
+import {
+  SiArduino,
+  SiKubernetes,
+  SiNixos,
+  SiOcaml,
+  SiVuedotjs,
+} from "react-icons/si";
 import { TbLetterV } from "react-icons/tb";
 
 const techStacks = [
@@ -67,7 +73,7 @@ const competitions = [
   {
     name: "ASC",
     src: "/com/asc.png",
-  }
+  },
 ];
 
 export function TechStacks({ className }: { className?: string }) {
@@ -76,11 +82,7 @@ export function TechStacks({ className }: { className?: string }) {
       <Marquee className={cs("opacity-50")} reverse>
         {competitions.map((comp, index) => (
           <div key={index}>
-            <img
-              src={comp.src}
-              alt={comp.name}
-              className="h-15 w-fit"
-            />
+            <img src={comp.src} alt={comp.name} className="h-15 w-fit" />
             <p className="text-center font-bold">{comp.name}</p>
           </div>
         ))}
@@ -94,5 +96,5 @@ export function TechStacks({ className }: { className?: string }) {
         ))}
       </Marquee>
     </div>
-  )
+  );
 }

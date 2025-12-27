@@ -56,4 +56,5 @@ export const GeekPie_ = ({ className }: { className?: string }) => (
         <path id="XMLID_126_" d="M247 66.2h33v4.1h-33z" className="st0" />
       </g>
     </g>
-  </svg>)
+  </svg>
+);

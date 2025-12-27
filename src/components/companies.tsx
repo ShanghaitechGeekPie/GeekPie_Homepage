@@ -39,7 +39,10 @@ export function Companies({ className }: { className?: string }) {
 
   return (
     <div
-      className={cs("flex h-[300px] w-full items-center justify-center overflow-hidden px-10", className)}
+      className={cs(
+        "flex h-[300px] w-full items-center justify-center overflow-hidden px-10",
+        className,
+      )}
       ref={containerRef}
     >
       <div className="flex size-full max-h-[250px] max-w-lg flex-col items-stretch justify-between gap-10">
@@ -139,20 +142,10 @@ const Icons = {
       className="rounded-full scale-150"
     />
   ),
-  google: () => (
-    <FcGoogle />
-  ),
+  google: () => <FcGoogle />,
   sixie: () => (
-    <img
-      src="/com/sixie.png"
-      alt="Sixie Capital Logo"
-      className=""
-    />
+    <img src="/com/sixie.png" alt="Sixie Capital Logo" className="" />
   ),
-  deemos: () => (
-    <span className="text-xs scale-75 font-bold">Deemos</span>
-  ),
-  amd: () => (
-    <BsAmd />
-  ),
+  deemos: () => <span className="text-xs scale-75 font-bold">Deemos</span>,
+  amd: () => <BsAmd />,
 };

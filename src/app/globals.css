@@ -45,56 +45,79 @@
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
-  from {
-    transform: translateX(0);
+    from {
+      transform: translateX(0);
     }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+    from {
+      transform: translateY(0);
     }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
-  --animate-orbit: orbit calc(var(--duration)*1s) linear infinite
-;
+  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
   @keyframes orbit {
-  0% {
-    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));}
-  100% {
-    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));}}
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
   --animate-grid: grid 15s linear infinite;
   @keyframes grid {
-  0% {
-    transform: translateY(-50%);}
-  100% {
-    transform: translateY(0);}}
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
   --animate-shine: shine var(--duration) infinite linear;
   @keyframes shine {
-  0% {
-    background-position: 0% 0%;}
-  50% {
-    background-position: 100% 100%;}
-  to {
-    background-position: 0% 0%;}}
-  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+  --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite
+    alternate;
   --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
   @keyframes shimmer-slide {
-  to {
-    transform: translate(calc(100cqw - 100%), 0);}}
+    to {
+      transform: translate(calc(100cqw - 100%), 0);
+    }
+  }
   @keyframes spin-around {
-  0% {
-    transform: translateZ(0) rotate(0);}
-  15%, 35% {
-    transform: translateZ(0) rotate(90deg);}
-  65%, 85% {
-    transform: translateZ(0) rotate(270deg);}
-  100% {
-    transform: translateZ(0) rotate(360deg);}}}
+    0% {
+      transform: translateZ(0) rotate(0);
+    }
+    15%,
+    35% {
+      transform: translateZ(0) rotate(90deg);
+    }
+    65%,
+    85% {
+      transform: translateZ(0) rotate(270deg);
+    }
+    100% {
+      transform: translateZ(0) rotate(360deg);
+    }
+  }
+}
 
 :root {
   --radius: 0.625rem;
@@ -194,8 +217,7 @@
 }
 
 @layer components {
-/* Markdown Alert */
-
+  /* Markdown Alert */
 
   .prose .octicon {
     display: inline-block;
@@ -209,14 +231,14 @@
     padding: var(--base-size-8, 0.5rem) var(--base-size-16, 1rem);
     margin-bottom: var(--base-size-16, 1rem);
     color: inherit;
-    border-left: .25em solid var(--borderColor-default, #1f6feb);
+    border-left: 0.25em solid var(--borderColor-default, #1f6feb);
   }
 
-  .prose .markdown-alert>:first-child {
+  .prose .markdown-alert > :first-child {
     margin-top: 0;
   }
 
-  .prose .markdown-alert>:last-child {
+  .prose .markdown-alert > :last-child {
     margin-bottom: 0;
   }
 
@@ -267,4 +289,3 @@
     color: var(--fgColor-danger, #ff6b6b);
   }
 }
-

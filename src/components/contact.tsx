@@ -6,7 +6,7 @@ import { IconType } from "react-icons";
 import { FaGithub, FaQq } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
 
-const links: { href: string, icon: IconType }[] = [
+const links: { href: string; icon: IconType }[] = [
   {
     href: "https://qm.qq.com/cgi-bin/qm/qr?k=g248V3KideQVW6xQA_REfiiErBrsRq_P&authKey=abd97DiBhLi0qyR0PQAMvFm5HCxNr4sjaMGaVuUOsSc5NYptm6trJSgM%2Bmip6MQh&noverify=0&group_code=217260786",
     icon: FaQq,
@@ -18,8 +18,8 @@ const links: { href: string, icon: IconType }[] = [
   {
     href: "mailto:geekpie@geekpie.club",
     icon: MdMail,
-  }
-]
+  },
+];
 
 export function RetroGrid() {
   return (
@@ -30,16 +30,26 @@ export function RetroGrid() {
 
       <div className="flex items-center justify-center gap-3">
         {links.map((link) => (
-          <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-            <link.icon className={cn(
-              "w-6 h-6 hover:opacity-80 hover:scale-110 active:scale-90 transition-all",
-            )} />
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <link.icon
+              className={cn(
+                "w-6 h-6 hover:opacity-80 hover:scale-110 active:scale-90 transition-all",
+              )}
+            />
           </a>
-        ))
-        }
+        ))}
       </div>
 
-      <img src="/geekpie_retro.png" alt="GeekPie Retro" className="h-[200px] -z-10 dark:invert-100" />
+      <img
+        src="/geekpie_retro.png"
+        alt="GeekPie Retro"
+        className="h-[200px] -z-10 dark:invert-100"
+      />
 
       <MagicRetroGrid className="[mask-image:linear-gradient(to_bottom,transparent_30%,#000_100%)]" />
     </div>

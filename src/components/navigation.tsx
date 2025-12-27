@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,19 +10,23 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
-import { isotonic } from "./localfont"
-import { FaGithub } from "react-icons/fa6"
-import { GeekPie_ } from "./geekpie"
-import { ModeToggle } from "./toggleDark"
-import { links, services, departlinks, friendlinks } from "@/statics/links"
+} from "@/components/ui/navigation-menu";
+import { isotonic } from "./localfont";
+import { FaGithub } from "react-icons/fa6";
+import { GeekPie_ } from "./geekpie";
+import { ModeToggle } from "./toggleDark";
+import { links, services, departlinks, friendlinks } from "@/statics/links";
 
 export function NavMenu({ className }: { className?: string }) {
   return (
     <NavigationMenu className={cn(className)}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className={"bg-transparent hidden md:inline-flex"}>探索 GeekPie_</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={"bg-transparent hidden md:inline-flex"}
+          >
+            探索 GeekPie_
+          </NavigationMenuTrigger>
           <NavigationMenuTrigger className={"bg-transparen md:hidden"}>
             <div className="w-16">
               <GeekPie_ />
@@ -38,7 +42,12 @@ export function NavMenu({ className }: { className?: string }) {
                     target="_blank"
                   >
                     <FaGithub className="h-10 w-10 text-muted-foreground" />
-                    <div className={cn(`mb-2 mt-1 text-2xl font-medium`, isotonic.className)}>
+                    <div
+                      className={cn(
+                        `mb-2 mt-1 text-2xl font-medium`,
+                        isotonic.className,
+                      )}
+                    >
                       GeekPie_
                     </div>
                     <p className="text-md leading-tight text-muted-foreground">
@@ -91,7 +100,7 @@ export function NavMenu({ className }: { className?: string }) {
                 </ListItem>
               ))}
             </ul>
-            <hr/>
+            <hr />
             <ul className="grid w-400px gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] max-h-[80vh] overflow-y-auto">
               {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
               {friendlinks.map((component) => (
@@ -111,7 +120,7 @@ export function NavMenu({ className }: { className?: string }) {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -125,7 +134,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
           {...props}
         >
@@ -136,6 +145,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";

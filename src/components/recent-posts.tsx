@@ -4,11 +4,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export function RecentPosts() {
-  const blogs = getSortedPostsData('blog');
-  const events = getSortedPostsData('event');
-  
+  const blogs = getSortedPostsData("blog");
+  const events = getSortedPostsData("event");
+
   const allPosts = [...blogs, ...events]
-    .filter(post => !post.draft)
+    .filter((post) => !post.draft)
     .sort((a, b) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
@@ -30,10 +30,10 @@ export function RecentPosts() {
       </div>
       <div className="flex gap-4 mt-4">
         <Button asChild variant="outline">
-            <Link href="/posts/blog">查看更多博客</Link>
+          <Link href="/posts/blog">查看更多博客</Link>
         </Button>
         <Button asChild variant="outline">
-            <Link href="/posts/event">查看更多活动</Link>
+          <Link href="/posts/event">查看更多活动</Link>
         </Button>
       </div>
     </div>

@@ -28,7 +28,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "GeekPie_",
-  description: "For those who love Tech! We are GeekPie Association from ShanghaiTech University.",
+  description:
+    "For those who love Tech! We are GeekPie Association from ShanghaiTech University.",
 };
 
 export default function RootLayout({
@@ -50,7 +51,7 @@ export default function RootLayout({
           </header>
           {children}
           <footer className="flex items-center justify-center w-full p-5 border-t bg-transparent backdrop-blur-sm">
-            <Footer7 
+            <Footer7
               logo={{
                 url: "https://geekpie.club/",
                 src: "/geekpie_Logo.svg",
@@ -62,42 +63,85 @@ export default function RootLayout({
                 {
                   title: "GeekPie_",
                   links: [
-                    { name: "Github", href: "https://github.com/ShanghaitechGeekPie/" },
-                    ...links.map(link => {
-                      return { name: link.title, href: link.href, description: link.description };
-                    })
+                    {
+                      name: "Github",
+                      href: "https://github.com/ShanghaitechGeekPie/",
+                    },
+                    ...links.map((link) => {
+                      return {
+                        name: link.title,
+                        href: link.href,
+                        description: link.description,
+                      };
+                    }),
                   ],
                 },
                 {
                   title: "服务",
                   links: [
-                    ...services.map(link => {
-                      return { name: link.title, href: link.href, description: link.description };
-                    })
+                    ...services.map((link) => {
+                      return {
+                        name: link.title,
+                        href: link.href,
+                        description: link.description,
+                      };
+                    }),
                   ],
                 },
                 {
                   title: "友链",
                   links: [
-                    ...departlinks.map(link => {
-                      return { name: link.title, href: link.href, description: link.description };
+                    ...departlinks.map((link) => {
+                      return {
+                        name: link.title,
+                        href: link.href,
+                        description: link.description,
+                      };
                     }),
-                    ...friendlinks.map(link => {
-                      return { name: link.title, href: link.href, description: link.description };
-                    })
-                  ]
-                }
+                    ...friendlinks.map((link) => {
+                      return {
+                        name: link.title,
+                        href: link.href,
+                        description: link.description,
+                      };
+                    }),
+                  ],
+                },
               ]}
               copyright="Made with ❤️ by ZAMBAR @ GeekPie_"
-
               socialLinks={[
-                { icon: <FaQq />, href: "https://qm.qq.com/cgi-bin/qm/qr?k=g248V3KideQVW6xQA_REfiiErBrsRq_P&authKey=abd97DiBhLi0qyR0PQAMvFm5HCxNr4sjaMGaVuUOsSc5NYptm6trJSgM%2Bmip6MQh&noverify=0&group_code=217260786", label: "QQ Group" },
-                { icon: <IoMail />, href: "mailto: geekpie@geekpie.club", label: "Email" },
-                { icon: <FaGithub />, href: "https://github.com/ShanghaitechGeekPie/", label: "Github" },
-                { icon: <SiKnowledgebase />, href: "https://ncngzakonwnv.feishu.cn", label: "Feishu Knowledge Base" },
-                { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/geekpie/", label: "LinkedIn" },
+                {
+                  icon: <FaQq />,
+                  href: "https://qm.qq.com/cgi-bin/qm/qr?k=g248V3KideQVW6xQA_REfiiErBrsRq_P&authKey=abd97DiBhLi0qyR0PQAMvFm5HCxNr4sjaMGaVuUOsSc5NYptm6trJSgM%2Bmip6MQh&noverify=0&group_code=217260786",
+                  label: "QQ Group",
+                },
+                {
+                  icon: <IoMail />,
+                  href: "mailto: geekpie@geekpie.club",
+                  label: "Email",
+                },
+                {
+                  icon: <FaGithub />,
+                  href: "https://github.com/ShanghaitechGeekPie/",
+                  label: "Github",
+                },
+                {
+                  icon: <SiKnowledgebase />,
+                  href: "https://ncngzakonwnv.feishu.cn",
+                  label: "Feishu Knowledge Base",
+                },
+                {
+                  icon: <FaLinkedin />,
+                  href: "https://www.linkedin.com/company/geekpie/",
+                  label: "LinkedIn",
+                },
               ]}
-              legalLinks={[{ name: "沪ICP备2021011443号-2", href: "https://beian.miit.gov.cn/" }]}
+              legalLinks={[
+                {
+                  name: "沪ICP备2021011443号-2",
+                  href: "https://beian.miit.gov.cn/",
+                },
+              ]}
             />
           </footer>
         </ThemeProvider>

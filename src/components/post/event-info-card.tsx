@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BorderBeam } from "@/components/magicui/border-beam";
@@ -11,25 +11,25 @@ export function EventInfoCard({ post }: { post: PostData }) {
   const start = post.start ? new Date(post.start) : null;
   const end = post.end ? new Date(post.end) : null;
 
-  let status = 'ended';
+  let status = "ended";
   if (start && now < start) {
-    status = 'upcoming';
+    status = "upcoming";
   } else if (start && end && now >= start && now <= end) {
-    status = 'ongoing';
+    status = "ongoing";
   } else if (!end && start && now >= start) {
-    // If no end time, assume ongoing if started? or just ended? 
+    // If no end time, assume ongoing if started? or just ended?
     // Let's assume if no end time, it's just a point in time event, so if passed it's ended.
-    status = 'ended';
+    status = "ended";
   }
 
   const getStatusBorderColor = (status: string) => {
     switch (status) {
-      case 'ongoing':
-        return 'from-transparent via-green-500 to-transparent';
-      case 'upcoming':
-        return 'from-transparent via-purple-500 to-transparent';
+      case "ongoing":
+        return "from-transparent via-green-500 to-transparent";
+      case "upcoming":
+        return "from-transparent via-purple-500 to-transparent";
       default:
-        return 'from-transparent via-gray-500 to-transparent';
+        return "from-transparent via-gray-500 to-transparent";
     }
   };
 
@@ -39,7 +39,12 @@ export function EventInfoCard({ post }: { post: PostData }) {
         <CardTitle className="text-xl">Event Info</CardTitle>
         {post.link && (
           <InteractiveHoverButton className="w-auto">
-            <a href={post.link} target="_blank" rel="noopener noreferrer" className="px-4">
+            <a
+              href={post.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4"
+            >
               Link
             </a>
           </InteractiveHoverButton>
@@ -56,13 +61,13 @@ export function EventInfoCard({ post }: { post: PostData }) {
           {start && (
             <>
               <dt className="font-bold text-muted-foreground">Start:</dt>
-              <dd className="text-foreground">{format(start, 'PPpp')}</dd>
+              <dd className="text-foreground">{format(start, "PPpp")}</dd>
             </>
           )}
           {end && (
             <>
               <dt className="font-bold text-muted-foreground">End:</dt>
-              <dd className="text-foreground">{format(end, 'PPpp')}</dd>
+              <dd className="text-foreground">{format(end, "PPpp")}</dd>
             </>
           )}
           {post.guest && Array.isArray(post.guest) && post.guest.length > 0 && (
@@ -71,17 +76,27 @@ export function EventInfoCard({ post }: { post: PostData }) {
               <dd className="text-foreground">
                 <ul className="flex flex-wrap gap-2">
                   {post.guest.map((guest: string) => (
-                    <li key={guest} className="flex items-center gap-2 bg-secondary px-3 py-1.5 rounded-full text-sm">
-                      {!guest.startsWith("/") &&
+                    <li
+                      key={guest}
+                      className="flex items-center gap-2 bg-secondary px-3 py-1.5 rounded-full text-sm"
+                    >
+                      {!guest.startsWith("/") && (
                         <img
                           src={`https://github.com/${guest.split("/")[0]}.png`}
                           alt={guest}
                           className="w-5 h-5 rounded-full"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
+                            (e.target as HTMLImageElement).style.display =
+                              "none";
                           }}
-                        />}
-                      <span>{(guest.startsWith("/") ? guest.slice(1) : guest).replace("/", " / ")}</span>
+                        />
+                      )}
+                      <span>
+                        {(guest.startsWith("/")
+                          ? guest.slice(1)
+                          : guest
+                        ).replace("/", " / ")}
+                      </span>
                     </li>
                   ))}
                 </ul>

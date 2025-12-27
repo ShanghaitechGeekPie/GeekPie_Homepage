@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
   height: 800,
-  onRender: () => { },
+  onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
   theta: 0.3,
@@ -64,19 +64,22 @@ export default function Universe() {
         color={color}
         refresh
       />
-      <Globe className="mt-[70vh] lg:mt-40 mr-auto lg:mr-0 -z-10 max-w-2/3"
+      <Globe
+        className="mt-[70vh] lg:mt-40 mr-auto lg:mr-0 -z-10 max-w-2/3"
         config={{
           ...GLOBE_CONFIG,
-          ...resolvedTheme === 'dark' ? {
-            baseColor: [0x3c / 0xff, 0x3c / 0xff, 0x3c / 0xff],
-            markerColor: [1, 1, 1],
-            glowColor: [1, 1, 1],
-            diffuse: 2.2,
-            dark: 1,
-            mapBrightness: 10
-          } : {},
+          ...(resolvedTheme === "dark"
+            ? {
+                baseColor: [0x3c / 0xff, 0x3c / 0xff, 0x3c / 0xff],
+                markerColor: [1, 1, 1],
+                glowColor: [1, 1, 1],
+                diffuse: 2.2,
+                dark: 1,
+                mapBrightness: 10,
+              }
+            : {}),
         }}
       />
     </>
-  )
+  );
 }

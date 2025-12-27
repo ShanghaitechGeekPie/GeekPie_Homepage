@@ -10,7 +10,7 @@ interface Footer7Props {
   };
   sections?: Array<{
     title: string;
-    links: Array<{ name: string; href: string; description?: string}>;
+    links: Array<{ name: string; href: string; description?: string }>;
   }>;
   description?: string;
   socialLinks?: Array<{
@@ -120,7 +120,13 @@ export const Footer7 = ({
                       key={linkIdx}
                       className="font-medium hover:text-primary"
                     >
-                      <a href={link.href} aria-label={link.description || link.name} title={`${link.name} - ${link.description || ""}`}>{link.name}</a>
+                      <a
+                        href={link.href}
+                        aria-label={`${link.name} - ${link.description || ""}`}
+                        title={`${link.name} - ${link.description || ""}`}
+                      >
+                        {link.name}
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -142,4 +148,3 @@ export const Footer7 = ({
     </section>
   );
 };
-
