@@ -31,6 +31,11 @@ export const services: Array<ServiceEntry> = [
     description: "由 GeekPie 运维的主要服务的状态",
   },
   {
+    title: "GeekPie Uni-Auth",
+    href: "https://status.geekpie.club/status",
+    description: "使用 GeekPie 账户登录到各个服务",
+  },
+  {
     title: "上海科技大学镜像站",
     href: "https://mirrors.shanghaitech.edu.cn/",
     description:
