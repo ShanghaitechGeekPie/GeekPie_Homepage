@@ -30,8 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "daily" as const,
         priority: 0.8,
     })),
-    ...services.map((nav) => ({
-        url: `https://geekpie.club${nav.href}`,
+    ...services.filter((item) => (item.internal !== true)).map((nav) => ({
+        url: `${nav.href}`,
         lastModified: new Date(),
         changeFrequency: "weekly" as const,
         priority: 0.7,

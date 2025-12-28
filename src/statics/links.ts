@@ -49,6 +49,7 @@ export const services: Array<ServiceEntry> = [
   {
     title: "GeekPie Meeting",
     href: "https://meet.geekpie.club/",
+    internal: true,
     description: "基于 Jitsi Meet 的无限制视频会议服务（仅校内）",
   },
   {
@@ -92,6 +93,7 @@ export const services: Array<ServiceEntry> = [
   {
     title: "GeekPie Send",
     href: "https://send.geekpie.club/",
+    internal: true,
     description: "简单、私密的文件分享服务（仅校内）",
   },
 ];

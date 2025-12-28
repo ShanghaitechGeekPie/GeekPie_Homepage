@@ -8,4 +8,5 @@ export interface ServiceEntry {
   title: string;
   href: string;
   description: string;
+  internal?: boolean;
 }
