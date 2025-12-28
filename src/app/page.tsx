@@ -21,14 +21,14 @@ export default function Home() {
             <Universe />
             <TextAnimate
               animation="blurInUp"
-              as="h1"
+              as="h2"
               className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-8xl"
             >
               For those
             </TextAnimate>
             <TextAnimate
               animation="blurInUp"
-              as="h1"
+              as="h2"
               delay={0.25}
               className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-8xl mb-3"
             >
@@ -37,6 +37,7 @@ export default function Home() {
             <TextAnimate
               animation="blurInUp"
               delay={0.5}
+              as="h1"
               className={cs(
                 isotonic.className,
                 "text-2xl font-bold tracking-tight lg:text-4xl",

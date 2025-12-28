@@ -27,7 +27,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "GeekPie_",
+  title: "GeekPie_ Association @ ShanghaiTech SIST",
   description:
     "For those who love Tech! We are GeekPie Association from ShanghaiTech University.",
 };
