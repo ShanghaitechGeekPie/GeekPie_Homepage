@@ -32,7 +32,7 @@ export const services: Array<ServiceEntry> = [
   },
   {
     title: "GeekPie Uni-Auth",
-    href: "https://status.geekpie.club/status",
+    href: "https://auth.geekpie.club/",
     description: "使用 GeekPie 账户登录到各个服务",
   },
   {
