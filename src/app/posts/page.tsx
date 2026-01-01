@@ -9,7 +9,23 @@ export default function PostsPage() {
 
   return (
     <div className="container mx-auto py-12 px-4 max-w-4xl space-y-12">
-      <h1 className="text-6xl font-bold my-5">活动与博客</h1>
+      <div className="flex flex-wrap justify-between items-center gap-3">
+        <h1 className="text-6xl font-bold my-5 flex-grow">活动与博客</h1>
+        <div className="w-full md:w-auto">
+          <div className="flex md:flex-col gap-1 items-center justify-center">
+          <img
+            src="/wechat.jpg"
+            alt="WeChat Official Account"
+            className="w-20 md:w-28 aspect-square"
+          />
+          <span className="text-left md:text-center">
+            微信公众号
+            <br/>
+            GeekPie 极客派
+          </span>
+          </div>
+        </div>
+      </div>
 
       {/* Events Section */}
       <section>
@@ -19,7 +35,7 @@ export default function PostsPage() {
             href="/posts/event"
             className="flex items-center text-primary hover:underline group min-w-fit"
           >
-            View all events{" "}
+            More events{" "}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
@@ -42,7 +58,7 @@ export default function PostsPage() {
             href="/posts/blog"
             className="flex items-center text-primary hover:underline group min-w-fit"
           >
-            View all blogs{" "}
+            More blogs{" "}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
