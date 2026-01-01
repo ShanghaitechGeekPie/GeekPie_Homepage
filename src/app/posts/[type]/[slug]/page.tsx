@@ -13,10 +13,36 @@ import { AlertTriangle } from "lucide-react";
 import rehypePrettyCode, { Options } from "rehype-pretty-code";
 import rehypeGithubAlert from "rehype-github-alert";
 import { CodeBlock } from "@/components/mdx/code-block";
+import type { Metadata } from "next";
+import { getDescription } from "@/lib/utils";
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
   return paths;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ type: string; slug: string }>;
+}): Promise<Metadata> {
+  const { type, slug } = await params;
+
+  if (type !== "blog" && type !== "event") {
+    notFound();
+  }
+
+  let postData;
+  try {
+    postData = await getPostData(type as PostType, slug);
+  } catch (e) {
+    notFound();
+  }
+
+  return {
+    title: `${postData.title} | GeekPie Club`,
+    description: getDescription(postData.content, postData.summary, 160),
+  };
 }
 
 export default async function Post({

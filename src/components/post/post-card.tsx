@@ -10,23 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PostData } from "@/lib/posts";
-
-function getPreview(content: string) {
-  // Remove markdown headings, images, links, etc. roughly
-  const plainText = content
-    .replace(/!\[.*?\]\(.*?\)/g, "") // Remove images
-    .replace(/\[(.*?)\]\(.*?\)/g, "$1") // Remove links but keep text
-    .replace(/#{1,6}\s/g, "") // Remove headings
-    .replace(/>\s/g, "") // Remove blockquotes
-    .replace(/`{3}[\s\S]*?`{3}/g, "") // Remove code blocks
-    .replace(/`.*?`/g, "") // Remove inline code
-    .replace(/\*\*/g, "") // Remove bold
-    .replace(/\*/g, "") // Remove italic
-    .replace(/\n/g, " ") // Replace newlines with spaces
-    .trim();
-
-  return plainText.slice(0, 150) + (plainText.length > 150 ? "..." : "");
-}
+import { getDescription } from "@/lib/utils";
 
 export function PostCard({ post }: { post: PostData }) {
   return (
@@ -56,7 +40,7 @@ export function PostCard({ post }: { post: PostData }) {
         </div>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-muted-foreground">{getPreview(post.content)}</p>
+        <p className="text-muted-foreground">{getDescription(post.content, post.summary, 150)}</p>
       </CardContent>
       <CardFooter>
         <Button asChild variant="outline">
