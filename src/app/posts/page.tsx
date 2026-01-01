@@ -2,13 +2,37 @@ import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import { PostCard } from "@/components/post/post-card";
 import { ArrowRight } from "lucide-react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export default function PostsPage() {
   const recentEvents = getSortedPostsData("event").slice(0, 2);
   const recentBlogs = getSortedPostsData("blog").slice(0, 2);
 
   return (
-    <div className="container mx-auto py-12 px-4 max-w-4xl space-y-12">
+    <>
+      <div className="container mx-auto py-6 px-4 max-w-4xl">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Posts</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+      <div className="container mx-auto py-12 px-4 max-w-4xl space-y-12">
       <div className="flex flex-wrap justify-between items-center gap-3">
         <h1 className="text-6xl font-bold my-5 flex-grow">活动与博客</h1>
         <div className="w-full md:w-auto">
@@ -72,6 +96,7 @@ export default function PostsPage() {
           )}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

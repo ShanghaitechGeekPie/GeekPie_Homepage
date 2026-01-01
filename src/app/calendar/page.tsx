@@ -18,6 +18,15 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import Link from "next/link";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 function ActivityCard({ item }: { item: Item }) {
   const status =
@@ -272,6 +281,21 @@ export default function ProjectPage() {
 
   return (
     <>
+      <div className="container mx-auto py-6 px-4 max-w-2xl">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Calendar</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <h1 className="text-6xl font-bold my-5">活动日历</h1>
       {isLoading ? (
         <div className="w-full max-w-2xl border-t">

@@ -15,6 +15,15 @@ import rehypeGithubAlert from "rehype-github-alert";
 import { CodeBlock } from "@/components/mdx/code-block";
 import type { Metadata } from "next";
 import { getDescription } from "@/lib/utils";
+import Link from "next/link";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -84,7 +93,37 @@ export default async function Post({
   };
 
   return (
-    <div className="container mx-auto py-12 px-4">
+    <>
+      <div className="container mx-auto py-6 px-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/posts">Posts</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href={`/posts/${type}`} className="capitalize">
+                  {type}
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{postData.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+      <div className="container mx-auto py-12 px-4">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <aside className="hidden lg:block lg:col-span-1 order-1">
           <div className="lg:sticky lg:top-24 space-y-8">
@@ -148,6 +187,7 @@ export default async function Post({
           </div>
         </main>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

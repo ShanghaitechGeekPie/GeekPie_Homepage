@@ -3,10 +3,33 @@
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { leaders, alumni } from "@/statics/members";
 import Link from "next/link";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 export default function PeoplesPage() {
   return (
     <>
+      <div className="container mx-auto py-6 px-4 max-w-5xl">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Members</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <h1 className="text-6xl font-bold my-5">Meet GeekPie</h1>
 
       <div className="mx-5">
