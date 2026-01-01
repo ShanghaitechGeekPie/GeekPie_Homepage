@@ -13,11 +13,11 @@ export default function PostsPage() {
 
       {/* Events Section */}
       <section>
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-3xl font-bold">Latest Events</h2>
+        <div className="flex items-center justify-between mb-6 gap-3">
+          <h2 className="text-3xl font-bold">极客活动 | GeekPie_ Events</h2>
           <Link
             href="/posts/event"
-            className="flex items-center text-primary hover:underline group"
+            className="flex items-center text-primary hover:underline group min-w-fit"
           >
             View all events{" "}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -36,11 +36,11 @@ export default function PostsPage() {
 
       {/* Blogs Section */}
       <section>
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-3xl font-bold">Latest Blogs</h2>
+        <div className="flex items-center justify-between mb-6 gap-3">
+          <h2 className="text-3xl font-bold">极客日志 | GeekPie_ Blogs</h2>
           <Link
             href="/posts/blog"
-            className="flex items-center text-primary hover:underline group"
+            className="flex items-center text-primary hover:underline group min-w-fit"
           >
             View all blogs{" "}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
