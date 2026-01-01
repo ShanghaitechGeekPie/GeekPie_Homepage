@@ -6,12 +6,12 @@ export const links: Array<NavLink> = [
     href: "/",
     description: "关于 GeekPie 学生社团",
   },
-  {
-    title: "活动日历",
-    href: "/calendar",
-    description:
-      "GeekPie 的活动日历，记录 GeekPie 学生社团的活动、比赛、Seminar 等",
-  },
+  // {
+  //   title: "活动日历",
+  //   href: "/calendar",
+  //   description:
+  //     "GeekPie 的活动日历，记录 GeekPie 学生社团的活动、比赛、Seminar 等",
+  // },
   {
     title: "成员介绍",
     href: "/members",
