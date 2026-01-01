@@ -40,7 +40,9 @@ export function PostCard({ post }: { post: PostData }) {
         </div>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-muted-foreground">{getDescription(post.content, post.summary, 150)}</p>
+        <p className="text-muted-foreground">
+          {getDescription(post.content, post.summary, 150)}
+        </p>
       </CardContent>
       <CardFooter>
         <Button asChild variant="outline">

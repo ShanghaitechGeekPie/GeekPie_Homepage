@@ -7,7 +7,7 @@ import { NavMenu } from "@/components/navigation";
 import { Footer7 } from "@/components/ui/footer-7";
 import { departlinks, friendlinks, links, services } from "@/statics/links";
 import { FaGithub, FaLinkedin, FaQq } from "react-icons/fa6";
-import { IoMail } from "react-icons/io5";
+import { IoLogoWechat, IoMail } from "react-icons/io5";
 import { SiKnowledgebase } from "react-icons/si";
 
 // const geistSans = Geist({
@@ -114,6 +114,11 @@ export default function RootLayout({
                   icon: <FaQq />,
                   href: "https://qm.qq.com/cgi-bin/qm/qr?k=g248V3KideQVW6xQA_REfiiErBrsRq_P&authKey=abd97DiBhLi0qyR0PQAMvFm5HCxNr4sjaMGaVuUOsSc5NYptm6trJSgM%2Bmip6MQh&noverify=0&group_code=217260786",
                   label: "QQ Group",
+                },
+                {
+                  icon: <IoLogoWechat />,
+                  href: "http://weixin.qq.com/r/mp/9yf07D-EaWIWrXuP93Ll",
+                  label: "WeChat Official Account",
                 },
                 {
                   icon: <IoMail />,

@@ -4,12 +4,17 @@ import { RetroGrid as MagicRetroGrid } from "@/components/magicui/retro-grid";
 import { cn } from "@/lib/utils";
 import { IconType } from "react-icons";
 import { FaGithub, FaQq } from "react-icons/fa6";
+import { IoLogoWechat } from "react-icons/io5";
 import { MdMail } from "react-icons/md";
 
 const links: { href: string; icon: IconType }[] = [
   {
     href: "https://qm.qq.com/cgi-bin/qm/qr?k=g248V3KideQVW6xQA_REfiiErBrsRq_P&authKey=abd97DiBhLi0qyR0PQAMvFm5HCxNr4sjaMGaVuUOsSc5NYptm6trJSgM%2Bmip6MQh&noverify=0&group_code=217260786",
     icon: FaQq,
+  },
+  {
+    href: "http://weixin.qq.com/r/mp/9yf07D-EaWIWrXuP93Ll",
+    icon: IoLogoWechat,
   },
   {
     href: "https://github.com/ShanghaitechGeekPie/",
