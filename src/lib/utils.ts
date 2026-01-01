@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import removeMd from 'remove-markdown';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -17,16 +18,14 @@ export function getDescription(
   }
 
   // Generate from content
-  const plainText = content
-    .replace(/!\[.*?\]\(.*?\)/g, "") // Remove images
-    .replace(/\[(.*?)\]\(.*?\)/g, "$1") // Remove links but keep text
-    .replace(/#{{1,6}}\s/g, "") // Remove headings
-    .replace(/>\s/g, "") // Remove blockquotes
-    .replace(/`{{3}}[\s\S]*?`{{3}}/g, "") // Remove code blocks
-    .replace(/`.*?`/g, "") // Remove inline code
-    .replace(/\*\*/g, "") // Remove bold
-    .replace(/\*/g, "") // Remove italic
-    .replace(/\n/g, " ") // Replace newlines with spaces
+  const plainText = removeMd(content, {
+    gfm: true,
+    useImgAltText: false,
+    htmlTagsToSkip: [
+      "h1",
+      "pre",
+    ]
+  })
     .trim();
 
   if (!plainText) return "";
