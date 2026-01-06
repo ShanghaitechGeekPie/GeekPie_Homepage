@@ -30,12 +30,17 @@ export function RecentPosts() {
       </div>
       <div className="flex gap-4 mt-4">
         <Button asChild variant="outline">
-          <Link href="/posts/blog">查看更多博客</Link>
+          <Link href="/posts">查看更多推文</Link>
         </Button>
         <Button asChild variant="outline">
-          <Link href="/posts/event">查看更多活动</Link>
+          <Link href="/api/geekpie-events.ics" target="_blank" prefetch={false}>
+            订阅活动日历
+          </Link>
         </Button>
       </div>
+      <span className="text-sm text-muted-foreground mt-2">
+        活动日历为 ics 格式，由前端生成，不可下载。请复制链接至日历软件中订阅。
+      </span>
     </div>
   );
 }

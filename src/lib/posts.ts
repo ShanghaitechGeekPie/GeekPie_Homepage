@@ -34,6 +34,12 @@ export function getSortedPostsData(type: PostType): PostData[] {
       if (data.date && data.date instanceof Date) {
         data.date = data.date.toISOString();
       }
+      if (data.start && data.start instanceof Date) {
+        data.start = data.start.toISOString();
+      }
+      if (data.end && data.end instanceof Date) {
+        data.end = data.end.toISOString();
+      }
 
       return {
         slug,
@@ -99,6 +105,12 @@ export async function getPostData(
   // Ensure date is a string
   if (data.date && data.date instanceof Date) {
     data.date = data.date.toISOString();
+  }
+  if (data.start && data.start instanceof Date) {
+    data.start = data.start.toISOString();
+  }
+  if (data.end && data.end instanceof Date) {
+    data.end = data.end.toISOString();
   }
 
   return {
