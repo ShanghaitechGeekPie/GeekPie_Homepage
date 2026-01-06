@@ -22,6 +22,18 @@ export const links: Array<NavLink> = [
     href: "/posts",
     description: "查看我们最新的活动和博客投稿",
   },
+  {
+    title: "订阅活动日历",
+    href: "/api/geekpie-events.ics",
+    description: "复制链接到日历软件中订阅活动日历",
+    hidden: true,
+  },
+  {
+    title: "订阅 RSS 源",
+    href: "/rss.xml",
+    description: "订阅我们的最新动态和技术分享",
+    hidden: true,
+  }
 ];
 
 export const services: Array<ServiceEntry> = [

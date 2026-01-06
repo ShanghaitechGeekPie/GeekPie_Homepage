@@ -28,7 +28,7 @@ export function RecentPosts() {
           <PostCard key={post.slug} post={post} />
         ))}
       </div>
-      <div className="flex gap-4 mt-4">
+      <div className="flex flex-wrap gap-4 mt-4 items-center justify-center">
         <Button asChild variant="outline">
           <Link href="/posts">查看更多推文</Link>
         </Button>
@@ -43,7 +43,7 @@ export function RecentPosts() {
           </Link>
         </Button>
       </div>
-      <span className="text-sm text-muted-foreground mt-2">
+      <span className="text-sm text-muted-foreground mt-2 text-center">
         活动日历为 ics 格式，由前端生成，不可下载。请复制链接至日历软件中订阅。
       </span>
     </div>

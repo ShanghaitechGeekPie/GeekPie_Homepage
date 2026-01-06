@@ -9,8 +9,8 @@ import { TechStacks } from "@/components/techstacks";
 import { Companies } from "@/components/companies";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { Services } from "@/components/services";
-import { FaQq, FaGithub, FaLinkedin } from "react-icons/fa6";
-import { IoLogoWechat, IoMail } from "react-icons/io5";
+import { FaQq, FaGithub } from "react-icons/fa6";
+import { IoLogoLinkedin, IoLogoRss, IoLogoWechat, IoMail } from "react-icons/io5";
 import { SiKnowledgebase } from "react-icons/si";
 
 export const features = [
@@ -84,6 +84,7 @@ export const footerSocials = [
     icon: <FaGithub />,
     href: "https://github.com/ShanghaitechGeekPie/",
     label: "Github",
+    contact: true,
   },
   {
     icon: <SiKnowledgebase />,
@@ -91,9 +92,14 @@ export const footerSocials = [
     label: "Feishu Knowledge Base",
   },
   {
-    icon: <FaLinkedin />,
+    icon: <IoLogoLinkedin />,
     href: "https://www.linkedin.com/company/geekpie/",
     label: "LinkedIn",
     contact: true,
   },
+  {
+    icon: <IoLogoRss />,
+    href: "https://geekpie.club/rss.xml",
+    label: "RSS Feed",
+  }
 ]

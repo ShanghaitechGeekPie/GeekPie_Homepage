@@ -56,7 +56,7 @@ export function NavMenu({ className }: { className?: string }) {
                   </a>
                 </NavigationMenuLink>
               </li>
-              {links.map((item, index) => (
+              {links.filter((item) => item.hidden !== true).map((item, index) => (
                 <ListItem href={item.href} title={item.title} key={index}>
                   {item.description}
                 </ListItem>
@@ -71,7 +71,7 @@ export function NavMenu({ className }: { className?: string }) {
           <NavigationMenuContent>
             <ul className="grid w-400px gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] max-h-[80vh] overflow-y-auto">
               {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
-              {services.map((component) => (
+              {services.filter((item) => item.hidden !== true).map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -90,7 +90,7 @@ export function NavMenu({ className }: { className?: string }) {
           <NavigationMenuContent>
             <ul className="grid w-400px gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] max-h-[80vh] overflow-y-auto">
               {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
-              {departlinks.map((component) => (
+              {departlinks.filter((item) => item.hidden !== true).map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -103,7 +103,7 @@ export function NavMenu({ className }: { className?: string }) {
             <hr />
             <ul className="grid w-400px gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] max-h-[80vh] overflow-y-auto">
               {/* <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]"> */}
-              {friendlinks.map((component) => (
+              {friendlinks.filter((item) => item.hidden !== true).map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
