@@ -33,6 +33,11 @@ export function RecentPosts() {
           <Link href="/posts">查看更多推文</Link>
         </Button>
         <Button asChild variant="outline">
+          <Link href="/rss.xml" target="_blank" prefetch={false}>
+            订阅 RSS 源
+          </Link>
+        </Button>
+        <Button asChild variant="outline">
           <Link href="/api/geekpie-events.ics" target="_blank" prefetch={false}>
             订阅活动日历
           </Link>

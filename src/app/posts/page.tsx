@@ -36,7 +36,7 @@ export default function PostsPage() {
         <div className="flex flex-wrap justify-between items-center gap-3">
           <h1 className="text-6xl font-bold my-5 min-w-fit flex-grow">活动与博客</h1>
           <div className="w-full flex items-center justify-around gap-3 flex-wrap">
-            <div className="flex gap-1 items-center justify-center">
+            <div className="flex gap-2 items-center justify-center">
               <img
                 src="/wechat.jpg"
                 alt="WeChat Official Account"
@@ -48,14 +48,20 @@ export default function PostsPage() {
                 GeekPie 极客派
               </span>
             </div>
-            <div className="flex flex-col justify-center items-end">
+            <div className="flex flex-col justify-center items-end gap-2">
+              <Link href="/rss.xml" target="_blank" prefetch={false}
+                className="flex items-center text-primary hover:underline group min-w-fit"
+              >
+                订阅 RSS 源
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
               <Link href="/api/geekpie-events.ics" target="_blank" prefetch={false}
                 className="flex items-center text-primary hover:underline group min-w-fit"
               >
                 订阅活动日历
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <span className="text-sm text-muted-foreground mt-2">
+              <span className="text-sm text-muted-foreground -mt-2">
                 复制链接至日历软件中订阅
               </span>
             </div>
