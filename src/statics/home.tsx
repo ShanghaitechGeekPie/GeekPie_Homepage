@@ -9,6 +9,9 @@ import { TechStacks } from "@/components/techstacks";
 import { Companies } from "@/components/companies";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { Services } from "@/components/services";
+import { FaQq, FaGithub, FaLinkedin } from "react-icons/fa6";
+import { IoLogoWechat, IoMail } from "react-icons/io5";
+import { SiKnowledgebase } from "react-icons/si";
 
 export const features = [
   {
@@ -58,3 +61,39 @@ export const features = [
     className: "lg:col-start-2 lg:col-end-2 lg:row-start-2 lg:row-end-4",
   },
 ];
+
+export const footerSocials = [
+  {
+    icon: <FaQq />,
+    href: "https://qm.qq.com/cgi-bin/qm/qr?k=g248V3KideQVW6xQA_REfiiErBrsRq_P&authKey=abd97DiBhLi0qyR0PQAMvFm5HCxNr4sjaMGaVuUOsSc5NYptm6trJSgM%2Bmip6MQh&noverify=0&group_code=217260786",
+    label: "QQ Group",
+    contact: true,
+  },
+  {
+    icon: <IoLogoWechat />,
+    href: "https://geekpie.club/posts",
+    label: "WeChat Official Account",
+  },
+  {
+    icon: <IoMail />,
+    href: "mailto: geekpie@geekpie.club",
+    label: "Email",
+    contact: true,
+  },
+  {
+    icon: <FaGithub />,
+    href: "https://github.com/ShanghaitechGeekPie/",
+    label: "Github",
+  },
+  {
+    icon: <SiKnowledgebase />,
+    href: "https://ncngzakonwnv.feishu.cn",
+    label: "Feishu Knowledge Base",
+  },
+  {
+    icon: <FaLinkedin />,
+    href: "https://www.linkedin.com/company/geekpie/",
+    label: "LinkedIn",
+    contact: true,
+  },
+]
