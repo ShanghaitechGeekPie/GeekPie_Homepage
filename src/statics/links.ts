@@ -128,6 +128,11 @@ export const friendlinks: Array<NavLink> = [
     description: "上海科技大学 DataTech 社团",
   },
   {
+    title: "OpenSIST",
+    href: "https://opensist.tech/",
+    description: "OpenSIST 旨在为上科大学子提供一个更加开放的留学申请信息分享平台，帮助大家更好地规划自己的留学申请。",
+  },
+  {
     title: "PKU - HPCGame",
     href: "https://hpcgame.pku.edu.cn/",
     description: "北京大学主办、GeekPie_HPC 参与协办的高性能计算挑战赛",
