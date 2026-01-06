@@ -1,3 +1,4 @@
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -102,10 +103,17 @@ export const Footer7 = ({
             </p>
             <ul className="flex items-center space-x-6 text-muted-foreground">
               {socialLinks.map((social, idx) => (
-                <li key={idx} className="font-medium hover:text-primary">
-                  <a href={social.href} aria-label={social.label}>
-                    {social.icon}
-                  </a>
+                <li key={idx} className="font-medium hover:text-primary transition-colors">
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a href={social.href} aria-label={social.label}>
+                        {social.icon}
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom">
+                      <p>{social.label}</p>
+                    </TooltipContent>
+                  </Tooltip>
                 </li>
               ))}
             </ul>
@@ -118,7 +126,7 @@ export const Footer7 = ({
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
-                      className="font-medium hover:text-primary"
+                      className="font-medium hover:text-primary transition-colors"
                     >
                       <a
                         href={link.href}
