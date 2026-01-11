@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://geekpie.club/sitemap.xml/",
+    sitemap: "https://geekpie.club/sitemap.xml",
   };
 }

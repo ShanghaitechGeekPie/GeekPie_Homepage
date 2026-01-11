@@ -50,6 +50,7 @@ export const services: Array<ServiceEntry> = [
   {
     title: "上海科技大学镜像站",
     href: "https://mirrors.shanghaitech.edu.cn/",
+    internal: true, // Could not be resolved by Sitemap
     description:
       "抽风、龟速、复古的镜像服务——托管于华东教育网边缘节点张江理工学院",
   },

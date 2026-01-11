@@ -1,5 +1,3 @@
-"use client";
-
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { leaders, alumni } from "@/statics/members";
 import Link from "next/link";
