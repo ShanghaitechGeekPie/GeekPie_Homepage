@@ -36,16 +36,16 @@ export default function PostsPage() {
         <div className="flex flex-wrap justify-between items-center gap-3">
           <h1 className="text-6xl font-bold my-5 min-w-fit flex-grow">活动与博客</h1>
           <div className="w-full flex items-center justify-around gap-3 flex-wrap">
-            <div className="flex gap-2 items-center justify-center">
+            <div className="flex gap-3 items-center justify-center">
               <img
                 src="/wechat.jpg"
                 alt="WeChat Official Account"
-                className="w-20 md:w-28 aspect-square"
+                className="w-20 md:w-28 aspect-square shadow-sm"
               />
               <span className="text-left">
                 微信公众号
                 <br />
-                GeekPie 极客派
+                <b>GeekPie 极客派</b>
               </span>
             </div>
             <div className="flex flex-col justify-center items-end gap-2">
