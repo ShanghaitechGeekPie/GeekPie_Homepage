@@ -7,6 +7,7 @@ import { NavMenu } from "@/components/navigation";
 import { Footer7 } from "@/components/ui/footer-7";
 import { departlinks, friendlinks, links, services } from "@/statics/links";
 import { footerSocials } from "@/statics/home";
+import Link from "next/link";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -43,7 +44,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <header className="sticky top-0 z-40 p-3 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="max-w-5xl mx-auto flex justify-between items-center">
-              <GeekPie_ className="min-h-[2rem] max-h-[2rem] min-w-fit hidden md:block" />
+              <Link className="min-w-fit hidden md:block" href="/">
+                <GeekPie_ className="min-h-[2rem] max-h-[2rem]" />
+              </Link>
               <NavMenu className="" />
             </div>
           </header>
