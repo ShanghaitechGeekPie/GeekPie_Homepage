@@ -10,6 +10,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Posts | GeekPie Club",
+    description:
+      "Explore the latest events and blog posts from GeekPie Association at ShanghaiTech University.",
+  };
+}
 
 export default function PostsPage() {
   const recentEvents = getSortedPostsData("event").slice(0, 2);

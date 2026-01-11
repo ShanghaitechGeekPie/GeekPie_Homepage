@@ -11,6 +11,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Members | GeekPie Club",
+    description:
+      "Meet passionate members and alumni of GeekPie Association at ShanghaiTech University.",
+  };
+}
 
 export default function PeoplesPage() {
   return (

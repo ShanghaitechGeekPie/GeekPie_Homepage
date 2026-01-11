@@ -10,6 +10,20 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { PostListWithFilter } from "@/components/post/post-list-with-filter";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ type: string }>;
+}): Promise<Metadata> {
+  const { type } = await params;
+  return {
+    title: `${type.charAt(0).toUpperCase() + type.slice(1)} Posts | GeekPie Club`,
+    description:
+      `Explore the latest ${type} posts from GeekPie Association at ShanghaiTech University.`,
+  };
+}
 
 export function generateStaticParams() {
   return [{ type: "blog" }, { type: "event" }];
