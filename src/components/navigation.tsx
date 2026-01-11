@@ -19,7 +19,7 @@ import { links, services, departlinks, friendlinks } from "@/statics/links";
 
 export function NavMenu({ className }: { className?: string }) {
   return (
-    <NavigationMenu className={cn(className)}>
+    <NavigationMenu className={cn(className)} delayDuration={0}>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger
