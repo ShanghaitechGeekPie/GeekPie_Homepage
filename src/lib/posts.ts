@@ -12,6 +12,7 @@ export interface PostData {
   title: string;
   date: string;
   content: string;
+  tags?: string[];
   [key: string]: any;
 }
 
@@ -41,11 +42,16 @@ export function getSortedPostsData(type: PostType): PostData[] {
         data.end = data.end.toISOString();
       }
 
+      // Ensure tags are strings
+      if (data.tags && Array.isArray(data.tags)) {
+        data.tags = data.tags.map((tag) => String(tag));
+      }
+
       return {
         slug,
         type,
         content: matterResult.content,
-        ...(data as { title: string; date: string }),
+        ...(data as { title: string; date: string; tags?: string[] }),
       };
     });
 
@@ -117,6 +123,6 @@ export async function getPostData(
     slug,
     type,
     content: matterResult.content,
-    ...(data as { title: string; date: string }),
+    ...(data as { title: string; date: string; tags?: string[] }),
   };
 }

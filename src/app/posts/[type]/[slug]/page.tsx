@@ -133,7 +133,7 @@ export default async function Post({
               <h3 className="text-sm font-semibold mb-2 text-muted-foreground">
                 Tags
               </h3>
-              <TagsList tags={postData.tags} />
+              <TagsList tags={postData.tags || []} type={type as PostType} />
             </div>
           </div>
         </aside>
@@ -183,7 +183,7 @@ export default async function Post({
             <h3 className="text-sm font-semibold mb-2 text-muted-foreground">
               Tags
             </h3>
-            <TagsList tags={postData.tags} />
+            <TagsList tags={postData.tags || []} type={type as PostType} />
           </div>
         </main>
       </div>

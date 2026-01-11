@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { PostData } from "@/lib/posts";
 import { getDescription } from "@/lib/utils";
+import { TagsList } from "./tags";
 
 export function PostCard({ post }: { post: PostData }) {
   return (
@@ -43,6 +44,7 @@ export function PostCard({ post }: { post: PostData }) {
         <p className="text-muted-foreground">
           {getDescription(post.content, post.summary, 150)}
         </p>
+        <TagsList tags={post.tags || []} type={post.type} />
       </CardContent>
       <CardFooter>
         <Button asChild variant="outline">
