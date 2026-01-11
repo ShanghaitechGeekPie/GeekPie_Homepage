@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...links.map((nav) => ({
       url: `https://geekpie.club${nav.href}`,
       lastModified: new Date(),
-      changeFrequency: "weekly" as const,
+      changeFrequency: "never" as const,
       priority: 0.9,
     })),
     ...getSortedPostsData("event")
@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .map((nav) => ({
         url: `${nav.href}`,
         lastModified: new Date(),
-        changeFrequency: "weekly" as const,
+        changeFrequency: "monthly" as const,
         priority: 0.7,
       })),
   ];
