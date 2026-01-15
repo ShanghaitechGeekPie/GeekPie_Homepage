@@ -53,7 +53,6 @@ export default function Universe() {
         vx={1}
         size={0.8}
         color={color}
-        refresh
       />
       <Particles
         className="absolute inset-0 -z-20 opacity-50"
@@ -62,7 +61,6 @@ export default function Universe() {
         vx={-1}
         size={0.4}
         color={color}
-        refresh
       />
       <Globe
         className="mt-[70vh] lg:mt-40 mr-auto lg:mr-0 -z-10 max-w-2/3"

@@ -22,7 +22,7 @@ export const features = [
     href: "/calendar",
     cta: "我们最近的动态",
     background: (
-      <Services className="absolute h-full transition-all opacity-50 hover:opacity-20 [mask-image:linear-gradient(to_top,transparent_0%,#000_100%)]" />
+      <Services className="absolute h-full transition-all [mask-image:linear-gradient(to_top,transparent_30%,#000_100%)]" />
     ),
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
   },
@@ -56,7 +56,7 @@ export const features = [
     href: "/posts/event",
     cta: "我们举办的活动",
     background: (
-      <Companies className="absolute border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_0%,#000_50%)] group-hover:scale-105" />
+      <Companies className="absolute border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_50%)]" />
     ),
     className: "lg:col-start-2 lg:col-end-2 lg:row-start-2 lg:row-end-4",
   },
