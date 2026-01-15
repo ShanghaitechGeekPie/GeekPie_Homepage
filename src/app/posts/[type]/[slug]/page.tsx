@@ -94,7 +94,9 @@ export default async function Post({
     img: (props: any) => (
       <span className="my-8 flex flex-col items-center not-prose">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img {...props} className="rounded-lg border border-border" />
+        <a href={props.src} target="_blank" rel="noopener noreferrer">
+          <img {...props} className="rounded-lg border border-border hover:opacity-80 hover:shadow-lg transition-all duration-200" />
+        </a>
         {props.alt && (
           <span className="mt-3 text-sm text-muted-foreground text-center block">
             {props.alt}
