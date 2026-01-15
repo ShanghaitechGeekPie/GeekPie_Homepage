@@ -24,6 +24,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Comments from "@/components/post/comments";
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -178,6 +179,10 @@ export default async function Post({
               }}
             />
           </article>
+
+          <div className="max-w-4xl">
+            <Comments />
+          </div>
 
           <div className="lg:hidden mt-8 border-t pt-4">
             <h3 className="text-sm font-semibold mb-2 text-muted-foreground">
