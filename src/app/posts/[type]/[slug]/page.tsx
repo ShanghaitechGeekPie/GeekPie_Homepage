@@ -91,6 +91,17 @@ export default async function Post({
 
   const components = {
     pre: CodeBlock, // 将 markdown 中的 pre 标签替换为我们的 CodeBlock 组件
+    img: (props: any) => (
+      <span className="my-8 flex flex-col items-center not-prose">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img {...props} className="rounded-lg border border-border" />
+        {props.alt && (
+          <span className="mt-3 text-sm text-muted-foreground text-center block">
+            {props.alt}
+          </span>
+        )}
+      </span>
+    ),
   };
 
   return (
