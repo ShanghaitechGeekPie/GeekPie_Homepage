@@ -150,7 +150,7 @@ type Item = {
 };
 
 async function fetchProjectItems(): Promise<Item[]> {
-  const token = "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";
+  const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
   if (!token) {
     throw new Error("GitHub token is not defined");
   }

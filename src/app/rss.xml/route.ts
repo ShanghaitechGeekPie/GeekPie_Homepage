@@ -24,7 +24,7 @@ async function markdownToHtml(markdown: string): Promise<string> {
 
 export async function GET() {
   const posts = getAllSortedPosts();
-  const siteUrl = "https://geekpie.club";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club";
 
   const items = await Promise.all(
     posts.map(async (post) => {

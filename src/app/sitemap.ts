@@ -7,13 +7,13 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://geekpie.club/",
+      url: process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club/",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     ...links.map((nav) => ({
-      url: `https://geekpie.club${nav.href}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club"}${nav.href}`,
       lastModified: new Date(),
       changeFrequency: "never" as const,
       priority: 0.9,
@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getSortedPostsData("event")
       .slice(0, 2)
       .map((post) => ({
-        url: `https://geekpie.club/posts/${post.type}/${post.slug}`,
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club"}/posts/${post.type}/${post.slug}`,
         lastModified: new Date(),
         changeFrequency: "daily" as const,
         priority: 0.8,
@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getSortedPostsData("blog")
       .slice(0, 2)
       .map((post) => ({
-        url: `https://geekpie.club/posts/${post.type}/${post.slug}`,
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club"}/posts/${post.type}/${post.slug}`,
         lastModified: new Date(),
         changeFrequency: "daily" as const,
         priority: 0.8,

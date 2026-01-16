@@ -198,7 +198,7 @@ export const alumni = [
     title: "Haotian Jing",
     subtitle: "系统工程师 @ 思勰投资",
     handle: "2022",
-    url: "https://geekpie.club/members", // prefers not to disclose
+    url: "#", // prefers not to disclose
   },
   {
     image: "/assets/profile_photos/lzhang.jpg",

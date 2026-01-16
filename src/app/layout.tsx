@@ -54,7 +54,7 @@ export default function RootLayout({
           <footer className="flex items-center justify-center w-full p-5 border-t bg-transparent backdrop-blur-sm">
             <Footer7
               logo={{
-                url: "https://geekpie.club/",
+                url: process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club",
                 src: "/geekpie_Logo.svg",
                 alt: "GeekPie_",
                 title: "Association",

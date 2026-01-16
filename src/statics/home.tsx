@@ -71,7 +71,7 @@ export const footerSocials = [
   },
   {
     icon: <IoLogoWechat />,
-    href: "https://geekpie.club/posts",
+    href: `${process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club"}/posts`,
     label: "WeChat Official Account",
   },
   {
@@ -99,7 +99,7 @@ export const footerSocials = [
   },
   {
     icon: <IoLogoRss />,
-    href: "https://geekpie.club/rss.xml",
+    href: `${process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club"}/rss.xml`,
     label: "RSS Feed",
   }
 ]
