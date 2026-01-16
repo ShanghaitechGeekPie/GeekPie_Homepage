@@ -13,6 +13,7 @@ export interface PostData {
   date: string;
   content: string;
   tags?: string[];
+  duration?: "milestone" | "continuous";
   [key: string]: any;
 }
 
