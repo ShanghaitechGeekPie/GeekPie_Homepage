@@ -99,7 +99,7 @@ export const alumni = [
   },
   {
     image: "/assets/profile_photos/zyang.jpg",
-    title: "Zhou Yang",
+    title: "Yang Zhou",
     subtitle:
       "Robotics PhD Candidate @ NYU | RoboMaster 社团创立者 | Ex Intern @ Carnegie Mellon University",
     handle: "2019",
