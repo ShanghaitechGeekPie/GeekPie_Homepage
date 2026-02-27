@@ -15,7 +15,8 @@ import rehypeGithubAlert from "rehype-github-alert";
 import { CodeBlock } from "@/components/mdx/code-block";
 import type { Metadata } from "next";
 import { getDescription } from "@/lib/utils";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from  "next-view-transitions";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -112,19 +113,19 @@ export default async function Post({
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              <BreadcrumbLink asChild className="nav-home">
                 <Link href="/">Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              <BreadcrumbLink asChild className="nav-posts">
                 <Link href="/posts">Posts</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              <BreadcrumbLink asChild className="nav-post-type">
                 <Link href={`/posts/${type}`} className="capitalize">
                   {type}
                 </Link>
@@ -132,7 +133,7 @@ export default async function Post({
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>{postData.title}</BreadcrumbPage>
+              <BreadcrumbPage className="nav-post-title">{postData.title}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

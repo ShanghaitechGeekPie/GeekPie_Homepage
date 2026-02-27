@@ -1,4 +1,5 @@
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { Link } from "next-view-transitions";
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -128,13 +129,13 @@ export const Footer7 = ({
                       key={linkIdx}
                       className="font-medium hover:text-primary transition-colors"
                     >
-                      <a
+                      <Link
                         href={link.href}
                         aria-label={`${link.name} - ${link.description || ""}`}
                         title={`${link.name} - ${link.description || ""}`}
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

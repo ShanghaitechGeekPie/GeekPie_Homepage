@@ -1,6 +1,7 @@
 import { getSortedPostsData, PostType } from "@/lib/posts";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from  "next-view-transitions";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -47,13 +48,13 @@ export default async function PostTypePage(props: {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              <BreadcrumbLink asChild className="nav-home">
                 <Link href="/">Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              <BreadcrumbLink asChild className="nav-posts">
                 <Link href="/posts">Posts</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>

@@ -8,6 +8,7 @@ import { Footer7 } from "@/components/ui/footer-7";
 import { departlinks, friendlinks, links, services } from "@/statics/links";
 import { footerSocials } from "@/statics/home";
 import Link from "next/link";
+import { ViewTransitions } from "next-view-transitions";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -50,8 +51,9 @@ export default function RootLayout({
               <NavMenu className="" />
             </div>
           </header>
-          {children}
-          <footer className="flex items-center justify-center w-full p-5 border-t bg-transparent backdrop-blur-sm">
+          <ViewTransitions>
+            {children}
+          <footer className="nav-footer flex items-center justify-center w-full p-5 border-t bg-transparent backdrop-blur-sm">
             <Footer7
               logo={{
                 url: process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club",
@@ -119,6 +121,7 @@ export default function RootLayout({
               ]}
             />
           </footer>
+          </ViewTransitions>
         </ThemeProvider>
       </body>
     </html>

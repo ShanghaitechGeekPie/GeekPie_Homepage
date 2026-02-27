@@ -1,5 +1,6 @@
 import { getSortedPostsData } from "@/lib/posts";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from  "next-view-transitions";
 import { PostCard } from "@/components/post/post-card";
 import { ArrowRight } from "lucide-react";
 import {
@@ -27,7 +28,7 @@ export default function PostsPage() {
   return (
     <>
       <div className="container mx-auto py-6 px-4 max-w-4xl">
-        <Breadcrumb>
+        <Breadcrumb className="breadcrumb">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>

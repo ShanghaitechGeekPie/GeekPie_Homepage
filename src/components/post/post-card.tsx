@@ -1,4 +1,5 @@
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from  "next-view-transitions";
 import { format } from "date-fns";
 import {
   Card,
@@ -12,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { PostData } from "@/lib/posts";
 import { getDescription } from "@/lib/utils";
 import { TagsList } from "./tags";
+import { LoadingButton } from "../ui/loading-button";
 
 export function PostCard({ post }: { post: PostData }) {
   return (
@@ -47,9 +49,9 @@ export function PostCard({ post }: { post: PostData }) {
         <TagsList tags={post.tags || []} type={post.type} />
       </CardContent>
       <CardFooter>
-        <Button asChild variant="outline">
+        <LoadingButton asChild variant="outline">
           <Link href={`/posts/${post.type}/${post.slug}`}>Read more</Link>
-        </Button>
+        </LoadingButton>
       </CardFooter>
     </Card>
   );

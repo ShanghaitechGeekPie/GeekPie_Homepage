@@ -2,7 +2,8 @@
 
 import { useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link, useTransitionRouter } from  "next-view-transitions";
 import { PostData } from "@/lib/posts";
 import { PostCard } from "./post-card";
 import { toggleVariants } from "@/components/ui/toggle";
@@ -27,6 +28,7 @@ function PostListWithFilterContent({
   allTags: string[];
   type: string;
 }) {
+  const router = useTransitionRouter();
   const searchParams = useSearchParams();
   const activeTags = searchParams.getAll("tag");
 
