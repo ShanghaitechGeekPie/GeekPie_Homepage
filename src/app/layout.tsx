@@ -30,6 +30,13 @@ export const metadata: Metadata = {
   title: "GeekPie_ Association @ ShanghaiTech SIST",
   description:
     "For those who love Tech! We are GeekPie Association from ShanghaiTech University.",
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/rss.xml", title: "GeekPie Posts" },
+      ],
+    },
+  },
 };
 
 export default function RootLayout({

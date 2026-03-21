@@ -54,6 +54,11 @@ channel > item {
 	}
 	item > description {
 		margin-bottom: 10px;
+		color: #666666;
+		font-style: italic;
+	}
+	item > content\:encoded {
+		margin-bottom: 10px;
 	}
 	item > category {
 		background-color: #efefef;

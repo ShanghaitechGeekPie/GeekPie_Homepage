@@ -1,4 +1,5 @@
 import { getAllSortedPosts } from "@/lib/posts";
+import { getDescription } from "@/lib/utils";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
@@ -30,6 +31,7 @@ export async function GET() {
     posts.map(async (post) => {
       const url = `${siteUrl}/posts/${post.type}/${post.slug}`;
       const htmlContent = await markdownToHtml(post.content);
+      const summary = getDescription(post.content, post.summary, 300);
       return `
     <item>
       <title>[GeekPie ${post.type}] ${post.title}</title>
@@ -37,7 +39,8 @@ export async function GET() {
       <link>${url}</link>
       <guid>${url}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <description><![CDATA[${htmlContent}]]></description>
+      <description><![CDATA[${summary}]]></description>
+      <content:encoded><![CDATA[${htmlContent}]]></content:encoded>
       <category>${post.type}</category>
       ${post.tags && post.tags.map((tag:any) => `<category>${tag}</category>`).join("\n")}
     </item>`;
@@ -46,7 +49,7 @@ export async function GET() {
 
   const xml = `<?xml version="1.0" encoding="UTF-8" ?>
 <?xml-stylesheet type="text/css" href="/assets/css/rss.css" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>GeekPie Posts</title>
     <link>${siteUrl}</link>
