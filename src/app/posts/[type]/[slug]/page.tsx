@@ -183,7 +183,7 @@ export default async function Post({
               components={components}
               options={{
                 mdxOptions: {
-                  remarkPlugins: [remarkGfm, remarkRewriteAssets],
+                  remarkPlugins: [remarkGfm, remarkRewriteAssets(type, slug)],
                   rehypePlugins: [
                     rehypeSlug,
                     rehypeGithubAlert,

@@ -22,12 +22,12 @@ export function getSortedPostsData(type: PostType): PostData[] {
   if (!fs.existsSync(dir)) {
     return [];
   }
-  const fileNames = fs.readdirSync(dir);
-  const allPostsData = fileNames
-    .filter((fileName) => fileName.endsWith(".md"))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, "");
-      const fullPath = path.join(dir, fileName);
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const allPostsData = entries
+    .filter((entry) => entry.isDirectory() && fs.existsSync(path.join(dir, entry.name, "index.md")))
+    .map((entry) => {
+      const slug = entry.name;
+      const fullPath = path.join(dir, entry.name, "index.md");
       const fileContents = fs.readFileSync(fullPath, "utf8");
       const matterResult = matter(fileContents);
       const data = matterResult.data;
@@ -86,12 +86,12 @@ export function getAllPostIds() {
   types.forEach((type) => {
     const dir = path.join(postsDirectory, type);
     if (fs.existsSync(dir)) {
-      const fileNames = fs.readdirSync(dir);
-      fileNames.forEach((fileName) => {
-        if (fileName.endsWith(".md")) {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      entries.forEach((entry) => {
+        if (entry.isDirectory() && fs.existsSync(path.join(dir, entry.name, "index.md"))) {
           paths.push({
             type: type,
-            slug: fileName.replace(/\.md$/, ""),
+            slug: entry.name,
           });
         }
       });
@@ -104,7 +104,7 @@ export async function getPostData(
   type: PostType,
   slug: string,
 ): Promise<PostData> {
-  const fullPath = path.join(postsDirectory, type, `${slug}.md`);
+  const fullPath = path.join(postsDirectory, type, slug, "index.md");
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
   const data = matterResult.data;

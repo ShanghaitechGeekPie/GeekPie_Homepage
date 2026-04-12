@@ -10,16 +10,16 @@ import { remarkRewriteAssets } from "@/lib/remark-rewrite-assets";
 
 export const dynamic = "force-static";
 
-async function markdownToHtml(markdown: string): Promise<string> {
+async function markdownToHtml(markdown: string, type: string, slug: string): Promise<string> {
   const result = await unified()
     .use(remarkParse)
     .use(remarkGfm)
-    .use(remarkRewriteAssets)
+    .use(remarkRewriteAssets(type, slug))
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeStringify)
     .process(markdown);
-  
+
   return String(result);
 }
 
@@ -30,7 +30,7 @@ export async function GET() {
   const items = await Promise.all(
     posts.map(async (post) => {
       const url = `${siteUrl}/posts/${post.type}/${post.slug}`;
-      const htmlContent = await markdownToHtml(post.content);
+      const htmlContent = await markdownToHtml(post.content, post.type, post.slug);
       const summary = getDescription(post.content, post.summary, 300);
       return `
     <item>
