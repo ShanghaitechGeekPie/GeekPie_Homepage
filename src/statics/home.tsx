@@ -65,41 +65,55 @@ export const features = [
 export const footerSocials = [
   {
     icon: <FaQq />,
+    name: "qq",
     href: "https://qm.qq.com/cgi-bin/qm/qr?k=g248V3KideQVW6xQA_REfiiErBrsRq_P&authKey=abd97DiBhLi0qyR0PQAMvFm5HCxNr4sjaMGaVuUOsSc5NYptm6trJSgM%2Bmip6MQh&noverify=0&group_code=217260786",
     label: "QQ Group",
     contact: true,
+    mask: true,
   },
   {
     icon: <IoLogoWechat />,
+    name: "wechat",
     href: `${process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club"}/posts`,
     label: "WeChat Official Account",
+    mask: true,
   },
   {
     icon: <IoMail />,
+    name: "email",
     href: "mailto: geekpie@geekpie.club",
     label: "Email",
     contact: true,
+    mask: true,
   },
   {
     icon: <FaGithub />,
+    name: "github",
     href: "https://github.com/ShanghaitechGeekPie/",
     label: "Github",
     contact: true,
+    mask: false,
   },
   {
     icon: <SiKnowledgebase />,
+    name: "feishu",
     href: "https://ncngzakonwnv.feishu.cn",
     label: "Feishu Knowledge Base",
+    mask: true,
   },
   {
     icon: <IoLogoLinkedin />,
+    name: "linkedin",
     href: "https://www.linkedin.com/company/geekpie/",
     label: "LinkedIn",
     contact: true,
+    mask: true,
   },
   {
     icon: <IoLogoRss />,
+    name: "rss",
     href: `${process.env.NEXT_PUBLIC_SITE_URL || "https://geekpie.club"}/rss.xml`,
     label: "RSS Feed",
+    mask: false,
   }
 ]

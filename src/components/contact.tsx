@@ -10,7 +10,7 @@ import { MdMail } from "react-icons/md";
 
 const links: { href: string; icon: IconType }[] = footerSocials.filter(item => item.contact).map((item) => ({
   icon: item.icon.type as IconType,
-  href: item.href,
+  href: item.mask ? `/contact/${item.name}` : item.href,
 }));
 
 export function RetroGrid() {

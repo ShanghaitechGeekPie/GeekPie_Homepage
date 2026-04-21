@@ -126,7 +126,10 @@ export default function RootLayout({
                 },
               ]}
               copyright="Made with ❤️ by ZAMBAR @ GeekPie_"
-              socialLinks={footerSocials}
+              socialLinks={footerSocials.map((s) => ({
+                ...s,
+                href: s.mask ? `/contact/${s.name}` : s.href,
+              }))}
               legalLinks={[
                 {
                   name: "沪ICP备2021011443号-2",
