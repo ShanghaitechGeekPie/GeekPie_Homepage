@@ -11,12 +11,12 @@ const GLOBE_CONFIG: COBEOptions = {
   width: 800,
   height: 800,
   onRender: () => {},
-  devicePixelRatio: 2,
+  devicePixelRatio: 1,
   phi: 0,
   theta: 0.3,
   dark: 0,
   diffuse: 0.4,
-  mapSamples: 16000,
+  mapSamples: 6000,
   mapBrightness: 1.2,
   opacity: 0.9,
   baseColor: [1, 1, 1],
@@ -48,7 +48,7 @@ export default function Universe() {
     <>
       <Particles
         className="absolute inset-0 z-0"
-        quantity={80}
+        quantity={30}
         ease={80}
         vx={1}
         size={0.8}
@@ -56,7 +56,7 @@ export default function Universe() {
       />
       <Particles
         className="absolute inset-0 -z-20 opacity-50"
-        quantity={20}
+        quantity={10}
         ease={80}
         vx={-1}
         size={0.4}

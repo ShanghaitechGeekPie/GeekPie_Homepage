@@ -49,7 +49,14 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} antialiased relative flex flex-col justify-center items-stretch`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+          themes={["light", "dark", "system"]}
+          value={{ light: "light", dark: "dark" }}
+        >
           <header className="sticky top-0 z-40 p-3 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="max-w-5xl mx-auto flex justify-between items-center">
               <Link className="min-w-fit hidden md:block" href="/">
