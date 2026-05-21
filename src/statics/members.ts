@@ -60,6 +60,13 @@ export const leaders = [
     handle: "@GregTaoo",
     url: "https://github.com/GregTaoo",
   },
+  {
+    image: "/assets/profile_photos/lliu.jpg",
+    title: "LINJIA LIU",
+    subtitle: "Open Course",
+    handle: "@CNDY1390",
+    url: "https://github.com/CNDY1390",
+  },
 ];
 export const alumni = [
   {
