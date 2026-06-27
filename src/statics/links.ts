@@ -48,7 +48,7 @@ export const services: Array<ServiceEntry> = [
     description: "使用 GeekPie 账户登录到各个服务",
   },
   {
-    title: "上海科技大学镜像站",
+    title: "上海科技大学镜像站(监修中)",
     href: "https://mirrors.shanghaitech.edu.cn/",
     internal: true, // Could not be resolved by Sitemap
     description:
@@ -58,6 +58,12 @@ export const services: Array<ServiceEntry> = [
     title: "CourseBench",
     href: "https://coursebench.geekpie.club/",
     description: "一个真实可靠、不断完善的多维课程评价信息库",
+  },
+  {
+    title: "Paseo Relay",
+    href: "https://paseo.geekpie.club/",
+    internal: false,
+    description: "GeekPie 提供的 paseo.sh 中转服务",
   },
   {
     title: "GeekPie Meeting",
