@@ -395,5 +395,8 @@ export const alumni = [
     url: "https://github.com/DFPMTS",
   },
 ]
-  .sort((a, b) => a.title.localeCompare(b.title))
-  .sort((a, b) => a.handle.localeCompare(b.handle));
+  .sort((a, b) => {
+    const yearCmp = b.handle.trim().localeCompare(a.handle.trim());
+    if (yearCmp !== 0) return yearCmp;
+    return a.title.localeCompare(b.title);
+  });

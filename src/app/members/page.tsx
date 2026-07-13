@@ -132,38 +132,59 @@ export default function PeoplesPage() {
                 </a>
               </InteractiveHoverButton>
             </div>
-            <div className="mt-6 md:mt-24">
-              <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-                {alumni.map((member, index) => (
-                  <Link href={member.url} key={index} className="group">
-                    <img
-                      className="group-hover:shadow-md h-80 w-full rounded-md object-cover object-top transition-all duration-500 group-hover:h-[22.5rem]"
-                      src={member.image}
-                      alt="team member"
-                      width="800"
-                      height="800"
-                    />
-                    <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
-                      <div className="flex justify-between items-center">
-                        <h3 className="text-title text-base font-medium transition-all duration-500 group-hover:tracking-wide group-hover:text-lg group-hover:font-bold">
-                          {member.title}
-                        </h3>
-                        <span className="text-xs group-hover:text-sm transition-all duration-500 ">
-                          {member.handle}
-                        </span>
-                      </div>
-                      <div className="mt-1 flex items-center justify-between">
-                        <span className="text-muted-foreground inline-block text-sm transition duration-300">
-                          {member.subtitle}
-                        </span>
-                        <div className="group-hover:text-primary-600 dark:group-hover:text-primary-400 inline-block translate-y-8 text-sm tracking-wide opacity-0 transition-all duration-500 hover:underline group-hover:translate-y-0 group-hover:opacity-100">
-                          Link
-                        </div>
-                      </div>
+            <div className="mt-6 md:mt-24 space-y-12">
+              {alumni
+                .reduce(
+                  (groups, member) => {
+                    const year = member.handle.trim();
+                    const last = groups[groups.length - 1];
+                    if (last && last.year === year) {
+                      last.members.push(member);
+                    } else {
+                      groups.push({ year, members: [member] });
+                    }
+                    return groups;
+                  },
+                  [] as { year: string; members: typeof alumni }[]
+                )
+                .map(({ year, members }) => (
+                  <div key={year}>
+                    <div className="flex items-center gap-4 mb-8">
+                      <h3 className="text-lg font-semibold whitespace-nowrap">
+                        Class of {year}
+                      </h3>
+                      <div className="flex-1 border-t" />
                     </div>
-                  </Link>
+                    <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+                      {members.map((member, index) => (
+                        <Link href={member.url} key={index} className="group">
+                          <img
+                            className="group-hover:shadow-md h-80 w-full rounded-md object-cover object-top transition-all duration-500 group-hover:h-[22.5rem]"
+                            src={member.image}
+                            alt="team member"
+                            width="800"
+                            height="800"
+                          />
+                          <div className="px-2 pt-2 sm:pb-0 sm:pt-4">
+                            <div className="flex justify-between items-center">
+                              <h3 className="text-title text-base font-medium transition-all duration-500 group-hover:tracking-wide group-hover:text-lg group-hover:font-bold">
+                                {member.title}
+                              </h3>
+                            </div>
+                            <div className="mt-1 flex items-center justify-between">
+                              <span className="text-muted-foreground inline-block text-sm transition duration-300">
+                                {member.subtitle}
+                              </span>
+                              <div className="group-hover:text-primary-600 dark:group-hover:text-primary-400 inline-block translate-y-8 text-sm tracking-wide opacity-0 transition-all duration-500 hover:underline group-hover:translate-y-0 group-hover:opacity-100">
+                                Link
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 ))}
-              </div>
             </div>
           </div>
         </section>
