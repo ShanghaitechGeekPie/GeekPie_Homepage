@@ -38,6 +38,11 @@ export const links: Array<NavLink> = [
 
 export const services: Array<ServiceEntry> = [
   {
+    title: "TechPie",
+    href: "https://techpie.geekpie.club/",
+    description: "开源校园 App，课表、截止时间与校园服务",
+  },
+  {
     title: "GeekPie 服务状态",
     href: "https://status.geekpie.club/status",
     description: "由 GeekPie 运维的主要服务的状态",
