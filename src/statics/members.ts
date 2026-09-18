@@ -290,7 +290,7 @@ export const alumni = [
   {
     image: "/assets/profile_photos/lhuang.jpg",
     title: "Lei Huang",
-    subtitle: "MS Student @ UIUC | Quant Sys @ 思勰投资",
+    subtitle: "Pre-train & RL Intern @ Qwen | MS Student @ UIUC",
     handle: "2025",
     url: "https://www.linkedin.com/in/lei-huang-117102355/",
   },
